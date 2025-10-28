@@ -94,3 +94,31 @@ footer {
   color: #ccc;
   font-size: 14px;
 }
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.navigation .btn {
+  background: #007ACC;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.navigation .btn:hover {
+  background: #005f99;
+}
+
+.navigation .next {
+  background: #28a745; /* hijau untuk next */
+}
+
+.navigation .next:hover {
+  background: #1e7e34;
+}
