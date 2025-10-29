@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>System Monitoring & Logging - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../../it/index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📊 System Monitoring & Logging</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Sistem Operasi tidak hanya menjalankan aplikasi, tapi juga <strong>mencatat dan memantau</strong> semua aktivitas. 
+       Bayangkan OS seperti <em>kamera CCTV</em> dan <em>papan kontrol</em> di sebuah gedung: 
+       CCTV (logging) merekam semua kejadian, sedangkan papan kontrol (monitoring) menunjukkan kondisi gedung secara real-time.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Monitoring</strong>: memantau penggunaan CPU, RAM, disk, dan jaringan.</li>
+      <li><strong>Logging</strong>: mencatat semua event penting (error, login, update sistem).</li>
+      <li><strong>Tools</strong>:
+        <ul>
+          <li>Windows: Task Manager, Event Viewer</li>
+          <li>Linux: top/htop, journalctl, syslog</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Monitoring membantu mendeteksi masalah secara cepat, logging membantu menelusuri penyebab masalah.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan monitoring sederhana:</p>
+    <pre><code># Windows
+taskmgr   # buka Task Manager
+eventvwr  # buka Event Viewer
+
+# Linux
+top       # lihat proses real-time
+journalctl -xe   # lihat log sistem
+</code></pre>
+    <p>👉 Dari sini kamu bisa melihat kondisi sistem saat ini dan catatan kejadian penting.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan kamu adalah admin server. 
+       Tiba-tiba server melambat dan beberapa user tidak bisa login.</p>
+    <p><strong>Tugas:</strong> Jelaskan langkah-langkah monitoring dan logging apa yang akan kamu lakukan 
+       untuk menemukan penyebab masalah tersebut.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="file-system.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="kernel-dan-modul.html" class="btn next">Lanjut ke Advanced ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
