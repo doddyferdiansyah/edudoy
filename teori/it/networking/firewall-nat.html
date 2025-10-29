@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Firewall & NAT - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🛡️ Firewall & NAT</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Firewall</strong> adalah penjaga gerbang jaringan yang mengatur lalu lintas data masuk dan keluar.  
+       <strong>NAT (Network Address Translation)</strong> adalah penerjemah alamat IP yang memungkinkan banyak perangkat di jaringan lokal 
+       berbagi satu alamat IP publik.  
+       Bayangkan Firewall seperti <em>satpam di pintu gerbang</em>, dan NAT seperti <em>resepsionis yang mencatat siapa keluar-masuk dengan satu pintu utama</em>.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <h3>Firewall</h3>
+    <ul>
+      <li>Mengontrol akses berdasarkan aturan (allow/deny).</li>
+      <li>Bisa berbasis perangkat keras (hardware) atau perangkat lunak (software).</li>
+      <li>Melindungi jaringan dari serangan luar.</li>
+    </ul>
+
+    <h3>NAT</h3>
+    <ul>
+      <li>Mengubah alamat IP private menjadi IP public (dan sebaliknya).</li>
+      <li>Jenis NAT: Static NAT, Dynamic NAT, dan PAT (Port Address Translation).</li>
+      <li>Memungkinkan banyak perangkat lokal berbagi satu koneksi internet.</li>
+    </ul>
+
+    <p>Firewall menjaga keamanan, sementara NAT menghemat alamat IP publik dan menyederhanakan koneksi.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lihat aturan firewall di perangkatmu:</p>
+    <pre><code># Windows (Command Prompt, sebagai admin)
+netsh advfirewall firewall show rule name=all
+
+# Linux (Terminal)
+sudo iptables -L
+</code></pre>
+    <p>👉 Dari sini kamu bisa melihat aturan firewall yang aktif.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kamu mengelola jaringan kantor dengan 50 komputer yang terhubung ke Internet melalui satu router.</p>
+    <p><strong>Tugas:</strong> Jelaskan bagaimana NAT membantu semua komputer tersebut bisa mengakses Internet dengan satu IP publik, 
+       dan bagaimana firewall bisa melindungi jaringan dari akses berbahaya.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="wireless.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="monitoring.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
