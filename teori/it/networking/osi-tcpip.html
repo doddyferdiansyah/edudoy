@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Model OSI & TCP/IP - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📡 Model OSI & TCP/IP</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Model OSI</strong> dan <strong>TCP/IP</strong> adalah kerangka kerja yang menjelaskan bagaimana data bergerak di jaringan. 
+       Bayangkan seperti <em>kantor pos</em>: ada proses menulis surat, memasukkan ke amplop, memberi alamat, mengirim, hingga diterima. 
+       Setiap tahap punya peran sendiri agar pesan sampai dengan benar.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <h3>Model OSI (7 Layer)</h3>
+    <ol>
+      <li><strong>Application</strong>: layanan untuk user (HTTP, FTP, SMTP).</li>
+      <li><strong>Presentation</strong>: format data, enkripsi, kompresi.</li>
+      <li><strong>Session</strong>: mengatur sesi komunikasi.</li>
+      <li><strong>Transport</strong>: memastikan data sampai utuh (TCP/UDP).</li>
+      <li><strong>Network</strong>: pengalamatan & routing (IP).</li>
+      <li><strong>Data Link</strong>: pengiriman frame antar perangkat (Ethernet, MAC).</li>
+      <li><strong>Physical</strong>: media fisik (kabel, sinyal, radio).</li>
+    </ol>
+
+    <h3>Model TCP/IP (4 Layer)</h3>
+    <ol>
+      <li><strong>Application</strong>: HTTP, FTP, DNS.</li>
+      <li><strong>Transport</strong>: TCP, UDP.</li>
+      <li><strong>Internet</strong>: IP, ICMP.</li>
+      <li><strong>Network Access</strong>: Ethernet, Wi-Fi.</li>
+    </ol>
+
+    <p>Model OSI lebih detail (7 layer), sedangkan TCP/IP lebih praktis (4 layer) dan digunakan di dunia nyata.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan <code>ping</code> untuk melihat bagaimana protokol bekerja:</p>
+    <pre><code># Windows / Linux / Mac
+ping google.com
+</code></pre>
+    <p>👉 Saat kamu melakukan ping, data melewati beberapa layer: Application (ICMP request), Transport, Internet (IP), hingga Network Access.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan kamu mengirim email ke temanmu:</p>
+    <p><strong>Tugas:</strong> Jelaskan bagaimana email tersebut melewati 7 layer OSI dari Application hingga Physical. 
+       Gunakan analogi surat di kantor pos untuk mempermudah penjelasan.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="dns-dhcp.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="routing-switching.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
