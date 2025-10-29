@@ -1,1 +1,80 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kernel & Modul - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../../it/index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🧩 Kernel & Modul</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Kernel</strong> adalah inti dari sistem operasi, penghubung langsung antara perangkat keras dan perangkat lunak. 
+       Kernel mengatur CPU, memori, perangkat I/O, dan menyediakan layanan dasar untuk aplikasi. 
+       <em>Modul</em> adalah komponen tambahan (seperti driver) yang bisa dimuat atau dilepas tanpa harus memodifikasi kernel utama. 
+       Bayangkan kernel seperti <strong>mesin mobil</strong>, dan modul seperti <strong>aksesori tambahan</strong> (AC, audio, GPS) yang bisa dipasang atau dilepas sesuai kebutuhan.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Monolithic Kernel</strong>: semua layanan inti berjalan di ruang kernel (contoh: Linux).</li>
+      <li><strong>Microkernel</strong>: hanya fungsi inti di kernel, layanan lain berjalan di ruang user (contoh: Minix).</li>
+      <li><strong>Hybrid Kernel</strong>: kombinasi keduanya (contoh: Windows NT, macOS XNU).</li>
+      <li><strong>Modul Kernel</strong>: kode tambahan yang bisa dimuat/dilepas secara dinamis (misalnya driver perangkat).</li>
+    </ul>
+    <p>Dengan modul, OS menjadi lebih fleksibel dan tidak perlu reboot hanya untuk menambahkan fitur baru.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba cek versi kernel di Linux:</p>
+    <pre><code>uname -r</code></pre>
+    <p>👉 Perintah ini akan menampilkan versi kernel yang sedang digunakan.</p>
+
+    <p>Cek modul kernel yang sedang aktif:</p>
+    <pre><code>lsmod</code></pre>
+    <p>👉 Dari sini kamu bisa melihat daftar modul (driver) yang sedang dimuat.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan kernel adalah mesin mobil:</p>
+    <ul>
+      <li>Mesin = kernel inti</li>
+      <li>AC, audio, GPS = modul tambahan</li>
+    </ul>
+    <p><strong>Tugas:</strong> Jelaskan apa risiko jika semua fitur dipasang langsung ke mesin (monolithic), 
+       dibandingkan jika dipasang terpisah sebagai modul (modular).</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="system-monitoring.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="virtualisasi-os.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
