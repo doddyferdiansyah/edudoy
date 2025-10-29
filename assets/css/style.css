@@ -122,3 +122,18 @@ footer {
 .navigation .next:hover {
   background: #1e7e34;
 }
+
+.btn.roadmap {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #007ACC;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.btn.roadmap:hover {
+  background: #005fa3;
+}
