@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Network Security - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🛡️ Network Security</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Network Security</strong> adalah serangkaian praktik, kebijakan, dan teknologi untuk melindungi jaringan dari ancaman.  
+       Bayangkan seperti <em>sistem keamanan rumah pintar</em>: ada pagar, CCTV, alarm, dan kunci digital.  
+       Semua bekerja bersama untuk mencegah penyusup masuk dan menjaga penghuni tetap aman.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Firewall</strong>: mengontrol lalu lintas masuk/keluar berdasarkan aturan.</li>
+      <li><strong>IDS/IPS (Intrusion Detection/Prevention System)</strong>: mendeteksi dan mencegah aktivitas mencurigakan.</li>
+      <li><strong>VPN & Enkripsi</strong>: melindungi data saat transit.</li>
+      <li><strong>Segmentation & VLAN</strong>: membatasi akses antar bagian jaringan.</li>
+      <li><strong>Zero Trust</strong>: tidak ada perangkat/user yang otomatis dipercaya, semua harus diverifikasi.</li>
+      <li><strong>Patch Management</strong>: memperbarui sistem agar tidak rentan terhadap eksploitasi.</li>
+    </ul>
+    <p>Keamanan jaringan bukan hanya soal teknologi, tapi juga kebijakan dan kesadaran pengguna.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba cek port terbuka di perangkatmu:</p>
+    <pre><code># Windows (Command Prompt)
+netstat -an | find "LISTEN"
+
+# Linux/Mac (Terminal)
+sudo netstat -tulnp
+</code></pre>
+    <p>👉 Dari sini kamu bisa melihat layanan apa saja yang sedang berjalan dan mendengarkan koneksi.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kamu adalah admin jaringan di sebuah perusahaan.  
+       Suatu hari, IDS mendeteksi adanya percobaan brute force login ke server internal.</p>
+    <p><strong>Tugas:</strong> Sebutkan langkah-langkah yang akan kamu lakukan untuk:
+      <ol>
+        <li>Menghentikan serangan.</li>
+        <li>Melindungi server agar tidak diserang lagi.</li>
+        <li>Meningkatkan kesadaran tim IT dan user.</li>
+      </ol>
+    </p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="vpn.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="sdn.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
