@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Manajemen Proses - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../../it/index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚙️ Manajemen Proses</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Setiap aplikasi yang kamu buka adalah sebuah <strong>proses</strong>. 
+       Sistem Operasi bertugas mengatur kapan proses dijalankan, dihentikan, atau dibagi sumber dayanya. 
+       Bayangkan OS seperti <em>manajer lalu lintas</em> yang mengatur ribuan kendaraan (proses) agar tidak tabrakan di jalan raya (CPU).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Proses</strong>: program yang sedang berjalan.</li>
+      <li><strong>Thread</strong>: unit eksekusi lebih kecil di dalam proses.</li>
+      <li><strong>Scheduling</strong>: algoritma OS untuk menentukan urutan eksekusi (FCFS, Round Robin, Priority).</li>
+      <li><strong>Multitasking</strong>: kemampuan menjalankan banyak proses sekaligus.</li>
+    </ul>
+    <p>Tanpa manajemen proses, komputer bisa macet karena semua aplikasi berebut CPU.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lihat proses yang sedang berjalan:</p>
+    <pre><code># Windows
+tasklist
+
+# Linux/Mac
+top
+# atau
+htop
+</code></pre>
+    <p>👉 Dari sini kamu bisa melihat daftar proses, penggunaan CPU, dan memori.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan CPU adalah sebuah restoran dengan satu koki:</p>
+    <ul>
+      <li>Setiap pesanan = proses</li>
+      <li>Koki = CPU</li>
+      <li>OS = manajer dapur</li>
+    </ul>
+    <p><strong>Tugas:</strong> Jelaskan bagaimana manajer dapur (OS) bisa mengatur agar semua pesanan tetap selesai, meski koki hanya satu.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="struktur-direktori.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="permission-linux.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
