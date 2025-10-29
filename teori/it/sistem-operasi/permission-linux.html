@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Permission & User Management - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../../it/index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔐 Permission & User Management</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Setiap sistem operasi harus bisa mengatur <strong>siapa yang boleh melakukan apa</strong>. 
+       Permission adalah mekanisme keamanan dasar yang memastikan file dan folder tidak bisa diakses sembarangan. 
+       Bayangkan komputer seperti <em>perpustakaan digital</em>: ada buku umum yang bisa dibaca semua orang, 
+       ada juga arsip khusus yang hanya boleh diakses pustakawan.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>User</strong>: identitas individu yang menggunakan sistem.</li>
+      <li><strong>Group</strong>: kumpulan user dengan hak akses yang sama.</li>
+      <li><strong>Permission</strong>: hak akses file/folder (read, write, execute).</li>
+      <li><strong>Ownership</strong>: setiap file punya pemilik (user) dan group.</li>
+    </ul>
+    <p>Dengan permission, OS bisa mencegah user biasa menghapus file sistem atau mengakses data orang lain.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lihat permission file di Linux:</p>
+    <pre><code>ls -l
+</code></pre>
+    <p>Output contoh:</p>
+    <pre><code>-rw-r--r--  1 doddy users   1200 Oct 29 20:00 catatan.txt</code></pre>
+    <p>👉 Artinya: pemilik (doddy) bisa membaca & menulis, group hanya bisa membaca, orang lain hanya bisa membaca.</p>
+
+    <p>Ubah permission agar hanya pemilik yang bisa membaca file:</p>
+    <pre><code>chmod 600 catatan.txt</code></pre>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan kamu adalah admin lab komputer. 
+       Ada folder <code>/lab/tugas</code> yang hanya boleh diakses oleh dosen dan asisten, 
+       tapi tidak boleh diubah oleh mahasiswa.</p>
+    <p><strong>Tugas:</strong> Tentukan permission yang tepat untuk folder tersebut, 
+       dan jelaskan kenapa kamu memilih pengaturan itu.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="manajemen-proses.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="memory-management.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
