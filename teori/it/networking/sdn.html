@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud & Software Defined Networking (SDN) - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>☁️ Cloud & Software Defined Networking (SDN)</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>SDN</strong> adalah pendekatan modern dalam jaringan yang memisahkan <em>control plane</em> (otak pengatur) 
+       dari <em>data plane</em> (jalur data). Dengan SDN, administrator bisa mengatur jaringan secara terpusat melalui software, 
+       bukan lagi konfigurasi manual di tiap perangkat.  
+       Bayangkan seperti <em>smart city</em>: semua lampu lalu lintas dikendalikan dari pusat kontrol, 
+       bukan diatur manual di tiap persimpangan.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Control Plane</strong>: bagian yang membuat keputusan (misalnya routing).</li>
+      <li><strong>Data Plane</strong>: bagian yang meneruskan paket sesuai instruksi.</li>
+      <li><strong>SDN Controller</strong>: otak pusat yang mengatur seluruh jaringan.</li>
+      <li><strong>OpenFlow</strong>: protokol populer untuk komunikasi antara controller dan switch.</li>
+      <li><strong>Integrasi Cloud</strong>: SDN banyak digunakan di data center dan cloud untuk otomatisasi dan skalabilitas.</li>
+    </ul>
+    <p>SDN membuat jaringan lebih fleksibel, mudah diatur, dan siap menghadapi kebutuhan skala besar seperti cloud computing.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Jika menggunakan simulator (misalnya Mininet), coba jalankan:</p>
+    <pre><code># Menjalankan topologi sederhana dengan Mininet
+sudo mn --topo single,3 --controller=remote --switch ovsk
+</code></pre>
+    <p>👉 Dari sini kamu bisa melihat bagaimana SDN controller mengatur switch dan host secara terpusat.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kamu adalah admin data center yang harus mengatur ribuan server dan switch.</p>
+    <p><strong>Tugas:</strong> Jelaskan bagaimana SDN bisa mempermudah pekerjaanmu dibandingkan konfigurasi manual tradisional.  
+       Sebutkan minimal 3 keuntungan utama (misalnya otomatisasi, skalabilitas, keamanan).</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="network-security.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="index.html" class="btn next">Kembali ke Daftar Materi ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
