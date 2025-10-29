@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Management - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../../it/index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>💾 Memory Management</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>RAM adalah <strong>ruang kerja sementara</strong> bagi komputer. 
+       Sistem Operasi bertugas mengatur siapa yang boleh menggunakan memori, kapan, dan seberapa banyak. 
+       Bayangkan RAM seperti <em>meja kerja</em>: semakin besar meja, semakin banyak pekerjaan bisa dilakukan sekaligus. 
+       OS adalah <em>manajer kantor</em> yang memastikan meja dipakai secara adil dan efisien.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Virtual Memory</strong>: teknik agar komputer bisa “meminjam” ruang dari harddisk ketika RAM penuh.</li>
+      <li><strong>Paging & Segmentation</strong>: cara OS membagi memori menjadi blok-blok kecil agar lebih mudah dikelola.</li>
+      <li><strong>Swap</strong>: area di disk yang digunakan sebagai cadangan RAM.</li>
+      <li><strong>Memory Protection</strong>: mencegah satu proses mengganggu memori proses lain.</li>
+    </ul>
+    <p>Tanpa manajemen memori, aplikasi bisa saling berebut RAM dan menyebabkan sistem crash.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba cek penggunaan RAM di sistem kamu:</p>
+    <pre><code># Windows (Command Prompt / PowerShell)
+systeminfo | findstr /C:"Total Physical Memory"
+
+# Linux/Mac (Terminal)
+free -h
+</code></pre>
+    <p>👉 Dari sini kamu bisa melihat total RAM, penggunaan saat ini, dan swap memory.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan kamu punya meja kerja kecil, tapi harus mengerjakan banyak tugas sekaligus. 
+       Kamu mulai menaruh sebagian kertas di lantai (swap). 
+       Akibatnya, pekerjaan jadi lebih lambat.</p>
+    <p><strong>Tugas:</strong> Jelaskan kenapa komputer dengan RAM kecil tapi swap besar tetap terasa lambat, 
+       meskipun secara teori punya “memori tambahan”.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="permission-linux.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="file-system.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
