@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Alamat IP & Subnet Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔢 Alamat IP & Subnet Dasar</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>Alamat IP</strong> adalah identitas unik setiap perangkat di jaringan, seperti <em>alamat rumah</em> di dunia nyata. 
+       <strong>Subnet</strong> adalah cara membagi jaringan besar menjadi jaringan-jaringan kecil, 
+       seperti membagi kota menjadi beberapa kecamatan agar lebih teratur.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>IPv4</strong>: terdiri dari 4 angka (0–255), contoh: <code>192.168.1.10</code>.</li>
+      <li><strong>IPv6</strong>: format lebih panjang untuk menggantikan IPv4, contoh: <code>2001:0db8:85a3::8a2e:0370:7334</code>.</li>
+      <li><strong>Subnet Mask</strong>: menentukan bagian mana dari IP yang menunjukkan jaringan dan mana yang menunjukkan host. Contoh: <code>255.255.255.0</code>.</li>
+      <li><strong>Private IP</strong>: digunakan di jaringan lokal (contoh: 192.168.x.x, 10.x.x.x).</li>
+      <li><strong>Public IP</strong>: digunakan untuk mengakses Internet.</li>
+    </ul>
+    <p>Dengan subnetting, administrator bisa mengatur efisiensi penggunaan alamat IP dan meningkatkan keamanan jaringan.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba cek alamat IP perangkatmu:</p>
+    <pre><code># Windows (Command Prompt)
+ipconfig
+
+# Linux/Mac (Terminal)
+ifconfig
+</code></pre>
+    <p>👉 Dari output ini, perhatikan alamat IPv4 dan subnet mask yang digunakan.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kamu punya jaringan dengan alamat <code>192.168.1.0/24</code> (artinya subnet mask 255.255.255.0).</p>
+    <p><strong>Tugas:</strong> Berapa jumlah maksimal host (perangkat) yang bisa terhubung dalam subnet ini? 
+       Jelaskan perhitungan singkatnya.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="perangkat-jaringan.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="dns-dhcp.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
