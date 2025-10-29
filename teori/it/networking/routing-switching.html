@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Routing & Switching - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔀 Routing & Switching</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Switching</strong> dan <strong>Routing</strong> adalah dua konsep inti dalam jaringan. 
+       Bayangkan jaringan seperti <em>jalan raya</em>: 
+       <strong>Switch</strong> adalah persimpangan dalam satu kota (LAN), 
+       sedangkan <strong>Router</strong> adalah gerbang tol yang menghubungkan antar kota (WAN).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <h3>Switching</h3>
+    <ul>
+      <li>Menghubungkan banyak perangkat dalam satu jaringan lokal (LAN).</li>
+      <li>Bekerja di layer Data Link (Layer 2 OSI).</li>
+      <li>Menggunakan alamat MAC untuk mengirim data ke perangkat tujuan.</li>
+    </ul>
+
+    <h3>Routing</h3>
+    <ul>
+      <li>Menghubungkan jaringan yang berbeda (misalnya LAN ke Internet).</li>
+      <li>Bekerja di layer Network (Layer 3 OSI).</li>
+      <li>Menggunakan alamat IP untuk menentukan jalur terbaik.</li>
+      <li>Bisa menggunakan routing statis (manual) atau dinamis (OSPF, BGP).</li>
+    </ul>
+
+    <p>Switch fokus pada <em>siapa</em> di dalam jaringan lokal, sedangkan Router fokus pada <em>ke mana</em> data harus pergi di luar jaringan.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lihat tabel routing di perangkatmu:</p>
+    <pre><code># Windows (Command Prompt)
+route print
+
+# Linux/Mac (Terminal)
+netstat -rn
+</code></pre>
+    <p>👉 Dari output ini, kamu bisa melihat jalur default (default gateway) yang digunakan untuk keluar ke Internet.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kamu punya dua jaringan lokal:</p>
+    <ul>
+      <li>192.168.1.0/24 untuk tim A</li>
+      <li>192.168.2.0/24 untuk tim B</li>
+    </ul>
+    <p><strong>Tugas:</strong> Jelaskan perangkat apa yang dibutuhkan agar kedua tim bisa saling berkomunikasi, 
+       dan bagaimana routing berperan di sini.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="osi-tcpip.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="wireless.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
