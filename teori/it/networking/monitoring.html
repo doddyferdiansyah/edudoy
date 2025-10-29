@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoring & Troubleshooting - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📊 Monitoring & Troubleshooting</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Monitoring</strong> adalah proses memantau kesehatan jaringan, 
+       sedangkan <strong>Troubleshooting</strong> adalah langkah-langkah untuk menemukan dan memperbaiki masalah.  
+       Bayangkan seperti <em>dokter</em>: monitoring = pemeriksaan rutin, troubleshooting = pengobatan saat sakit.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <h3>Monitoring</h3>
+    <ul>
+      <li>Menggunakan tools seperti <code>ping</code>, <code>traceroute</code>, <code>netstat</code>, atau aplikasi seperti Wireshark, Nagios, Zabbix.</li>
+      <li>Memantau bandwidth, latency, packet loss, uptime.</li>
+      <li>Mendeteksi masalah sebelum berdampak besar.</li>
+    </ul>
+
+    <h3>Troubleshooting</h3>
+    <ul>
+      <li>Mengidentifikasi masalah (apakah di perangkat, kabel, router, atau server).</li>
+      <li>Menggunakan metode sistematis: <em>Identify → Isolate → Fix → Verify</em>.</li>
+      <li>Contoh: jika tidak bisa akses website, cek koneksi lokal → gateway → DNS → server tujuan.</li>
+    </ul>
+
+    <p>Monitoring menjaga jaringan tetap sehat, troubleshooting menyelesaikan masalah saat terjadi gangguan.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan traceroute untuk melihat jalur data ke server tujuan:</p>
+    <pre><code># Windows (Command Prompt)
+tracert google.com
+
+# Linux/Mac (Terminal)
+traceroute google.com
+</code></pre>
+    <p>👉 Dari output ini, kamu bisa melihat hop demi hop (router yang dilewati) hingga sampai ke tujuan.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kamu diminta memperbaiki jaringan kantor. Gejalanya: komputer bisa ping gateway, 
+       tapi tidak bisa membuka website.</p>
+    <p><strong>Tugas:</strong> Buat langkah troubleshooting sistematis untuk menemukan penyebab masalah. 
+       Sebutkan tools apa saja yang akan kamu gunakan di setiap langkah.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="firewall-nat.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="advanced-routing.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
