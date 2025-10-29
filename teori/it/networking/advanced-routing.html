@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Routing Protocols - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🛰️ Advanced Routing Protocols</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Routing lanjutan</strong> menggunakan protokol dinamis untuk menentukan jalur terbaik antar jaringan.  
+       Bayangkan seperti <em>aplikasi peta digital</em> (Google Maps/Waze) yang selalu mencari rute tercepat, 
+       bukan hanya jalur tetap. Protokol routing dinamis membuat jaringan lebih pintar dan adaptif.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <h3>Jenis Protokol Routing Dinamis</h3>
+    <ul>
+      <li><strong>RIP (Routing Information Protocol)</strong>: sederhana, berbasis hop count, cocok untuk jaringan kecil.</li>
+      <li><strong>OSPF (Open Shortest Path First)</strong>: menggunakan algoritma Dijkstra, cepat beradaptasi, cocok untuk jaringan menengah-besar.</li>
+      <li><strong>BGP (Border Gateway Protocol)</strong>: protokol inti Internet, menghubungkan antar ISP dan jaringan global.</li>
+      <li><strong>EIGRP (Enhanced Interior Gateway Routing Protocol)</strong>: protokol Cisco, efisien dan cepat konvergensi.</li>
+    </ul>
+
+    <h3>Routing Statis vs Dinamis</h3>
+    <ul>
+      <li><strong>Statis</strong>: jalur ditentukan manual, cocok untuk jaringan kecil dan stabil.</li>
+      <li><strong>Dinamis</strong>: router saling bertukar informasi, otomatis mencari jalur terbaik.</li>
+    </ul>
+
+    <p>Routing dinamis membuat jaringan lebih fleksibel, tetapi juga lebih kompleks dalam konfigurasi.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lihat protokol routing yang aktif di router (jika menggunakan simulator seperti Cisco Packet Tracer atau GNS3):</p>
+    <pre><code># Contoh konfigurasi OSPF di Cisco IOS
+router ospf 1
+ network 192.168.1.0 0.0.0.255 area 0
+</code></pre>
+    <p>👉 Dari sini, router akan otomatis berbagi informasi rute dengan router lain di area yang sama.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kamu mengelola jaringan dengan 3 router yang saling terhubung.  
+       Router A ke Router B, Router B ke Router C, dan Router A ke Router C.</p>
+    <p><strong>Tugas:</strong> Jelaskan kenapa menggunakan OSPF lebih efisien dibandingkan routing statis dalam skenario ini. 
+       Apa yang terjadi jika salah satu link putus?</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="monitoring.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="vlan.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
