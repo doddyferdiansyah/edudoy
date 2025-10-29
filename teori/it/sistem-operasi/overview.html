@@ -44,6 +44,27 @@
     .beginner { background: #d4edda; color: #155724; }
     .intermediate { background: #fff3cd; color: #856404; }
     .advanced { background: #f8d7da; color: #721c24; }
+
+    /* Progress bar */
+    .progress-container {
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 15px 0;
+      height: 20px;
+      width: 100%;
+    }
+    .progress-bar {
+      height: 100%;
+      text-align: center;
+      color: white;
+      font-size: 0.8em;
+      line-height: 20px;
+      font-weight: bold;
+    }
+    .progress-beginner { background: #28a745; }
+    .progress-intermediate { background: #ffc107; color: #000; }
+    .progress-advanced { background: #dc3545; }
   </style>
 </head>
 <body>
@@ -71,7 +92,10 @@
 
   <section class="roadmap">
     <div class="level">
-      <h2>🔰 Beginner</h2>
+      <h2>🔰 Beginner (5/5)</h2>
+      <div class="progress-container">
+        <div class="progress-bar progress-beginner" style="width:100%;">100%</div>
+      </div>
       <ul>
         <li><a href="definisi.html">Definisi Sistem Operasi</a> <span class="tag beginner">Beginner</span></li>
         <li><a href="navigasi-dasar.html">Navigasi Dasar OS</a> <span class="tag beginner">Beginner</span></li>
@@ -84,7 +108,10 @@
     <div class="arrow">⬇️</div>
 
     <div class="level">
-      <h2>⚙️ Intermediate</h2>
+      <h2>⚙️ Intermediate (5/5)</h2>
+      <div class="progress-container">
+        <div class="progress-bar progress-intermediate" style="width:100%;">100%</div>
+      </div>
       <ul>
         <li><a href="manajemen-proses.html">Manajemen Proses</a> <span class="tag intermediate">Intermediate</span></li>
         <li><a href="permission-linux.html">Permission & User Management</a> <span class="tag intermediate">Intermediate</span></li>
@@ -97,7 +124,10 @@
     <div class="arrow">⬇️</div>
 
     <div class="level">
-      <h2>🚀 Advanced</h2>
+      <h2>🚀 Advanced (5/5)</h2>
+      <div class="progress-container">
+        <div class="progress-bar progress-advanced" style="width:100%;">100%</div>
+      </div>
       <ul>
         <li><a href="kernel-dan-modul.html">Kernel & Modul</a> <span class="tag advanced">Advanced</span></li>
         <li><a href="virtualisasi-os.html">Virtualisasi Sistem Operasi</a> <span class="tag advanced">Advanced</span></li>
