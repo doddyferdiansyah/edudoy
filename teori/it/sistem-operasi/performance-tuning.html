@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Performance Tuning & Optimization - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../../it/index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚡ Performance Tuning & Optimization</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p>Setiap sistem operasi bisa dioptimalkan agar lebih cepat, stabil, dan efisien. 
+       <strong>Performance tuning</strong> adalah seni menyesuaikan parameter OS agar sesuai dengan kebutuhan. 
+       Bayangkan OS seperti <em>mesin balap</em>: dengan setelan standar bisa jalan, 
+       tapi dengan tuning yang tepat bisa melaju jauh lebih kencang.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Kernel Tuning</strong>: mengubah parameter kernel (misalnya networking, memory) dengan <code>sysctl</code>.</li>
+      <li><strong>Scheduler Optimization</strong>: mengatur prioritas proses agar aplikasi penting mendapat resource lebih banyak.</li>
+      <li><strong>Disk & I/O Optimization</strong>: menggunakan caching, memilih file system yang tepat.</li>
+      <li><strong>Resource Limits</strong>: membatasi penggunaan CPU/RAM oleh aplikasi tertentu.</li>
+    </ul>
+    <p>Optimasi harus hati-hati: salah konfigurasi bisa membuat sistem tidak stabil.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lihat parameter kernel terkait jaringan di Linux:</p>
+    <pre><code>sysctl -a | grep net.ipv4</code></pre>
+    <p>👉 Dari sini kamu bisa melihat banyak parameter yang bisa diubah untuk optimasi jaringan.</p>
+
+    <p>Contoh mengubah ukuran buffer TCP (sementara, hingga reboot):</p>
+    <pre><code>sudo sysctl -w net.core.rmem_max=26214400</code></pre>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan kamu sedang mengelola server database yang sering overload. 
+       Kamu ingin meningkatkan performa dengan tuning kernel.</p>
+    <p><strong>Tugas:</strong> Sebutkan 2 parameter yang mungkin kamu ubah (misalnya terkait memory atau networking), 
+       dan jelaskan dampaknya terhadap performa server.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="security-hardening.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="index.html" class="btn next">Kembali ke Daftar Materi ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
