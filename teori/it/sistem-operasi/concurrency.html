@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Concurrency & Synchronization - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../../it/index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔄 Concurrency & Synchronization</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p>Concurrency adalah kemampuan sistem operasi untuk menjalankan banyak proses atau thread secara bersamaan. 
+       Namun, tanpa <strong>synchronization</strong>, proses bisa saling berebut resource dan menimbulkan masalah. 
+       Bayangkan beberapa orang sedang menulis di papan tulis yang sama: 
+       jika tidak ada aturan giliran, tulisan bisa tumpang tindih dan kacau.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Penjelasan Singkat</h2>
+    <ul>
+      <li><strong>Race Condition</strong>: kondisi ketika dua proses/thread mengakses resource yang sama secara bersamaan dan hasilnya tidak terduga.</li>
+      <li><strong>Deadlock</strong>: kondisi ketika dua atau lebih proses saling menunggu resource yang tidak pernah dilepas.</li>
+      <li><strong>Starvation</strong>: proses tertentu tidak pernah mendapat giliran karena selalu didahului proses lain.</li>
+      <li><strong>Semaphore & Mutex</strong>: mekanisme sinkronisasi untuk mengatur akses ke resource bersama.</li>
+    </ul>
+    <p>OS menggunakan algoritma sinkronisasi untuk memastikan semua proses berjalan adil dan konsisten.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba jalankan program multithreading sederhana (contoh Python):</p>
+    <pre><code>import threading
+
+x = 0
+
+def tambah():
+    global x
+    for _ in range(1000000):
+        x += 1
+
+t1 = threading.Thread(target=tambah)
+t2 = threading.Thread(target=tambah)
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+
+print("Hasil:", x)
+</code></pre>
+    <p>👉 Jalankan beberapa kali. Hasilnya bisa berbeda-beda karena terjadi <strong>race condition</strong>.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Bayangkan ada dua orang yang ingin menggunakan printer yang sama:</p>
+    <ul>
+      <li>Orang A sudah memegang kertas, menunggu tinta.</li>
+      <li>Orang B sudah memegang tinta, menunggu kertas.</li>
+    </ul>
+    <p><strong>Tugas:</strong> Jelaskan kenapa situasi ini disebut <em>deadlock</em>, 
+       dan bagaimana OS bisa mencegahnya dengan mekanisme sinkronisasi.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="virtualisasi-os.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="security-hardening.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
