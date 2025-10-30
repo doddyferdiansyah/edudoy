@@ -5,6 +5,24 @@
   <title>Pemrograman Dasar - Fixly Learning Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    .content { max-width: 900px; margin: 0 auto; }
+    .level {
+      background: #f5f5f5;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .level h3 { margin-top: 0; }
+    .level ol { padding-left: 20px; }
+    .tag {
+      font-size: 0.8em; padding: 3px 8px; border-radius: 5px; margin-left: 8px;
+    }
+    .beginner { background: #d4edda; color: #155724; }
+    .intermediate { background: #fff3cd; color: #856404; }
+    .advanced { background: #f8d7da; color: #721c24; }
+  </style>
 </head>
 <body>
   <header>
@@ -32,35 +50,41 @@
   <section class="content">
     <h2>📚 Daftar Materi</h2>
 
-    <h3>🔰 Beginner</h3>
-    <ol>
-      <li><a href="apa-itu-pemrograman.html">Apa itu Pemrograman?</a></li>
-      <li><a href="bahasa-pemrograman.html">Bahasa Pemrograman & Compiler/Interpreter</a></li>
-      <li><a href="variabel-tipe-data.html">Variabel & Tipe Data</a></li>
-      <li><a href="operator-ekspresi.html">Operator & Ekspresi</a></li>
-      <li><a href="struktur-kontrol.html">Struktur Kontrol</a></li>
-      <li><a href="fungsi-dasar.html">Fungsi Dasar</a></li>
-      <li><a href="input-output.html">Input & Output</a></li>
-      <li><a href="mini-project-kalkulator.html">Mini Project: Kalkulator Sederhana</a></li>
-    </ol>
+    <div class="level">
+      <h3>🔰 Beginner</h3>
+      <ol>
+        <li><a href="apa-itu-pemrograman.html">Apa itu Pemrograman?</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="bahasa-pemrograman.html">Bahasa Pemrograman & Compiler/Interpreter</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="variabel-tipe-data.html">Variabel & Tipe Data</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="operator-ekspresi.html">Operator & Ekspresi</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="struktur-kontrol.html">Struktur Kontrol</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="fungsi-dasar.html">Fungsi Dasar</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="input-output.html">Input & Output</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="mini-project-kalkulator.html">Mini Project: Kalkulator Sederhana</a> <span class="tag beginner">Beginner</span></li>
+      </ol>
+    </div>
 
-    <h3>⚙️ Intermediate</h3>
-    <ol>
-      <li><a href="struktur-data-dasar.html">Struktur Data Dasar</a></li>
-      <li><a href="modularisasi-file.html">Modularisasi & File</a></li>
-      <li><a href="error-handling.html">Error Handling</a></li>
-      <li><a href="oop-dasar.html">OOP Dasar</a></li>
-      <li><a href="mini-project-todolist.html">Mini Project: To-Do List CLI</a></li>
-    </ol>
+    <div class="level">
+      <h3>⚙️ Intermediate</h3>
+      <ol>
+        <li><a href="struktur-data-dasar.html">Struktur Data Dasar</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="modularisasi-file.html">Modularisasi & File</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="error-handling.html">Error Handling</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="oop-dasar.html">OOP Dasar</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="mini-project-todolist.html">Mini Project: To-Do List CLI</a> <span class="tag intermediate">Intermediate</span></li>
+      </ol>
+    </div>
 
-    <h3>🧠 Advanced</h3>
-    <ol>
-      <li><a href="algoritma-kompleksitas.html">Algoritma & Kompleksitas</a></li>
-      <li><a href="rekursi.html">Rekursi</a></li>
-      <li><a href="struktur-data-lanjutan.html">Struktur Data Lanjutan</a></li>
-      <li><a href="asynchronous.html">Asynchronous Programming</a></li>
-      <li><a href="mini-project-game.html">Mini Project: Game Teks Sederhana</a></li>
-    </ol>
+    <div class="level">
+      <h3>🧠 Advanced</h3>
+      <ol>
+        <li><a href="algoritma-kompleksitas.html">Algoritma & Kompleksitas</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="rekursi.html">Rekursi</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="struktur-data-lanjutan.html">Struktur Data Lanjutan</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="asynchronous.html">Asynchronous Programming</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="mini-project-game.html">Mini Project: Game Teks Sederhana</a> <span class="tag advanced">Advanced</span></li>
+      </ol>
+    </div>
   </section>
 
   <footer>
