@@ -4,67 +4,127 @@
   <meta charset="UTF-8">
   <title>Overview Pemrograman Dasar - Fixly Learning Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 0;
+    }
+    .level {
+      background: #f5f5f5;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .level h2 { margin-top: 0; }
+    .level ul { list-style: none; padding: 0; }
+    .level ul li { margin: 8px 0; }
+    .arrow { font-size: 2em; margin: 10px 0; color: #007ACC; }
+    .tag {
+      font-size: 0.8em; padding: 3px 8px; border-radius: 5px; margin-left: 8px;
+    }
+    .beginner { background: #d4edda; color: #155724; }
+    .intermediate { background: #fff3cd; color: #856404; }
+    .advanced { background: #f8d7da; color: #721c24; }
+
+    /* Progress bar */
+    .progress-container {
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 15px 0;
+      height: 20px;
+      width: 100%;
+    }
+    .progress-bar {
+      height: 100%;
+      text-align: center;
+      color: white;
+      font-size: 0.8em;
+      line-height: 20px;
+      font-weight: bold;
+    }
+    .progress-beginner { background: #28a745; }
+    .progress-intermediate { background: #ffc107; color: #000; }
+    .progress-advanced { background: #dc3545; }
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo">Fixly Learning Hub</div>
       <ul class="menu">
-        <li><a href="../../index.html">Beranda</a></li>
-        <li><a href="../index.html">Teori Dasar</a></li>
-        <li><a href="../networking/index.html">Networking</a></li>
-        <li><a href="index.html">Pemrograman</a></li>
-        <li><a href="../../praktik/index.html">Praktik</a></li>
-        <li><a href="../../tips/index.html">Tips & Trik</a></li>
-        <li><a href="../../learning-path/index.html">Learning Path</a></li>
-        <li><a href="../../roadmap/index.html">Roadmap</a></li>
-        <li><a href="../../resources/index.html">Resource</a></li>
-        <li><a href="../../tentang/index.html">Tentang</a></li>
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>👨‍💻 Overview Pemrograman Dasar</h1>
-    <p>Ringkasan materi pemrograman dasar yang dibagi menjadi tiga level: Beginner, Intermediate, dan Advanced.  
-       Gunakan halaman ini sebagai peta perjalanan belajarmu.</p>
+    <h1>🗺️ Overview Pemrograman Dasar</h1>
+    <p>Ringkasan perjalanan belajar Pemrograman Dasar dari level Beginner → Intermediate → Advanced.</p>
   </section>
 
-  <section class="content">
-    <h2>🔰 Beginner</h2>
-    <ul>
-      <li>Apa itu Pemrograman?</li>
-      <li>Bahasa Pemrograman & Compiler/Interpreter</li>
-      <li>Variabel & Tipe Data</li>
-      <li>Operator & Ekspresi</li>
-      <li>Struktur Kontrol</li>
-      <li>Fungsi Dasar</li>
-      <li>Input & Output</li>
-      <li>Mini Project: Kalkulator</li>
-    </ul>
+  <section class="roadmap">
+    <div class="level">
+      <h2>🔰 Beginner (8/8)</h2>
+      <div class="progress-container">
+        <div class="progress-bar progress-beginner" style="width:100%;">100%</div>
+      </div>
+      <ul>
+        <li><a href="apa-itu-pemrograman.html">Apa itu Pemrograman?</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="bahasa-pemrograman.html">Bahasa Pemrograman & Compiler/Interpreter</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="variabel-tipe-data.html">Variabel & Tipe Data</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="operator-ekspresi.html">Operator & Ekspresi</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="struktur-kontrol.html">Struktur Kontrol</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="fungsi-dasar.html">Fungsi Dasar</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="input-output.html">Input & Output</a> <span class="tag beginner">Beginner</span></li>
+        <li><a href="mini-project-kalkulator.html">Mini Project: Kalkulator</a> <span class="tag beginner">Beginner</span></li>
+      </ul>
+    </div>
 
-    <h2>⚙️ Intermediate</h2>
-    <ul>
-      <li>Struktur Data Dasar</li>
-      <li>Modularisasi & File</li>
-      <li>Error Handling</li>
-      <li>OOP Dasar</li>
-      <li>Mini Project: To-Do List CLI</li>
-    </ul>
+    <div class="arrow">⬇️</div>
 
-    <h2>🧠 Advanced</h2>
-    <ul>
-      <li>Algoritma & Kompleksitas</li>
-      <li>Rekursi</li>
-      <li>Struktur Data Lanjutan</li>
-      <li>Asynchronous Programming</li>
-      <li>Mini Project: Game Teks</li>
-    </ul>
-  </section>
+    <div class="level">
+      <h2>⚙️ Intermediate (5/5)</h2>
+      <div class="progress-container">
+        <div class="progress-bar progress-intermediate" style="width:100%;">100%</div>
+      </div>
+      <ul>
+        <li><a href="struktur-data-dasar.html">Struktur Data Dasar</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="modularisasi-file.html">Modularisasi & File</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="error-handling.html">Error Handling</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="oop-dasar.html">OOP Dasar</a> <span class="tag intermediate">Intermediate</span></li>
+        <li><a href="mini-project-todolist.html">Mini Project: To-Do List CLI</a> <span class="tag intermediate">Intermediate</span></li>
+      </ul>
+    </div>
 
-  <section class="navigation">
-    <a href="index.html" class="btn next">➡️ Lanjut ke Daftar Materi</a>
+    <div class="arrow">⬇️</div>
+
+    <div class="level">
+      <h2>🚀 Advanced (5/5)</h2>
+      <div class="progress-container">
+        <div class="progress-bar progress-advanced" style="width:100%;">100%</div>
+      </div>
+      <ul>
+        <li><a href="algoritma-kompleksitas.html">Algoritma & Kompleksitas</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="rekursi.html">Rekursi</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="struktur-data-lanjutan.html">Struktur Data Lanjutan</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="asynchronous.html">Asynchronous Programming</a> <span class="tag advanced">Advanced</span></li>
+        <li><a href="mini-project-game.html">Mini Project: Game Teks</a> <span class="tag advanced">Advanced</span></li>
+      </ul>
+    </div>
   </section>
 
   <footer>
