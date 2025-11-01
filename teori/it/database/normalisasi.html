@@ -1,1 +1,104 @@
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Normalisasi Database - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📐 Normalisasi Database</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Normalisasi</strong> adalah proses merancang struktur tabel agar data lebih efisien, konsisten, dan bebas dari duplikasi.  
+       Bayangkan seperti <em>merapikan lemari arsip</em>: setiap laci hanya berisi dokumen yang relevan, tidak ada data ganda, dan mudah dicari.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Tujuan Normalisasi</h2>
+    <ul>
+      <li>Mengurangi duplikasi data.</li>
+      <li>Menjaga konsistensi data.</li>
+      <li>Mempermudah pemeliharaan database.</li>
+      <li>Meningkatkan efisiensi penyimpanan.</li>
+    </ul>
+
+    <h3>🔑 Bentuk Normalisasi Umum</h3>
+    <ul>
+      <li><strong>1NF (First Normal Form)</strong>: setiap kolom hanya menyimpan satu nilai (atomic).</li>
+      <li><strong>2NF (Second Normal Form)</strong>: sudah 1NF + semua kolom non-key bergantung penuh pada primary key.</li>
+      <li><strong>3NF (Third Normal Form)</strong>: sudah 2NF + tidak ada ketergantungan transitif antar kolom non-key.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Misalkan kita punya tabel <code>transaksi</code> yang belum dinormalisasi:</p>
+    <pre><code>-- Tabel belum dinormalisasi
+id_transaksi | nama_pelanggan | alamat       | produk       | harga
+-------------------------------------------------------------------
+1            | Andi           | Jakarta      | Laptop       | 7000000
+2            | Andi           | Jakarta      | Mouse        | 150000
+</code></pre>
+
+    <p>👉 Masalah: data pelanggan (nama, alamat) berulang setiap kali transaksi.</p>
+
+    <p>Setelah normalisasi (3NF):</p>
+    <pre><code>-- Tabel pelanggan
+id_pelanggan | nama_pelanggan | alamat
+---------------------------------------
+1            | Andi           | Jakarta
+
+-- Tabel produk
+id_produk | nama_produk | harga
+--------------------------------
+1         | Laptop      | 7000000
+2         | Mouse       | 150000
+
+-- Tabel transaksi
+id_transaksi | id_pelanggan | id_produk
+----------------------------------------
+1            | 1            | 1
+2            | 1            | 2
+</code></pre>
+    <p>👉 Data pelanggan dan produk tidak lagi duplikat, transaksi hanya menyimpan relasi.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Pada sistem <code>perpustakaan</code>, lakukan normalisasi:</p>
+    <ul>
+      <li>Tabel awal berisi: <code>id_peminjaman</code>, <code>nama_anggota</code>, <code>alamat</code>, <code>judul_buku</code>, <code>penulis</code>, <code>tanggal_pinjam</code>.</li>
+      <li>Identifikasi data yang berulang.</li>
+      <li>Pisahkan menjadi tabel <code>anggota</code>, <code>buku</code>, dan <code>peminjaman</code>.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat relasi antar tabel dengan foreign key agar data konsisten.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="groupby-aggregasi.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-inventaris.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
