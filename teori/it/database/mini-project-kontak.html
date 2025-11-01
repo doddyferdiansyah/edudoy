@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Sistem Kontak - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📱 Mini Project: Sistem Kontak</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Pada mini project ini, kita akan membangun <strong>sistem kontak sederhana</strong> menggunakan SQL.  
+       Tujuannya adalah menggabungkan semua konsep dasar: membuat tabel, menambahkan data, membaca, memperbarui, dan menghapus data.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Desain Database</h2>
+    <p>Kita akan membuat database <code>kontak_db</code> dengan tabel <code>kontak</code>:</p>
+    <ul>
+      <li><code>id</code> → primary key, auto increment</li>
+      <li><code>nama</code> → varchar(50)</li>
+      <li><code>telepon</code> → varchar(20)</li>
+      <li><code>email</code> → varchar(50)</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Implementasi</h2>
+    <pre><code>-- Membuat database
+CREATE DATABASE kontak_db;
+USE kontak_db;
+
+-- Membuat tabel kontak
+CREATE TABLE kontak (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(50) NOT NULL,
+    telepon VARCHAR(20),
+    email VARCHAR(50)
+);
+
+-- Menambahkan data
+INSERT INTO kontak (nama, telepon, email)
+VALUES 
+('Andi', '08123456789', 'andi@mail.com'),
+('Budi', '08234567890', 'budi@mail.com'),
+('Citra', '08345678901', 'citra@mail.com');
+
+-- Membaca semua data
+SELECT * FROM kontak;
+
+-- Memperbarui data
+UPDATE kontak
+SET telepon = '08999999999'
+WHERE nama = 'Budi';
+
+-- Menghapus data
+DELETE FROM kontak
+WHERE nama = 'Citra';
+</code></pre>
+    <p>👉 Dengan query di atas, kita sudah punya sistem CRUD sederhana untuk data kontak.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kembangkan sistem kontak dengan fitur tambahan:</p>
+    <ul>
+      <li>Tambahkan kolom <code>alamat</code> pada tabel.</li>
+      <li>Tambahkan minimal 5 data kontak baru.</li>
+      <li>Tampilkan semua kontak yang memiliki email dengan domain <code>@gmail.com</code>.</li>
+      <li>Urutkan daftar kontak berdasarkan nama secara alfabetis.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat query untuk mencari kontak berdasarkan huruf awal nama (misalnya semua nama yang dimulai dengan "A").</p>
+  </section>
+
+  <section class="navigation">
+    <a href="filter-sort.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="relasi-foreign-key.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
