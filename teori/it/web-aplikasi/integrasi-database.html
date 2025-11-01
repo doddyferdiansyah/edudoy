@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Integrasi Database - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🗄️ Integrasi Database</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Integrasi Database</strong> adalah proses menghubungkan aplikasi backend dengan sistem penyimpanan data.  
+       Dengan integrasi ini, aplikasi bisa menyimpan, mengambil, memperbarui, dan menghapus data secara permanen.  
+       Bayangkan database seperti <em>gudang arsip</em>, dan backend adalah <em>petugas arsip</em> yang mengatur keluar-masuknya data.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Database Relasional</strong> (MySQL, PostgreSQL) → data dalam tabel dengan relasi.</li>
+      <li><strong>Database Non-Relasional</strong> (MongoDB) → data dalam bentuk dokumen/JSON.</li>
+      <li><strong>Driver/Client</strong> → library untuk menghubungkan aplikasi dengan database.</li>
+      <li><strong>Query</strong> → perintah untuk mengelola data (SQL atau metode ORM).</li>
+    </ul>
+
+    <h3>🔹 Contoh Integrasi dengan MySQL</h3>
+    <pre><code>// app.js
+const express = require("express");
+const mysql = require("mysql2");
+const app = express();
+app.use(express.json());
+
+// Koneksi ke database
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "belajar_db"
+});
+
+// Route GET semua user
+app.get("/users", (req, res) =&gt; {
+  db.query("SELECT * FROM users", (err, results) =&gt; {
+    if (err) throw err;
+    res.json(results);
+  });
+});
+
+// Route POST tambah user
+app.post("/users", (req, res) =&gt; {
+  const { nama } = req.body;
+  db.query("INSERT INTO users (nama) VALUES (?)", [nama], (err, result) =&gt; {
+    if (err) throw err;
+    res.status(201).json({ id: result.insertId, nama });
+  });
+});
+
+app.listen(3000, () =&gt; console.log("Server berjalan di http://localhost:3000"));
+</code></pre>
+
+    <h3>🔹 Contoh Integrasi dengan MongoDB</h3>
+    <pre><code>// app.js
+const express = require("express");
+const { MongoClient } = require("mongodb");
+const app = express();
+app.use(express.json());
+
+const url = "mongodb://localhost:27017";
+const client = new MongoClient(url);
+const dbName = "belajar_db";
+
+app.get("/users", async (req, res) =&gt; {
+  await client.connect();
+  const db = client.db(dbName);
+  const users = await db.collection("users").find().toArray();
+  res.json(users);
+});
+
+app.post("/users", async (req, res) =&gt; {
+  await client.connect();
+  const db = client.db(dbName);
+  const result = await db.collection("users").insertOne({ nama: req.body.nama });
+  res.status(201).json(result);
+});
+
+app.listen(3000, () =&gt; console.log("Server berjalan di http://localhost:3000"));
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba buat database <code>belajar_db</code> dengan tabel <code>users</code> (MySQL) atau koleksi <code>users</code> (MongoDB).  
+       Lalu jalankan server Express di atas untuk menguji integrasi database.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat API sederhana dengan integrasi database:</p>
+    <ul>
+      <li>Endpoint <code>GET /products</code> → ambil semua produk.</li>
+      <li>Endpoint <code>POST /products</code> → tambah produk baru (nama & harga).</li>
+      <li>Endpoint <code>PUT /products/:id</code> → update harga produk.</li>
+      <li>Endpoint <code>DELETE /products/:id</code> → hapus produk.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan validasi agar harga harus berupa angka positif.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="rest-api.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="orm-dasar.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
