@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Algoritma & Kompleksitas - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚡ Algoritma & Kompleksitas</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Algoritma</strong> adalah langkah-langkah logis untuk menyelesaikan masalah.  
+       <strong>Kompleksitas</strong> mengukur seberapa efisien algoritma berjalan, baik dari sisi waktu maupun memori.  
+       Bayangkan seperti <em>rute perjalanan</em>: ada jalan cepat, ada jalan macet, ada jalan memutar.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Kompleksitas Waktu</strong>: berapa banyak langkah yang dibutuhkan algoritma (notasi Big-O).</li>
+      <li><strong>Kompleksitas Ruang</strong>: berapa banyak memori yang digunakan.</li>
+      <li><strong>Notasi Big-O</strong>: cara standar untuk menuliskan efisiensi algoritma, misalnya:
+        <ul>
+          <li><code>O(1)</code> → konstan</li>
+          <li><code>O(n)</code> → linear</li>
+          <li><code>O(n²)</code> → kuadratik</li>
+          <li><code>O(log n)</code> → logaritmik</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code># O(1) - konstan
+def akses_elemen(lst):
+    return lst[0]
+
+# O(n) - linear
+def jumlah_elemen(lst):
+    total = 0
+    for x in lst:
+        total += x
+    return total
+
+# O(n^2) - kuadratik
+def pasangan(lst):
+    for i in lst:
+        for j in lst:
+            print(i, j)
+</code></pre>
+    <p>👉 Perhatikan perbedaan: <code>akses_elemen</code> selalu cepat,  
+       <code>jumlah_elemen</code> butuh waktu sesuai panjang list,  
+       <code>pasangan</code> butuh waktu jauh lebih lama karena perulangan bersarang.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat dua fungsi pencarian:</p>
+    <ul>
+      <li><strong>Linear Search</strong>: cek satu per satu elemen dalam list.</li>
+      <li><strong>Binary Search</strong>: cari di list yang sudah terurut dengan membagi dua.</li>
+    </ul>
+    <p><strong>Tugas:</strong> Bandingkan kompleksitas keduanya (<code>O(n)</code> vs <code>O(log n)</code>) dengan mencoba list berisi 1.000, 10.000, dan 100.000 elemen.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="mini-project-todolist.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="rekursi.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
