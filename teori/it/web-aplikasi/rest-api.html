@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>REST API - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔗 REST API</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>REST API (Representational State Transfer)</strong> adalah standar arsitektur untuk membangun layanan web yang mudah diakses dan digunakan.  
+       REST menggunakan protokol HTTP dengan metode standar seperti GET, POST, PUT, DELETE.  
+       Bayangkan REST API seperti <em>pelayan restoran</em>: kita (client) memesan makanan (request), dapur (server) menyiapkan, lalu pelayan mengantarkan (response).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama REST API</h2>
+    <ul>
+      <li><strong>Endpoint</strong>: URL yang mewakili resource (contoh: <code>/users</code>).</li>
+      <li><strong>HTTP Methods</strong>:
+        <ul>
+          <li><code>GET</code> → mengambil data.</li>
+          <li><code>POST</code> → menambahkan data baru.</li>
+          <li><code>PUT</code> → memperbarui data.</li>
+          <li><code>DELETE</code> → menghapus data.</li>
+        </ul>
+      </li>
+      <li><strong>Response Format</strong>: biasanya JSON.</li>
+      <li><strong>Status Code</strong>: kode HTTP untuk menunjukkan hasil (200 OK, 201 Created, 404 Not Found, 500 Server Error).</li>
+    </ul>
+
+    <h3>🔹 Contoh REST API dengan Express</h3>
+    <pre><code>// app.js
+const express = require("express");
+const app = express();
+app.use(express.json());
+
+let users = [
+  { id: 1, nama: "Doddy" },
+  { id: 2, nama: "Budi" }
+];
+
+// GET semua user
+app.get("/users", (req, res) =&gt; {
+  res.json(users);
+});
+
+// POST user baru
+app.post("/users", (req, res) =&gt; {
+  const user = { id: users.length + 1, nama: req.body.nama };
+  users.push(user);
+  res.status(201).json(user);
+});
+
+// PUT update user
+app.put("/users/:id", (req, res) =&gt; {
+  const id = parseInt(req.params.id);
+  const user = users.find(u =&gt; u.id === id);
+  if (!user) return res.status(404).send("User tidak ditemukan");
+  user.nama = req.body.nama;
+  res.json(user);
+});
+
+// DELETE user
+app.delete("/users/:id", (req, res) =&gt; {
+  const id = parseInt(req.params.id);
+  users = users.filter(u =&gt; u.id !== id);
+  res.sendStatus(204);
+});
+
+app.listen(3000, () =&gt; console.log("Server berjalan di http://localhost:3000"));
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba jalankan server Express di atas, lalu gunakan <strong>Postman</strong> atau <strong>curl</strong> untuk menguji endpoint:</p>
+    <ul>
+      <li><code>GET http://localhost:3000/users</code></li>
+      <li><code>POST http://localhost:3000/users</code> dengan body JSON <code>{"nama": "Andi"}</code></li>
+      <li><code>PUT http://localhost:3000/users/1</code> dengan body JSON <code>{"nama": "Doddy Update"}</code></li>
+      <li><code>DELETE http://localhost:3000/users/2</code></li>
+    </ul>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat REST API sederhana untuk resource <code>tasks</code> dengan fitur:</p>
+    <ul>
+      <li><code>GET /tasks</code> → ambil semua tugas.</li>
+      <li><code>POST /tasks</code> → tambah tugas baru.</li>
+      <li><code>PUT /tasks/:id</code> → update status tugas.</li>
+      <li><code>DELETE /tasks/:id</code> → hapus tugas.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan validasi agar field <code>nama</code> tidak boleh kosong, dan gunakan status code yang sesuai.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="backend-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="integrasi-database.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
