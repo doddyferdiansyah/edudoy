@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Game Teks Sederhana - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🎮 Mini Project: Game Teks Sederhana</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p>Game teks sederhana ini menggabungkan semua konsep yang telah dipelajari:  
+       struktur kontrol, fungsi, OOP, dan input-output.  
+       Bayangkan seperti <em>petualangan interaktif</em> di terminal: pemain membuat pilihan dan cerita berkembang.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Deskripsi Proyek</h2>
+    <p>Pemain akan memulai petualangan dan memilih aksi seperti menjelajah, bertarung, atau kabur.  
+       Setiap pilihan akan mempengaruhi jalannya cerita dan status karakter.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Implementasi</h2>
+    <pre><code># Game Teks Sederhana
+
+class Player:
+    def __init__(self, nama):
+        self.nama = nama
+        self.hp = 100
+
+    def status(self):
+        print(f"{self.nama} - HP: {self.hp}")
+
+def mulai_game():
+    nama = input("Masukkan nama karakter: ")
+    pemain = Player(nama)
+    print(f"Selamat datang, {pemain.nama}!")
+    
+    while pemain.hp > 0:
+        print("\nApa yang ingin kamu lakukan?")
+        print("1. Menjelajah")
+        print("2. Bertarung")
+        print("3. Kabur")
+        pilihan = input("Pilih aksi (1/2/3): ")
+
+        if pilihan == "1":
+            print("Kamu menemukan hutan misterius...")
+        elif pilihan == "2":
+            print("Kamu bertemu monster! Bertarung dimulai...")
+            pemain.hp -= 20
+        elif pilihan == "3":
+            print("Kamu kabur dengan selamat.")
+            break
+        else:
+            print("Pilihan tidak valid.")
+
+        pemain.status()
+
+    print("Game selesai. Terima kasih telah bermain!")
+
+mulai_game()
+</code></pre>
+    <p>👉 Game ini menggunakan class <code>Player</code>, loop, input, dan kondisi untuk membuat alur cerita interaktif.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kembangkan game ini dengan fitur tambahan:</p>
+    <ul>
+      <li>Tambahkan sistem level dan XP.</li>
+      <li>Tambahkan inventaris (list item).</li>
+      <li>Tambahkan musuh dengan class <code>Enemy</code> dan sistem pertarungan berbasis turn.</li>
+      <li>Simpan progress ke file agar bisa dilanjutkan.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat sistem dialog dan pilihan bercabang untuk memperkaya cerita.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="asynchronous.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="capstone.html" class="btn next">Capstone Project ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
