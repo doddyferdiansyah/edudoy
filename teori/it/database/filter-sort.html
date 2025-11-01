@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter & Sort - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔎 Filter & Sort</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Setelah bisa menambahkan dan membaca data, kita perlu <strong>menyaring</strong> (filter) dan <strong>mengurutkan</strong> (sort) data.  
+       Bayangkan seperti <em>mencari buku di perpustakaan</em>: kita bisa mencari berdasarkan judul tertentu (filter) dan mengurutkan berdasarkan tahun terbit (sort).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Perintah Penting</h2>
+    <ul>
+      <li><strong>WHERE</strong> → menyaring data berdasarkan kondisi.</li>
+      <li><strong>ORDER BY</strong> → mengurutkan data (ASC = naik, DESC = turun).</li>
+      <li><strong>LIMIT</strong> → membatasi jumlah data yang ditampilkan.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh query pada tabel <code>mahasiswa</code>:</p>
+    <pre><code>-- Menampilkan mahasiswa dengan jurusan Informatika
+SELECT * FROM mahasiswa
+WHERE jurusan = 'Informatika';
+
+-- Mengurutkan mahasiswa berdasarkan umur (termuda ke tertua)
+SELECT * FROM mahasiswa
+ORDER BY umur ASC;
+
+-- Menampilkan 5 mahasiswa pertama
+SELECT * FROM mahasiswa
+LIMIT 5;
+
+-- Kombinasi: mahasiswa Informatika, urut umur, ambil 3 teratas
+SELECT * FROM mahasiswa
+WHERE jurusan = 'Informatika'
+ORDER BY umur ASC
+LIMIT 3;
+</code></pre>
+    <p>👉 Dengan kombinasi ini, kita bisa mencari data yang spesifik dan terurut sesuai kebutuhan.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Pada tabel <code>pegawai</code>, lakukan hal berikut:</p>
+    <ul>
+      <li>Tampilkan semua pegawai dengan posisi "Manager".</li>
+      <li>Urutkan pegawai berdasarkan gaji dari yang tertinggi ke terendah.</li>
+      <li>Tampilkan hanya 3 pegawai dengan gaji tertinggi.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gabungkan filter dan sort untuk menampilkan 2 pegawai dengan posisi "Staff" yang paling lama bekerja (tanggal_masuk paling awal).</p>
+  </section>
+
+  <section class="navigation">
+    <a href="sql-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-kontak.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
