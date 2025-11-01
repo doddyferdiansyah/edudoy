@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Kalkulator Sederhana - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🧮 Mini Project: Kalkulator Sederhana</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Setelah mempelajari variabel, operator, struktur kontrol, fungsi, dan input-output,  
+       saatnya kita gabungkan semua konsep itu dalam sebuah <strong>kalkulator sederhana</strong>.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Deskripsi Proyek</h2>
+    <p>Kalkulator ini akan meminta pengguna memilih operasi (tambah, kurang, kali, bagi),  
+       lalu memasukkan dua angka, dan menampilkan hasilnya.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Implementasi</h2>
+    <pre><code>def tambah(a, b):
+    return a + b
+
+def kurang(a, b):
+    return a - b
+
+def kali(a, b):
+    return a * b
+
+def bagi(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Error: Pembagian dengan nol!"
+
+print("=== Kalkulator Sederhana ===")
+print("1. Tambah")
+print("2. Kurang")
+print("3. Kali")
+print("4. Bagi")
+
+pilihan = input("Pilih operasi (1/2/3/4): ")
+
+x = float(input("Masukkan angka pertama: "))
+y = float(input("Masukkan angka kedua: "))
+
+if pilihan == "1":
+    print("Hasil:", tambah(x, y))
+elif pilihan == "2":
+    print("Hasil:", kurang(x, y))
+elif pilihan == "3":
+    print("Hasil:", kali(x, y))
+elif pilihan == "4":
+    print("Hasil:", bagi(x, y))
+else:
+    print("Pilihan tidak valid")
+</code></pre>
+    <p>👉 Program ini menggabungkan <code>fungsi</code>, <code>input-output</code>, <code>operator</code>, dan <code>struktur kontrol</code>.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kembangkan kalkulator ini dengan fitur tambahan:</p>
+    <ul>
+      <li>Operasi pangkat (<code>x ** y</code>).</li>
+      <li>Operasi modulus (<code>x % y</code>).</li>
+      <li>Loop agar program bisa digunakan berulang kali sampai pengguna memilih keluar.</li>
+    </ul>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="input-output.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="struktur-data-dasar.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
