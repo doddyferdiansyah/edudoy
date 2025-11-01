@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struktur Kontrol - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔀 Struktur Kontrol</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>Struktur kontrol</strong> adalah cara kita mengatur alur eksekusi program.  
+       Dengan struktur kontrol, kita bisa membuat komputer mengambil keputusan atau mengulang instruksi.  
+       Bayangkan seperti <em>rambu lalu lintas</em>: kadang harus belok, kadang berhenti, kadang jalan terus.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis Struktur Kontrol</h2>
+    <ul>
+      <li><strong>Kondisional (if, elif, else)</strong>: memilih jalur berdasarkan kondisi tertentu.</li>
+      <li><strong>Perulangan (for, while)</strong>: mengulang instruksi beberapa kali.</li>
+      <li><strong>Kontrol alur tambahan</strong>: <code>break</code>, <code>continue</code>, <code>pass</code>.</li>
+    </ul>
+    <p>Struktur kontrol membuat program lebih dinamis dan mampu menangani berbagai situasi.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba jalankan kode Python berikut:</p>
+    <pre><code># Kondisional
+nilai = 75
+if nilai >= 80:
+    print("Lulus dengan baik")
+elif nilai >= 60:
+    print("Lulus")
+else:
+    print("Tidak lulus")
+
+# Perulangan
+for i in range(3):
+    print("Belajar Python ke-", i+1)
+</code></pre>
+    <p>👉 Kondisional akan memilih output sesuai nilai, sedangkan perulangan akan mengulang teks 3 kali.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat program yang meminta input umur dari pengguna, lalu tampilkan:</p>
+    <ul>
+      <li>"Anak-anak" jika umur &lt; 12</li>
+      <li>"Remaja" jika umur 12–17</li>
+      <li>"Dewasa" jika umur 18–59</li>
+      <li>"Lansia" jika umur ≥ 60</li>
+    </ul>
+    <p><strong>Tugas:</strong> Gunakan <code>if-elif-else</code> untuk menentukan kategori umur.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="operator-ekspresi.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="fungsi-dasar.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
