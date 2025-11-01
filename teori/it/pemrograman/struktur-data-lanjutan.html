@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struktur Data Lanjutan - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🧱 Struktur Data Lanjutan</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Struktur data lanjutan</strong> digunakan untuk menyimpan dan mengelola data secara efisien dalam skala besar atau kompleks.  
+       Bayangkan seperti <em>arsip digital</em>: kita butuh sistem yang cepat dan terorganisir untuk mencari, menyisipkan, dan menghapus data.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis Struktur Data Lanjutan</h2>
+    <ul>
+      <li><strong>Stack</strong>: LIFO (Last In First Out), seperti tumpukan piring.</li>
+      <li><strong>Queue</strong>: FIFO (First In First Out), seperti antrean kasir.</li>
+      <li><strong>Deque</strong>: Double-ended queue, bisa tambah/hapus dari depan dan belakang.</li>
+      <li><strong>Linked List</strong>: Rantai node yang saling terhubung.</li>
+      <li><strong>Tree</strong>: Struktur hierarki, cocok untuk data terstruktur seperti folder.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code># Stack dengan list
+stack = []
+stack.append("A")
+stack.append("B")
+print(stack.pop())  # Output: B
+
+# Queue dengan deque
+from collections import deque
+queue = deque()
+queue.append("A")
+queue.append("B")
+print(queue.popleft())  # Output: A
+
+# Linked List sederhana
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+head = Node("A")
+head.next = Node("B")
+print(head.data, "->", head.next.data)
+</code></pre>
+    <p>👉 Perhatikan cara kerja masing-masing struktur: urutan masuk dan keluar berbeda.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat program yang mensimulasikan:</p>
+    <ul>
+      <li><strong>Stack</strong> untuk undo/redo teks.</li>
+      <li><strong>Queue</strong> untuk antrean pelanggan.</li>
+      <li><strong>Linked List</strong> untuk menyimpan daftar tugas dengan kemampuan menambah dan menghapus node.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Implementasikan pencarian node dalam linked list berdasarkan nilai.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="rekursi.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="asynchronous.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
