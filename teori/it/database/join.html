@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>JOIN (INNER, LEFT, RIGHT) - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔗 JOIN (INNER, LEFT, RIGHT)</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>JOIN</strong> digunakan untuk menggabungkan data dari dua atau lebih tabel berdasarkan kolom yang saling berhubungan.  
+       Bayangkan seperti <em>menyatukan dua lembar Excel</em> berdasarkan kolom yang sama.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis JOIN</h2>
+    <ul>
+      <li><strong>INNER JOIN</strong>: hanya menampilkan data yang cocok di kedua tabel.</li>
+      <li><strong>LEFT JOIN</strong>: menampilkan semua data dari tabel kiri, meskipun tidak ada pasangan di tabel kanan.</li>
+      <li><strong>RIGHT JOIN</strong>: menampilkan semua data dari tabel kanan, meskipun tidak ada pasangan di tabel kiri.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Kita gunakan tabel <code>mahasiswa</code> dan <code>kelas</code> dari materi sebelumnya:</p>
+    <pre><code>-- INNER JOIN: hanya mahasiswa yang punya kelas
+SELECT m.nama, k.nama_kelas
+FROM mahasiswa m
+INNER JOIN kelas k ON m.kelas_id = k.id;
+
+-- LEFT JOIN: semua mahasiswa, meskipun belum punya kelas
+SELECT m.nama, k.nama_kelas
+FROM mahasiswa m
+LEFT JOIN kelas k ON m.kelas_id = k.id;
+
+-- RIGHT JOIN: semua kelas, meskipun belum ada mahasiswa
+SELECT m.nama, k.nama_kelas
+FROM mahasiswa m
+RIGHT JOIN kelas k ON m.kelas_id = k.id;
+</code></pre>
+    <p>👉 Perhatikan perbedaan hasil: INNER JOIN hanya menampilkan data yang cocok, sedangkan LEFT/RIGHT JOIN tetap menampilkan semua data dari salah satu tabel.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat query JOIN untuk tabel <code>pegawai</code> dan <code>departemen</code>:</p>
+    <ul>
+      <li>Tampilkan nama pegawai beserta nama departemennya (gunakan INNER JOIN).</li>
+      <li>Tampilkan semua pegawai, meskipun belum punya departemen (gunakan LEFT JOIN).</li>
+      <li>Tampilkan semua departemen, meskipun belum ada pegawai (gunakan RIGHT JOIN).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat query untuk menghitung jumlah pegawai di setiap departemen menggunakan JOIN.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="relasi-foreign-key.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="groupby-aggregasi.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
