@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚡ JavaScript Dasar</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>JavaScript</strong> adalah bahasa pemrograman yang membuat halaman web menjadi interaktif.  
+       Jika HTML adalah kerangka rumah, CSS adalah cat dan dekorasi, maka JavaScript adalah <em>listrik</em> yang membuat rumah hidup dan berfungsi.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Dasar JavaScript</h2>
+    <ul>
+      <li><strong>Menambahkan JavaScript</strong>  
+        <pre><code>&lt;script&gt;
+  alert("Halo Dunia!");
+&lt;/script&gt;</code></pre>
+      </li>
+      <li><strong>Variabel</strong> → tempat menyimpan data.  
+        <pre><code>let nama = "Doddy";
+const umur = 25;</code></pre>
+      </li>
+      <li><strong>Tipe Data</strong> → string, number, boolean, array, object.</li>
+      <li><strong>Operator</strong> → +, -, *, /, %, ==, ===, &&, ||.</li>
+      <li><strong>Fungsi</strong> → blok kode yang bisa dipanggil ulang.  
+        <pre><code>function sapa(nama) {
+  return "Halo " + nama;
+}
+console.log(sapa("Doddy"));</code></pre>
+      </li>
+      <li><strong>Event</strong> → aksi pengguna (klik, input, hover).  
+        <pre><code>&lt;button onclick="alert('Tombol diklik!')"&gt;Klik Saya&lt;/button&gt;</code></pre>
+      </li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat file HTML dengan JavaScript sederhana:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;JS Dasar&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Belajar JavaScript&lt;/h1&gt;
+  &lt;button onclick="ubahTeks()"&gt;Klik Saya&lt;/button&gt;
+  &lt;p id="pesan"&gt;Teks awal&lt;/p&gt;
+
+  &lt;script&gt;
+    function ubahTeks() {
+      document.getElementById("pesan").innerHTML = "Teks berhasil diubah!";
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <p>👉 Saat tombol diklik, teks paragraf akan berubah.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat halaman HTML dengan JavaScript yang memiliki:</p>
+    <ul>
+      <li>Input teks untuk nama pengguna.</li>
+      <li>Tombol "Sapa" yang menampilkan pesan sapaan di bawahnya.</li>
+      <li>Gunakan fungsi JavaScript untuk mengambil nilai input dan menampilkannya.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan validasi: jika input kosong, tampilkan pesan error.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="css-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="devtools-accessibility.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
