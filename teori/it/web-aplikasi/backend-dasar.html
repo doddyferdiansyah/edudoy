@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Backend Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🖥️ Backend Dasar (Node.js & Express)</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Backend</strong> adalah bagian dari aplikasi web yang berjalan di server, mengatur logika, database, dan komunikasi dengan frontend.  
+       <strong>Node.js</strong> memungkinkan kita menjalankan JavaScript di server, sedangkan <strong>Express</strong> adalah framework minimalis untuk membuat server dengan cepat.  
+       Bayangkan backend seperti <em>dapur restoran</em>: pelanggan (frontend) hanya melihat makanan, tapi semua proses memasak terjadi di dapur (backend).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Server</strong>: menerima request dari client, mengirim response.</li>
+      <li><strong>Routing</strong>: menentukan respon berdasarkan URL/endpoint.</li>
+      <li><strong>Middleware</strong>: fungsi yang memproses request sebelum sampai ke handler.</li>
+      <li><strong>Database</strong>: tempat menyimpan data (akan dibahas lebih lanjut di modul Database).</li>
+    </ul>
+
+    <h3>🔹 Node.js</h3>
+    <pre><code>// server.js
+const http = require("http");
+
+const server = http.createServer((req, res) =&gt; {
+  res.writeHead(200, {"Content-Type": "text/plain"});
+  res.end("Halo dari Node.js!");
+});
+
+server.listen(3000, () =&gt; {
+  console.log("Server berjalan di http://localhost:3000");
+});
+</code></pre>
+
+    <h3>🔹 Express</h3>
+    <pre><code>// app.js
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) =&gt; {
+  res.send("Halo dari Express!");
+});
+
+app.listen(3000, () =&gt; {
+  console.log("Server berjalan di http://localhost:3000");
+});
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat server sederhana dengan Express:</p>
+    <ol>
+      <li>Install Node.js & npm.</li>
+      <li>Buat folder proyek, jalankan <code>npm init -y</code>.</li>
+      <li>Install Express: <code>npm install express</code>.</li>
+      <li>Buat file <code>app.js</code> dengan kode di atas.</li>
+      <li>Jalankan server: <code>node app.js</code>.</li>
+      <li>Buka <code>http://localhost:3000</code> di browser.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat server Express dengan fitur:</p>
+    <ul>
+      <li>Route <code>/</code> → menampilkan "Selamat datang di API saya".</li>
+      <li>Route <code>/about</code> → menampilkan biodata singkat.</li>
+      <li>Route <code>/users</code> → mengembalikan data JSON array user.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan middleware sederhana untuk mencatat setiap request (method + URL) ke console.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="framework-frontend.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="rest-api.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
