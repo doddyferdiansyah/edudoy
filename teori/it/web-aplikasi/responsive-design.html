@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Design - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 1200px; margin: 20px auto; padding: 20px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .box {
+      background: #3498db;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    /* Media Query untuk tablet */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    /* Media Query untuk HP */
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📱 Responsive Design</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Responsive Design</strong> adalah teknik membuat website agar tampil baik di berbagai ukuran layar (desktop, tablet, HP).  
+       Bayangkan seperti <em>air dalam wadah</em>: bentuknya menyesuaikan wadah, tapi tetap fungsional.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Dasar</h2>
+    <ul>
+      <li><strong>Fluid Layout</strong>: gunakan persentase (%) atau unit fleksibel (em, rem, vw, vh) daripada px.</li>
+      <li><strong>Media Queries</strong>: aturan CSS khusus untuk ukuran layar tertentu.</li>
+      <li><strong>Flexible Images</strong>: gambar otomatis menyesuaikan ukuran container (<code>max-width: 100%</code>).</li>
+      <li><strong>Mobile First</strong>: desain dimulai dari layar kecil, lalu diperluas ke layar besar.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <div class="container">
+      <div class="grid">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div>
+      </div>
+    </div>
+    <p>👉 Coba ubah ukuran browser. Grid akan berubah dari 3 kolom → 2 kolom → 1 kolom sesuai lebar layar.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat halaman portofolio sederhana dengan:</p>
+    <ul>
+      <li>Header dengan judul dan menu navigasi.</li>
+      <li>Bagian galeri berisi beberapa gambar dalam grid.</li>
+      <li>Gunakan media query agar galeri tampil 3 kolom di desktop, 2 kolom di tablet, dan 1 kolom di HP.</li>
+      <li>Pastikan gambar bersifat fleksibel (tidak meluber keluar layar).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Terapkan pendekatan <em>mobile-first</em> dengan menulis CSS untuk layar kecil terlebih dahulu.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="dom-manipulation.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="css-lanjutan.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
