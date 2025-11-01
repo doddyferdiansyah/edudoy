@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoring & Logging - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>📊 Monitoring & Logging</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Monitoring</strong> adalah proses memantau performa dan kesehatan aplikasi.  
+       <strong>Logging</strong> adalah pencatatan aktivitas dan error yang terjadi di aplikasi.  
+       Bayangkan monitoring seperti <em>dashboard mobil</em> yang menunjukkan kecepatan & bensin, sedangkan logging seperti <em>kotak hitam pesawat</em> yang merekam semua kejadian.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Monitoring</strong>:
+        <ul>
+          <li>Memantau CPU, RAM, response time, error rate.</li>
+          <li>Alat: Prometheus, Grafana, New Relic.</li>
+        </ul>
+      </li>
+      <li><strong>Logging</strong>:
+        <ul>
+          <li>Mencatat request, response, error, aktivitas user.</li>
+          <li>Alat: Winston (Node.js), Morgan (Express), ELK Stack (Elasticsearch, Logstash, Kibana).</li>
+        </ul>
+      </li>
+      <li><strong>Alerting</strong>: notifikasi otomatis jika ada error/penurunan performa.</li>
+    </ul>
+
+    <h3>🔹 Contoh Logging dengan Winston</h3>
+    <pre><code>// logger.js
+const { createLogger, transports, format } = require("winston");
+
+const logger = createLogger({
+  format: format.combine(
+    format.timestamp(),
+    format.json()
+  ),
+  transports: [
+    new transports.Console(),
+    new transports.File({ filename: "app.log" })
+  ]
+});
+
+module.exports = logger;
+
+// app.js
+const express = require("express");
+const logger = require("./logger");
+const app = express();
+
+app.get("/", (req, res) =&gt; {
+  logger.info("Route / diakses");
+  res.send("Halo Monitoring & Logging");
+});
+
+app.listen(3000, () =&gt; logger.info("Server berjalan di http://localhost:3000"));
+</code></pre>
+
+    <h3>🔹 Contoh Monitoring dengan Morgan</h3>
+    <pre><code>const morgan = require("morgan");
+app.use(morgan("combined")); // log request HTTP
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat aplikasi Express lalu:</p>
+    <ul>
+      <li>Tambahkan <code>morgan</code> untuk mencatat request.</li>
+      <li>Tambahkan <code>winston</code> untuk mencatat error ke file <code>app.log</code>.</li>
+      <li>Uji dengan mengakses beberapa route dan lihat hasil log.</li>
+    </ul>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat sistem logging & monitoring sederhana:</p>
+    <ul>
+      <li>Gunakan Winston untuk mencatat log ke file.</li>
+      <li>Gunakan Morgan untuk mencatat request HTTP.</li>
+      <li>Buat middleware error handler yang mencatat error ke log.</li>
+      <li>Integrasikan dengan Grafana/Prometheus untuk memantau performa (opsional).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan alert (misalnya kirim email/Slack) jika error rate melebihi ambang batas tertentu.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="deployment.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="scaling.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
