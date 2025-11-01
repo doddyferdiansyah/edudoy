@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Sistem Manajemen Tugas - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📝 Mini Project: Sistem Manajemen Tugas</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p>Pada mini project ini, kita akan membangun <strong>sistem manajemen tugas</strong> sederhana.  
+       Proyek ini menggabungkan konsep database relasional, transaksi, index, dan integrasi aplikasi.  
+       Bayangkan seperti <em>aplikasi to-do list</em> namun dengan fitur multi-user dan status tugas.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Desain Database</h2>
+    <p>Kita akan membuat 3 tabel utama:</p>
+    <ul>
+      <li><code>users</code> → menyimpan data pengguna.</li>
+      <li><code>tasks</code> → menyimpan detail tugas.</li>
+      <li><code>activity_log</code> → mencatat perubahan status tugas.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Implementasi</h2>
+    <pre><code>-- Membuat database
+CREATE DATABASE manajemen_tugas;
+USE manajemen_tugas;
+
+-- Tabel users
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
+);
+
+-- Tabel tasks
+CREATE TABLE tasks (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    judul VARCHAR(100) NOT NULL,
+    deskripsi TEXT,
+    status ENUM('pending','in_progress','done') DEFAULT 'pending',
+    deadline DATE,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Tabel activity_log
+CREATE TABLE activity_log (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    task_id INT,
+    aksi VARCHAR(50),
+    waktu TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (task_id) REFERENCES tasks(id)
+);
+
+-- Tambah user
+INSERT INTO users (username, email) VALUES ('doddy', 'doddy@mail.com');
+
+-- Tambah tugas
+INSERT INTO tasks (user_id, judul, deskripsi, deadline)
+VALUES (1, 'Belajar Database', 'Selesaikan modul Database hingga Advanced', '2025-11-10');
+
+-- Update status tugas + catat log
+START TRANSACTION;
+UPDATE tasks SET status = 'in_progress' WHERE id = 1;
+INSERT INTO activity_log (task_id, aksi) VALUES (1, 'Status diubah ke in_progress');
+COMMIT;
+
+-- Lihat daftar tugas dengan user
+SELECT t.judul, t.status, u.username
+FROM tasks t
+JOIN users u ON t.user_id = u.id;
+</code></pre>
+    <p>👉 Dengan desain ini, kita bisa mengelola tugas per user, melacak status, dan mencatat riwayat aktivitas.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kembangkan sistem manajemen tugas dengan fitur tambahan:</p>
+    <ul>
+      <li>Tambahkan kolom <code>prioritas</code> (Low, Medium, High) pada tabel <code>tasks</code>.</li>
+      <li>Buat query untuk menampilkan semua tugas yang belum selesai dengan prioritas High.</li>
+      <li>Buat query untuk menampilkan jumlah tugas selesai per user.</li>
+      <li>Buat trigger yang otomatis menambahkan log setiap kali status tugas berubah.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Integrasikan dengan aplikasi sederhana (misalnya Python/Node.js) untuk menampilkan daftar tugas dan memperbarui status melalui antarmuka.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="integrasi-aplikasi.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="index.html" class="btn next">Kembali ke Modul Database ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
