@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript ES6+ - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚡ JavaScript ES6+</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>ES6 (ECMAScript 2015)</strong> membawa banyak fitur baru yang membuat JavaScript lebih modern, ringkas, dan mudah dibaca.  
+       Bayangkan ES6 seperti <em>upgrade alat kerja</em>: dari obeng manual ke obeng listrik, lebih cepat dan efisien.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Fitur Utama ES6+</h2>
+    <ul>
+      <li><strong>let & const</strong> → pengganti <code>var</code> dengan cakupan blok.</li>
+      <li><strong>Arrow Function</strong> → fungsi lebih ringkas.  
+        <pre><code>const sapa = (nama) =&gt; `Halo ${nama}`;</code></pre></li>
+      <li><strong>Template Literal</strong> → string dengan backtick dan interpolasi.  
+        <pre><code>const umur = 25;
+console.log(`Umur saya ${umur} tahun`);</code></pre></li>
+      <li><strong>Destructuring</strong> → mengambil nilai dari array/objek dengan mudah.  
+        <pre><code>const [a, b] = [1, 2];
+const {nama, usia} = {nama: "Doddy", usia: 25};</code></pre></li>
+      <li><strong>Default Parameter</strong> → nilai default pada fungsi.  
+        <pre><code>function hitung(a, b = 10) { return a + b; }</code></pre></li>
+      <li><strong>Spread & Rest Operator</strong> → menyebarkan atau menggabungkan data.  
+        <pre><code>const arr1 = [1,2]; const arr2 = [...arr1, 3,4];</code></pre></li>
+      <li><strong>Class</strong> → sintaks OOP lebih rapi.  
+        <pre><code>class Orang {
+  constructor(nama) { this.nama = nama; }
+  sapa() { return `Halo, saya ${this.nama}`; }
+}</code></pre></li>
+      <li><strong>Promise & Async/Await</strong> → menangani operasi asynchronous.  
+        <pre><code>async function getData() {
+  let res = await fetch("https://api.example.com");
+  let data = await res.json();
+  console.log(data);
+}</code></pre></li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <div class="container">
+      <pre><code>// Arrow function + template literal
+const hitungLuas = (p, l) =&gt; `Luas: ${p * l}`;
+console.log(hitungLuas(5, 3));
+
+// Destructuring
+const user = { nama: "Doddy", umur: 25 };
+const { nama, umur } = user;
+console.log(`${nama} berusia ${umur} tahun`);
+
+// Spread operator
+const angka = [1,2,3];
+const angkaBaru = [...angka, 4,5];
+console.log(angkaBaru);
+</code></pre>
+    </div>
+    <p>👉 Jalankan kode ini di console browser untuk melihat hasilnya.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat script JavaScript dengan ketentuan:</p>
+    <ul>
+      <li>Gunakan <code>class</code> untuk membuat objek <code>Mahasiswa</code> dengan properti nama & jurusan.</li>
+      <li>Buat method <code>perkenalan()</code> yang mengembalikan string menggunakan template literal.</li>
+      <li>Buat array berisi beberapa mahasiswa, lalu gunakan <code>map()</code> dengan arrow function untuk menampilkan perkenalan mereka.</li>
+      <li>Tambahkan fungsi asynchronous yang mengambil data dari API publik (misalnya <code>https://jsonplaceholder.typicode.com/users</code>) dan tampilkan nama user.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan destructuring untuk mengambil hanya nama dan email dari data API.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="css-lanjutan.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="ajax-fetch.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
