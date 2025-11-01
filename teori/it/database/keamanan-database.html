@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Keamanan Database - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔐 Keamanan Database</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Keamanan database</strong> adalah langkah-langkah untuk melindungi data dari akses tidak sah, kebocoran, atau manipulasi.  
+       Bayangkan seperti <em>brankas digital</em>: hanya orang yang punya kunci yang bisa membuka dan mengelola isinya.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Prinsip Keamanan Database</h2>
+    <ul>
+      <li><strong>Authentication</strong>: memastikan hanya pengguna sah yang bisa masuk.</li>
+      <li><strong>Authorization</strong>: mengatur hak akses tiap pengguna.</li>
+      <li><strong>Encryption</strong>: melindungi data saat disimpan (at rest) maupun saat dikirim (in transit).</li>
+      <li><strong>Auditing & Logging</strong>: mencatat aktivitas untuk mendeteksi anomali.</li>
+      <li><strong>Backup & Recovery</strong>: menjaga ketersediaan data jika terjadi insiden.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh pengaturan keamanan di MySQL:</p>
+    <pre><code>-- Membuat user baru dengan password
+CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'passwordku';
+
+-- Memberikan hak akses hanya SELECT dan INSERT pada database tertentu
+GRANT SELECT, INSERT ON inventaris_db.* TO 'appuser'@'localhost';
+
+-- Mencabut hak akses
+REVOKE INSERT ON inventaris_db.* FROM 'appuser'@'localhost';
+
+-- Melihat hak akses user
+SHOW GRANTS FOR 'appuser'@'localhost';
+</code></pre>
+
+    <p>👉 Dengan cara ini, kita bisa membatasi akses sesuai kebutuhan, sehingga lebih aman.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Pada database <code>inventaris_db</code>:</p>
+    <ul>
+      <li>Buat user baru bernama <code>staff</code> dengan password.</li>
+      <li>Berikan hak akses hanya untuk membaca data (SELECT) pada tabel <code>barang</code>.</li>
+      <li>Coba lakukan query INSERT dengan user tersebut, pastikan ditolak.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Aktifkan enkripsi koneksi (SSL/TLS) antara client dan server database.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="backup-recovery.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="integrasi-aplikasi.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
