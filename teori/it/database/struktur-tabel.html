@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struktur Tabel & Tipe Data - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📋 Struktur Tabel & Tipe Data</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>Tabel</strong> adalah struktur utama dalam database relasional.  
+       Tabel terdiri dari <em>kolom</em> (field) dan <em>baris</em> (record).  
+       Bayangkan seperti <em>lembar Excel</em>: kolom = kategori data, baris = data aktual.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Komponen Tabel</h2>
+    <ul>
+      <li><strong>Kolom (Field)</strong>: mendefinisikan jenis data (misalnya nama, umur, alamat).</li>
+      <li><strong>Baris (Record)</strong>: menyimpan data aktual sesuai kolom.</li>
+      <li><strong>Primary Key</strong>: kolom unik untuk identifikasi tiap baris.</li>
+      <li><strong>Tipe Data</strong>: menentukan jenis data yang bisa disimpan (INT, VARCHAR, DATE, dll).</li>
+    </ul>
+
+    <h3>🔑 Contoh Tipe Data Umum</h3>
+    <ul>
+      <li><code>INT</code> → bilangan bulat</li>
+      <li><code>VARCHAR(n)</code> → teks dengan panjang maksimum n</li>
+      <li><code>DATE</code> → tanggal (YYYY-MM-DD)</li>
+      <li><code>BOOLEAN</code> → true/false</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat tabel <code>mahasiswa</code> dengan struktur berikut:</p>
+    <pre><code>CREATE TABLE mahasiswa (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(50) NOT NULL,
+    umur INT,
+    jurusan VARCHAR(30),
+    tanggal_daftar DATE
+);
+</code></pre>
+    <p>👉 Tabel di atas memiliki kolom <code>id</code> sebagai primary key, serta kolom teks, angka, dan tanggal.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat tabel <code>pegawai</code> dengan kolom:</p>
+    <ul>
+      <li><code>id</code> (primary key, auto increment)</li>
+      <li><code>nama</code> (varchar 50, wajib diisi)</li>
+      <li><code>posisi</code> (varchar 30)</li>
+      <li><code>gaji</code> (int)</li>
+      <li><code>tanggal_masuk</code> (date)</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan constraint agar kolom <code>gaji</code> tidak boleh bernilai negatif.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="pengantar-database.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="sql-dasar.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
