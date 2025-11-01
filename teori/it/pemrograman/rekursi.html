@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Rekursi - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔁 Rekursi</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Rekursi</strong> adalah teknik pemrograman di mana sebuah fungsi memanggil dirinya sendiri.  
+       Biasanya digunakan untuk menyelesaikan masalah yang dapat dipecah menjadi sub-masalah yang serupa.  
+       Bayangkan seperti <em>boneka matryoshka</em>: satu fungsi memanggil versi lebih kecil dari dirinya sendiri.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Base case</strong>: kondisi akhir yang menghentikan rekursi.</li>
+      <li><strong>Recursive case</strong>: bagian fungsi yang memanggil dirinya sendiri.</li>
+      <li>Tanpa base case, rekursi akan berjalan terus dan menyebabkan <code>RecursionError</code>.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code># Faktorial dengan rekursi
+def faktorial(n):
+    if n == 0:
+        return 1  # base case
+    else:
+        return n * faktorial(n - 1)  # recursive case
+
+print(faktorial(5))  # Output: 120
+</code></pre>
+    <p>👉 Fungsi <code>faktorial()</code> memanggil dirinya sendiri hingga mencapai base case <code>n == 0</code>.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat fungsi rekursif untuk menghitung:</p>
+    <ul>
+      <li><strong>Bilangan Fibonacci ke-n</strong> (dengan <code>f(0) = 0</code>, <code>f(1) = 1</code>, <code>f(n) = f(n-1) + f(n-2)</code>).</li>
+      <li><strong>Jumlah digit</strong> dari sebuah bilangan (misalnya <code>1234 → 1+2+3+4 = 10</code>).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Bandingkan versi rekursif dan iteratif dari fungsi Fibonacci. Apa kelebihan dan kekurangannya?</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="algoritma-kompleksitas.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="struktur-data-lanjutan.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
