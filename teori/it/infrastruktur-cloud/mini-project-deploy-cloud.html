@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Deploy Aplikasi ke Cloud - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🚀 Mini Project: Deploy Aplikasi ke Cloud</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p>Pada mini project ini, kita akan mempraktikkan seluruh konsep yang sudah dipelajari: container, orchestration, dan IaC.  
+       Tujuannya adalah <strong>mendeploy aplikasi web sederhana ke cloud</strong> menggunakan Docker + Kubernetes atau Terraform.  
+       Bayangkan ini seperti <em>membuka restoran cabang</em>: resep (kode) sudah ada, sekarang kita buka cabang di lokasi baru (cloud) agar bisa diakses semua orang.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Alur Deployment</h2>
+    <ol>
+      <li><strong>Siapkan aplikasi</strong> (misalnya Node.js API sederhana).</li>
+      <li><strong>Buat Dockerfile</strong> untuk mengemas aplikasi.</li>
+      <li><strong>Push image</strong> ke Docker Hub/registry.</li>
+      <li><strong>Deploy ke cloud</strong>:
+        <ul>
+          <li>Opsi 1: Gunakan Kubernetes (minikube/EKS/GKE/AKS).</li>
+          <li>Opsi 2: Gunakan Terraform untuk provisioning VM + deploy container.</li>
+        </ul>
+      </li>
+      <li><strong>Expose service</strong> agar aplikasi bisa diakses publik.</li>
+    </ol>
+
+    <h3>🔹 Contoh Dockerfile</h3>
+    <pre><code># Dockerfile
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+</code></pre>
+
+    <h3>🔹 Contoh Deployment Kubernetes</h3>
+    <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: notes
+  template:
+    metadata:
+      labels:
+        app: notes
+    spec:
+      containers:
+      - name: notes
+        image: your-dockerhub-username/notes-app:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notes-service
+spec:
+  selector:
+    app: notes
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba deploy aplikasi sederhana ke cloud provider pilihanmu:</p>
+    <ul>
+      <li>Buat image aplikasi dan push ke Docker Hub.</li>
+      <li>Deploy ke Kubernetes cluster (bisa pakai minikube untuk lokal).</li>
+      <li>Expose service dan akses aplikasi melalui browser.</li>
+    </ul>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat mini project lengkap:</p>
+    <ul>
+      <li>Aplikasi catatan sederhana (CRUD API).</li>
+      <li>Dockerize aplikasi.</li>
+      <li>Deploy ke Kubernetes cluster di cloud (misalnya GKE atau EKS).</li>
+      <li>Gunakan Terraform untuk provisioning cluster atau VM.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan monitoring sederhana (misalnya Prometheus + Grafana) untuk memantau aplikasi di cloud.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="iac-terraform.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="../index.html" class="btn next">Kembali ke Modul ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
