@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Asynchronous Programming - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⏳ Asynchronous Programming</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Asynchronous programming</strong> memungkinkan program menjalankan tugas tanpa menunggu satu sama lain selesai.  
+       Cocok untuk operasi yang butuh waktu lama seperti akses jaringan atau file.  
+       Bayangkan seperti <em>memasak sambil menunggu air mendidih</em>: kita bisa lanjut kerja lain tanpa menunggu.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>async</strong>: mendefinisikan fungsi asynchronous.</li>
+      <li><strong>await</strong>: menunggu hasil dari operasi asynchronous.</li>
+      <li><strong>event loop</strong>: sistem yang mengatur eksekusi tugas asynchronous.</li>
+      <li><strong>library</strong>: Python menggunakan <code>asyncio</code> untuk asynchronous programming.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code>import asyncio
+
+async def tugas_1():
+    print("Mulai tugas 1")
+    await asyncio.sleep(2)
+    print("Selesai tugas 1")
+
+async def tugas_2():
+    print("Mulai tugas 2")
+    await asyncio.sleep(1)
+    print("Selesai tugas 2")
+
+async def main():
+    await asyncio.gather(tugas_1(), tugas_2())
+
+asyncio.run(main())
+</code></pre>
+    <p>👉 Kedua tugas dijalankan bersamaan, meskipun masing-masing punya waktu tunggu berbeda.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat program asynchronous yang:</p>
+    <ul>
+      <li>Mengambil data dari 3 sumber (simulasi dengan <code>asyncio.sleep()</code>).</li>
+      <li>Menampilkan hasilnya setelah semua selesai.</li>
+      <li>Bandingkan waktu eksekusi dengan versi non-asynchronous.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan progress log agar pengguna tahu proses sedang berjalan.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="struktur-data-lanjutan.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-game.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
