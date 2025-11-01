@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Scaling - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>⚖️ Scaling</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Scaling</strong> adalah proses meningkatkan kapasitas aplikasi agar mampu menangani lebih banyak pengguna atau beban kerja.  
+       Bayangkan scaling seperti <em>menambah kursi di restoran</em>: saat pelanggan semakin banyak, kita bisa menambah kursi (server) atau memperbesar meja (upgrade server).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama Scaling</h2>
+    <ul>
+      <li><strong>Vertical Scaling (Scale Up)</strong>: menambah kapasitas server (CPU, RAM, storage).  
+        ➡️ Mudah dilakukan, tapi ada batas fisik & biaya tinggi.</li>
+      <li><strong>Horizontal Scaling (Scale Out)</strong>: menambah jumlah server untuk berbagi beban.  
+        ➡️ Lebih fleksibel, cocok untuk aplikasi besar.</li>
+      <li><strong>Load Balancer</strong>: mendistribusikan request ke beberapa server agar beban merata.</li>
+      <li><strong>Containerization</strong>: menggunakan Docker/Kubernetes untuk mempermudah scaling aplikasi.</li>
+      <li><strong>Auto-Scaling</strong>: sistem otomatis menambah/mengurangi server sesuai trafik (misalnya AWS Auto Scaling, Kubernetes HPA).</li>
+    </ul>
+
+    <h3>🔹 Contoh Load Balancer dengan Nginx</h3>
+    <pre><code>http {
+  upstream app_servers {
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+  }
+
+  server {
+    listen 80;
+    location / {
+      proxy_pass http://app_servers;
+    }
+  }
+}
+</code></pre>
+
+    <h3>🔹 Contoh Auto-Scaling di Kubernetes (HPA)</h3>
+    <pre><code>kubectl autoscale deployment myapp --cpu-percent=50 --min=2 --max=10</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat dua instance aplikasi Node.js di port berbeda (3000 & 3001), lalu gunakan Nginx sebagai load balancer untuk mendistribusikan request.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat sistem sederhana dengan scaling:</p>
+    <ul>
+      <li>Deploy aplikasi Node.js ke dua server berbeda.</li>
+      <li>Gunakan Nginx sebagai load balancer.</li>
+      <li>Tambahkan monitoring (misalnya Prometheus + Grafana) untuk melihat beban tiap server.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Implementasikan auto-scaling menggunakan Docker Swarm atau Kubernetes Horizontal Pod Autoscaler.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="monitoring-logging.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="capstone-project.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
