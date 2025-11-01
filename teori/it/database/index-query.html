@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Index & Optimasi Query - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚡ Index & Optimasi Query</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Index</strong> adalah struktur data tambahan yang mempercepat pencarian data di tabel.  
+       Bayangkan seperti <em>daftar isi buku</em>: tanpa index, kita harus membuka halaman satu per satu; dengan index, kita langsung lompat ke halaman yang dicari.  
+       Optimasi query memastikan database tetap cepat meskipun data semakin besar.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Index</h2>
+    <ul>
+      <li><strong>Primary Key</strong> → otomatis membuat index unik.</li>
+      <li><strong>Unique Index</strong> → memastikan nilai kolom tidak duplikat.</li>
+      <li><strong>Composite Index</strong> → index pada lebih dari satu kolom.</li>
+      <li><strong>Fulltext Index</strong> → untuk pencarian teks.</li>
+    </ul>
+    <p>⚠️ Index mempercepat SELECT, tapi bisa memperlambat INSERT/UPDATE/DELETE karena index juga harus diperbarui.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh penggunaan index pada tabel <code>pegawai</code>:</p>
+    <pre><code>-- Membuat index pada kolom nama
+CREATE INDEX idx_nama ON pegawai(nama);
+
+-- Membuat index unik pada email
+CREATE UNIQUE INDEX idx_email ON pegawai(email);
+
+-- Membuat composite index pada posisi dan departemen_id
+CREATE INDEX idx_posisi_dept ON pegawai(posisi, departemen_id);
+
+-- Melihat daftar index
+SHOW INDEX FROM pegawai;
+
+-- Menghapus index
+DROP INDEX idx_nama ON pegawai;
+</code></pre>
+    <p>👉 Gunakan <code>EXPLAIN</code> sebelum query untuk melihat apakah index digunakan:</p>
+    <pre><code>EXPLAIN SELECT * FROM pegawai WHERE nama = 'Andi';</code></pre>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Pada tabel <code>transaksi</code> di sistem inventaris:</p>
+    <ul>
+      <li>Buat index pada kolom <code>tanggal</code> untuk mempercepat pencarian transaksi berdasarkan tanggal.</li>
+      <li>Buat composite index pada <code>barang_id</code> dan <code>tipe</code> untuk mempercepat laporan transaksi.</li>
+      <li>Gunakan <code>EXPLAIN</code> untuk membandingkan performa query sebelum dan sesudah index.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Uji performa query dengan data dummy dalam jumlah besar (misalnya 100.000 baris) untuk melihat dampak index.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="mini-project-inventaris.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="transaksi-acid.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
