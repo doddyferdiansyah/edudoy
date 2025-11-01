@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Sistem Inventaris Barang - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📦 Mini Project: Sistem Inventaris Barang</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Pada mini project ini, kita akan membangun <strong>sistem inventaris sederhana</strong> untuk mengelola stok barang.  
+       Proyek ini menggabungkan konsep relasi, foreign key, JOIN, dan agregasi.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Desain Database</h2>
+    <p>Kita akan membuat 3 tabel utama:</p>
+    <ul>
+      <li><code>kategori</code> → menyimpan jenis barang.</li>
+      <li><code>barang</code> → menyimpan detail barang, terhubung ke kategori.</li>
+      <li><code>transaksi</code> → mencatat keluar/masuk barang.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Implementasi</h2>
+    <pre><code>-- Membuat database
+CREATE DATABASE inventaris_db;
+USE inventaris_db;
+
+-- Tabel kategori
+CREATE TABLE kategori (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama_kategori VARCHAR(50) NOT NULL
+);
+
+-- Tabel barang
+CREATE TABLE barang (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama_barang VARCHAR(50) NOT NULL,
+    stok INT DEFAULT 0,
+    kategori_id INT,
+    FOREIGN KEY (kategori_id) REFERENCES kategori(id)
+);
+
+-- Tabel transaksi
+CREATE TABLE transaksi (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    barang_id INT,
+    jumlah INT,
+    tipe ENUM('masuk','keluar'),
+    tanggal DATE,
+    FOREIGN KEY (barang_id) REFERENCES barang(id)
+);
+
+-- Tambah kategori
+INSERT INTO kategori (nama_kategori) VALUES ('Elektronik'), ('Alat Tulis');
+
+-- Tambah barang
+INSERT INTO barang (nama_barang, stok, kategori_id)
+VALUES ('Laptop', 10, 1), ('Mouse', 20, 1), ('Pulpen', 50, 2);
+
+-- Tambah transaksi
+INSERT INTO transaksi (barang_id, jumlah, tipe, tanggal)
+VALUES (1, 5, 'keluar', '2025-01-01'),
+       (2, 10, 'masuk', '2025-01-02'),
+       (3, 5, 'keluar', '2025-01-03');
+
+-- Laporan stok barang dengan kategori
+SELECT b.nama_barang, k.nama_kategori, b.stok
+FROM barang b
+JOIN kategori k ON b.kategori_id = k.id;
+
+-- Hitung total transaksi keluar per barang
+SELECT b.nama_barang, SUM(t.jumlah) AS total_keluar
+FROM transaksi t
+JOIN barang b ON t.barang_id = b.id
+WHERE t.tipe = 'keluar'
+GROUP BY b.nama_barang;
+</code></pre>
+    <p>👉 Dengan desain ini, kita bisa mengelola stok barang, mencatat transaksi, dan membuat laporan ringkas.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kembangkan sistem inventaris dengan fitur tambahan:</p>
+    <ul>
+      <li>Tambahkan kolom <code>harga</code> pada tabel <code>barang</code>.</li>
+      <li>Buat query untuk menghitung total nilai stok (stok × harga) per kategori.</li>
+      <li>Buat query untuk menampilkan 3 barang dengan stok terendah.</li>
+      <li>Buat query untuk menampilkan riwayat transaksi barang tertentu berdasarkan <code>barang_id</code>.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat trigger yang otomatis mengurangi atau menambah stok barang setiap kali ada transaksi masuk/keluar.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="normalisasi.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="index-query.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
