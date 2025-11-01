@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Integrasi Database dengan Aplikasi - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔗 Integrasi Database dengan Aplikasi</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p>Database jarang berdiri sendiri — biasanya digunakan oleh aplikasi.  
+       <strong>Integrasi database dengan aplikasi</strong> memungkinkan data disimpan, diambil, dan dimanipulasi melalui kode program.  
+       Bayangkan seperti <em>jembatan</em> antara aplikasi frontend dan gudang data di backend.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Integrasi</h2>
+    <ul>
+      <li><strong>Driver/Connector</strong>: library yang memungkinkan aplikasi berkomunikasi dengan database (contoh: MySQL Connector, psycopg2 untuk PostgreSQL).</li>
+      <li><strong>Query Execution</strong>: aplikasi mengirim perintah SQL ke database.</li>
+      <li><strong>ORM (Object Relational Mapping)</strong>: cara modern untuk mengelola database dengan objek (contoh: Sequelize, SQLAlchemy, Hibernate).</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh integrasi database MySQL dengan Python menggunakan <code>mysql-connector</code>:</p>
+    <pre><code>import mysql.connector
+
+# Koneksi ke database
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="passwordku",
+    database="inventaris_db"
+)
+
+cursor = db.cursor()
+
+# Membaca data
+cursor.execute("SELECT nama_barang, stok FROM barang")
+for (nama, stok) in cursor.fetchall():
+    print(f"{nama} - Stok: {stok}")
+
+# Menambahkan data
+cursor.execute(
+    "INSERT INTO barang (nama_barang, stok, kategori_id) VALUES (%s, %s, %s)",
+    ("Keyboard", 15, 1)
+)
+db.commit()
+
+print("Data berhasil ditambahkan!")
+</code></pre>
+    <p>👉 Dengan kode ini, aplikasi Python bisa membaca dan menulis data ke database.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat aplikasi sederhana (boleh Python, Node.js, atau PHP) yang terhubung ke database <code>inventaris_db</code>:</p>
+    <ul>
+      <li>Tampilkan daftar barang beserta stoknya.</li>
+      <li>Tambahkan fitur untuk menambah barang baru.</li>
+      <li>Tambahkan fitur untuk memperbarui stok barang tertentu.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan ORM (misalnya SQLAlchemy di Python atau Sequelize di Node.js) agar kode lebih rapi dan mudah dipelihara.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="keamanan-database.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-manajemen.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
