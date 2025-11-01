@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: To-Do List CLI - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📝 Mini Project: To-Do List CLI</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Setelah mempelajari struktur data, modularisasi, error handling, dan OOP dasar,  
+       saatnya kita gabungkan konsep-konsep tersebut dalam sebuah <strong>aplikasi To-Do List sederhana berbasis CLI</strong>.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Deskripsi Proyek</h2>
+    <p>Aplikasi ini memungkinkan pengguna untuk:</p>
+    <ul>
+      <li>Menambahkan tugas baru.</li>
+      <li>Melihat daftar tugas.</li>
+      <li>Menandai tugas sebagai selesai.</li>
+      <li>Menghapus tugas.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Implementasi</h2>
+    <pre><code># To-Do List CLI sederhana
+
+tugas = []
+
+def tampilkan_menu():
+    print("\n=== To-Do List ===")
+    print("1. Lihat daftar tugas")
+    print("2. Tambah tugas")
+    print("3. Tandai selesai")
+    print("4. Hapus tugas")
+    print("5. Keluar")
+
+def lihat_tugas():
+    if not tugas:
+        print("Belum ada tugas.")
+    else:
+        for i, t in enumerate(tugas, start=1):
+            status = "✅" if t["selesai"] else "❌"
+            print(f"{i}. {t['nama']} [{status}]")
+
+def tambah_tugas():
+    nama = input("Masukkan nama tugas: ")
+    tugas.append({"nama": nama, "selesai": False})
+    print("Tugas ditambahkan!")
+
+def tandai_selesai():
+    lihat_tugas()
+    try:
+        idx = int(input("Nomor tugas yang selesai: ")) - 1
+        tugas[idx]["selesai"] = True
+        print("Tugas ditandai selesai!")
+    except (ValueError, IndexError):
+        print("Nomor tidak valid.")
+
+def hapus_tugas():
+    lihat_tugas()
+    try:
+        idx = int(input("Nomor tugas yang dihapus: ")) - 1
+        tugas.pop(idx)
+        print("Tugas dihapus!")
+    except (ValueError, IndexError):
+        print("Nomor tidak valid.")
+
+# Main loop
+while True:
+    tampilkan_menu()
+    pilihan = input("Pilih menu: ")
+    if pilihan == "1":
+        lihat_tugas()
+    elif pilihan == "2":
+        tambah_tugas()
+    elif pilihan == "3":
+        tandai_selesai()
+    elif pilihan == "4":
+        hapus_tugas()
+    elif pilihan == "5":
+        print("Terima kasih sudah menggunakan To-Do List!")
+        break
+    else:
+        print("Pilihan tidak valid.")
+</code></pre>
+    <p>👉 Program ini menggabungkan list, dictionary, fungsi, input-output, dan error handling sederhana.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kembangkan aplikasi To-Do List ini dengan fitur tambahan:</p>
+    <ul>
+      <li>Simpan daftar tugas ke file (<code>todo.txt</code>) agar tidak hilang saat program ditutup.</li>
+      <li>Tambahkan opsi untuk mengedit nama tugas.</li>
+      <li>Gunakan OOP: buat kelas <code>Tugas</code> dan <code>ToDoList</code> untuk mengelola data.</li>
+    </ul>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="oop-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="algoritma-kompleksitas.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
