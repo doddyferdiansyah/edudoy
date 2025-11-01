@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>GROUP BY & Agregasi - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📊 GROUP BY & Agregasi</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>GROUP BY</strong> digunakan untuk mengelompokkan data berdasarkan kolom tertentu,  
+       sedangkan fungsi <strong>agregasi</strong> (COUNT, SUM, AVG, MIN, MAX) digunakan untuk melakukan perhitungan pada tiap kelompok.  
+       Bayangkan seperti <em>laporan keuangan</em>: kita bisa menghitung total penjualan per bulan atau rata-rata gaji per departemen.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Fungsi Agregasi Umum</h2>
+    <ul>
+      <li><code>COUNT()</code> → menghitung jumlah data.</li>
+      <li><code>SUM()</code> → menjumlahkan nilai.</li>
+      <li><code>AVG()</code> → menghitung rata-rata.</li>
+      <li><code>MIN()</code> → nilai terkecil.</li>
+      <li><code>MAX()</code> → nilai terbesar.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh query pada tabel <code>pegawai</code>:</p>
+    <pre><code>-- Hitung jumlah pegawai per departemen
+SELECT departemen_id, COUNT(*) AS jumlah_pegawai
+FROM pegawai
+GROUP BY departemen_id;
+
+-- Hitung rata-rata gaji per departemen
+SELECT departemen_id, AVG(gaji) AS rata_gaji
+FROM pegawai
+GROUP BY departemen_id;
+
+-- Cari gaji tertinggi per posisi
+SELECT posisi, MAX(gaji) AS gaji_tertinggi
+FROM pegawai
+GROUP BY posisi;
+</code></pre>
+    <p>👉 Dengan <code>GROUP BY</code>, kita bisa membuat ringkasan data yang lebih bermakna.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Pada tabel <code>pegawai</code>, lakukan hal berikut:</p>
+    <ul>
+      <li>Hitung jumlah pegawai di setiap posisi.</li>
+      <li>Tampilkan rata-rata gaji untuk setiap departemen.</li>
+      <li>Tampilkan gaji minimum dan maksimum untuk setiap posisi.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gabungkan dengan <code>JOIN</code> agar hasil menampilkan nama departemen, bukan hanya <code>departemen_id</code>.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="join.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="normalisasi.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
