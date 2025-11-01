@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Authentication & Session - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔐 Authentication & Session</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Authentication</strong> adalah proses memverifikasi identitas pengguna (login).  
+       <strong>Session</strong> adalah cara menyimpan status login agar pengguna tetap dikenali di setiap request.  
+       Bayangkan authentication seperti <em>pemeriksaan tiket</em> di bioskop, dan session adalah <em>stempel tangan</em> yang membuktikan kamu sudah lolos pemeriksaan.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Authentication</strong>: verifikasi identitas (username/password, OAuth, dll).</li>
+      <li><strong>Authorization</strong>: menentukan hak akses setelah login.</li>
+      <li><strong>Session</strong>: data login disimpan di server, dihubungkan dengan cookie di browser.</li>
+      <li><strong>Cookie</strong>: penyimpanan kecil di browser untuk menyimpan session ID.</li>
+      <li><strong>JWT (JSON Web Token)</strong>: alternatif session berbasis token yang dikirim di setiap request.</li>
+    </ul>
+
+    <h3>🔹 Contoh Session dengan Express</h3>
+    <pre><code>// app.js
+const express = require("express");
+const session = require("express-session");
+const app = express();
+
+app.use(express.json());
+app.use(session({
+  secret: "rahasia",
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // true jika pakai HTTPS
+}));
+
+// Login sederhana
+app.post("/login", (req, res) =&gt; {
+  const { username, password } = req.body;
+  if (username === "admin" &amp;&amp; password === "1234") {
+    req.session.user = username;
+    res.send("Login berhasil");
+  } else {
+    res.status(401).send("Login gagal");
+  }
+});
+
+// Route proteksi
+app.get("/dashboard", (req, res) =&gt; {
+  if (req.session.user) {
+    res.send(`Selamat datang ${req.session.user}`);
+  } else {
+    res.status(403).send("Harus login dulu");
+  }
+});
+
+app.listen(3000, () =&gt; console.log("Server jalan di http://localhost:3000"));
+</code></pre>
+
+    <h3>🔹 Contoh JWT</h3>
+    <pre><code>const jwt = require("jsonwebtoken");
+
+// Membuat token
+const token = jwt.sign({ user: "admin" }, "rahasia", { expiresIn: "1h" });
+
+// Verifikasi token
+jwt.verify(token, "rahasia", (err, decoded) =&gt; {
+  if (err) console.log("Token tidak valid");
+  else console.log(decoded.user);
+});
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat server Express dengan route <code>/login</code> dan <code>/dashboard</code>.  
+       Gunakan <code>express-session</code> untuk menyimpan status login.  
+       Uji dengan mengirim request login, lalu akses dashboard.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat sistem login dengan fitur:</p>
+    <ul>
+      <li>Form login dengan username & password.</li>
+      <li>Gunakan session untuk menyimpan status login.</li>
+      <li>Tambahkan route <code>/logout</code> untuk menghapus session.</li>
+      <li>Buat route proteksi yang hanya bisa diakses jika sudah login.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Implementasikan versi JWT untuk API, dengan middleware yang memverifikasi token sebelum mengakses route tertentu.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="orm-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="keamanan-web.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
