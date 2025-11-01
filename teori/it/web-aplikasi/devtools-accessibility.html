@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>DevTools & Accessibility - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🛠️ DevTools & Accessibility</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>DevTools</strong> adalah alat bawaan browser untuk debugging dan optimasi web.  
+       <strong>Accessibility (A11y)</strong> memastikan website bisa diakses semua orang, termasuk penyandang disabilitas.  
+       Bayangkan DevTools sebagai <em>kaca pembesar</em> untuk melihat isi web, dan Accessibility sebagai <em>pintu masuk universal</em> agar semua bisa menggunakannya.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Browser DevTools</h2>
+    <ul>
+      <li><strong>Elements</strong>: melihat dan mengedit struktur HTML & CSS secara langsung.</li>
+      <li><strong>Console</strong>: menampilkan log, error, dan menjalankan JavaScript.</li>
+      <li><strong>Network</strong>: memantau request/response, kecepatan loading.</li>
+      <li><strong>Sources</strong>: melihat file JS, debugging dengan breakpoint.</li>
+      <li><strong>Performance</strong>: menganalisis kecepatan rendering.</li>
+      <li><strong>Application</strong>: memantau storage (cookies, localStorage, sessionStorage).</li>
+    </ul>
+
+    <h2>📖 Prinsip Accessibility</h2>
+    <ul>
+      <li><strong>Perceivable</strong>: konten bisa dilihat/didengar (contoh: alt text pada gambar).</li>
+      <li><strong>Operable</strong>: bisa digunakan dengan keyboard, bukan hanya mouse.</li>
+      <li><strong>Understandable</strong>: navigasi dan konten mudah dipahami.</li>
+      <li><strong>Robust</strong>: kompatibel dengan berbagai perangkat & screen reader.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba langkah berikut:</p>
+    <ol>
+      <li>Buka halaman web apa saja, tekan <code>F12</code> untuk membuka DevTools.</li>
+      <li>Pilih tab <strong>Elements</strong>, ubah teks langsung di HTML dan lihat hasilnya.</li>
+      <li>Pilih tab <strong>Console</strong>, ketik <code>console.log("Halo DevTools!")</code>.</li>
+      <li>Gunakan tab <strong>Network</strong> untuk melihat file apa saja yang dimuat.</li>
+    </ol>
+
+    <p>👉 Untuk Accessibility, coba tambahkan atribut <code>alt</code> pada gambar:</p>
+    <pre><code>&lt;img src="foto.jpg" alt="Foto profil Doddy"&gt;</code></pre>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat halaman HTML sederhana lalu:</p>
+    <ul>
+      <li>Gunakan DevTools untuk mengubah warna teks secara langsung.</li>
+      <li>Tambahkan gambar tanpa <code>alt</code>, lalu perbaiki dengan menambahkan deskripsi.</li>
+      <li>Coba navigasi halaman hanya dengan keyboard (Tab, Enter, Space).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan tab <strong>Lighthouse</strong> di Chrome DevTools untuk mengaudit Accessibility halamanmu.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="javascript-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-profil.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
