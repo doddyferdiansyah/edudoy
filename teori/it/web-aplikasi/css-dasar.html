@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🎨 CSS Dasar</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>CSS (Cascading Style Sheets)</strong> digunakan untuk memberikan gaya pada halaman HTML.  
+       Bayangkan CSS seperti <em>cat dan dekorasi rumah</em>: HTML adalah kerangka, CSS membuatnya indah dan nyaman dilihat.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Cara Menghubungkan CSS</h2>
+    <ul>
+      <li><strong>Inline CSS</strong>: langsung di dalam tag HTML.  
+        <code>&lt;p style="color:red;"&gt;Teks merah&lt;/p&gt;</code></li>
+      <li><strong>Internal CSS</strong>: ditulis di dalam tag <code>&lt;style&gt;</code> di file HTML.  
+        <pre><code>&lt;style&gt;
+p { color: blue; }
+&lt;/style&gt;</code></pre></li>
+      <li><strong>External CSS</strong>: ditulis di file terpisah <code>.css</code> lalu dihubungkan dengan <code>&lt;link&gt;</code>.  
+        <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre></li>
+    </ul>
+
+    <h2>🔑 Properti CSS Dasar</h2>
+    <ul>
+      <li><code>color</code> → warna teks.</li>
+      <li><code>background-color</code> → warna latar.</li>
+      <li><code>font-size</code> → ukuran teks.</li>
+      <li><code>font-family</code> → jenis huruf.</li>
+      <li><code>margin</code> → jarak luar elemen.</li>
+      <li><code>padding</code> → jarak dalam elemen.</li>
+      <li><code>border</code> → garis tepi elemen.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat file <code>style.css</code> dan hubungkan ke HTML:</p>
+    <pre><code>/* style.css */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: darkblue;
+  text-align: center;
+}
+
+p {
+  color: #333;
+  font-size: 16px;
+}
+</code></pre>
+
+    <p>👉 Simpan file ini, lalu buka HTML yang sudah dihubungkan dengan <code>&lt;link&gt;</code> untuk melihat hasilnya.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat halaman HTML dengan CSS eksternal yang memiliki:</p>
+    <ul>
+      <li>Latar belakang berwarna lembut (misalnya pastel).</li>
+      <li>Heading utama dengan warna berbeda dan rata tengah.</li>
+      <li>Paragraf dengan font berbeda dari default browser.</li>
+      <li>Gambar dengan border dan padding.</li>
+      <li>Link yang berubah warna saat di-hover.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan kombinasi <code>margin</code> dan <code>padding</code> untuk mengatur tata letak agar lebih rapi.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="html-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="javascript-dasar.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
