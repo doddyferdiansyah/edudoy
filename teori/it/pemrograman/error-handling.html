@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Error Handling - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚠️ Error Handling</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Error handling</strong> adalah cara menangani kesalahan yang terjadi saat program berjalan.  
+       Tanpa penanganan error, program bisa berhenti tiba-tiba.  
+       Bayangkan seperti <em>sabuk pengaman</em>: tidak mencegah kecelakaan, tapi melindungi saat terjadi masalah.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Exception</strong>: kesalahan yang muncul saat program berjalan (misalnya pembagian dengan nol).</li>
+      <li><strong>try-except</strong>: blok untuk menangkap dan menangani error.</li>
+      <li><strong>finally</strong>: blok yang selalu dijalankan, entah ada error atau tidak.</li>
+      <li><strong>raise</strong>: digunakan untuk memunculkan error secara manual.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code># Contoh try-except
+try:
+    angka = int(input("Masukkan angka: "))
+    hasil = 10 / angka
+    print("Hasil:", hasil)
+except ZeroDivisionError:
+    print("Error: Tidak bisa dibagi dengan nol!")
+except ValueError:
+    print("Error: Input harus berupa angka!")
+finally:
+    print("Program selesai dijalankan.")
+</code></pre>
+    <p>👉 Program tetap berjalan meskipun terjadi error, karena error ditangani dengan baik.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat program yang meminta pengguna memasukkan dua angka, lalu menampilkan hasil pembagiannya.  
+       Tangani kemungkinan error berikut:</p>
+    <ul>
+      <li><code>ValueError</code> jika input bukan angka.</li>
+      <li><code>ZeroDivisionError</code> jika angka kedua adalah nol.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan blok <code>finally</code> untuk menampilkan pesan "Terima kasih sudah menggunakan program ini".</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="modularisasi-file.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="oop-dasar.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
