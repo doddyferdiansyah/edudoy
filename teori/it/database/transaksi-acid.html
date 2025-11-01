@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Transaksi & ACID - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔒 Transaksi & ACID</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Transaksi</strong> adalah serangkaian operasi database yang dijalankan sebagai satu kesatuan.  
+       Jika salah satu operasi gagal, maka seluruh transaksi dibatalkan.  
+       Prinsip <strong>ACID</strong> (Atomicity, Consistency, Isolation, Durability) menjamin keandalan transaksi.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Prinsip ACID</h2>
+    <ul>
+      <li><strong>Atomicity</strong>: semua operasi dalam transaksi harus berhasil semua atau gagal semua.</li>
+      <li><strong>Consistency</strong>: transaksi harus menjaga konsistensi aturan database.</li>
+      <li><strong>Isolation</strong>: transaksi berjalan seolah-olah sendiri, tanpa gangguan transaksi lain.</li>
+      <li><strong>Durability</strong>: hasil transaksi yang sudah selesai (commit) akan tersimpan permanen.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh transaksi pada sistem perbankan (transfer saldo):</p>
+    <pre><code>-- Mulai transaksi
+START TRANSACTION;
+
+-- Kurangi saldo dari rekening A
+UPDATE rekening SET saldo = saldo - 100000 WHERE id = 1;
+
+-- Tambahkan saldo ke rekening B
+UPDATE rekening SET saldo = saldo + 100000 WHERE id = 2;
+
+-- Jika semua berhasil, simpan perubahan
+COMMIT;
+
+-- Jika ada error, batalkan semua perubahan
+ROLLBACK;
+</code></pre>
+    <p>👉 Dengan transaksi, kita bisa memastikan bahwa transfer uang tidak menyebabkan saldo hilang atau ganda.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat simulasi transaksi pada tabel <code>inventaris</code>:</p>
+    <ul>
+      <li>Kurangi stok barang tertentu saat ada transaksi keluar.</li>
+      <li>Tambahkan stok barang lain saat ada transaksi masuk.</li>
+      <li>Gunakan <code>START TRANSACTION</code>, <code>COMMIT</code>, dan <code>ROLLBACK</code> untuk menjaga konsistensi.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Uji dengan sengaja membuat error di salah satu query untuk melihat bagaimana <code>ROLLBACK</code> bekerja.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="index-query.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="backup-recovery.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
