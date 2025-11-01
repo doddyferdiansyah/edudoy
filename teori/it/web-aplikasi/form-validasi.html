@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form & Validasi - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    label { display: block; margin-top: 10px; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+    button { margin-top: 15px; padding: 10px 15px; background: #3498db; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #2980b9; }
+    .error { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📑 Form & Validasi</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Form</strong> digunakan untuk mengumpulkan data dari pengguna.  
+       <strong>Validasi</strong> memastikan data yang dimasukkan sesuai aturan sebelum dikirim.  
+       Bayangkan form seperti <em>gerbang masuk</em> dan validasi sebagai <em>penjaga gerbang</em> yang memeriksa tiket sebelum masuk.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Elemen Form Dasar</h2>
+    <ul>
+      <li><code>&lt;input type="text"&gt;</code> → input teks.</li>
+      <li><code>&lt;input type="email"&gt;</code> → input email.</li>
+      <li><code>&lt;input type="password"&gt;</code> → input password.</li>
+      <li><code>&lt;textarea&gt;</code> → input teks panjang.</li>
+      <li><code>&lt;button type="submit"&gt;</code> → tombol kirim.</li>
+    </ul>
+
+    <h2>📖 Validasi</h2>
+    <ul>
+      <li><strong>Validasi HTML5</strong>: menggunakan atribut seperti <code>required</code>, <code>minlength</code>, <code>pattern</code>.</li>
+      <li><strong>Validasi JavaScript</strong>: logika tambahan untuk memeriksa input sebelum submit.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <div class="container">
+      <form id="myForm">
+        <label>Nama:</label>
+        <input type="text" id="nama" required minlength="3">
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Password:</label>
+        <input type="password" id="password" required minlength="6">
+
+        <button type="submit">Kirim</button>
+        <p id="errorMsg" class="error"></p>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const errorMsg = document.getElementById("errorMsg");
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        let nama = document.getElementById("nama").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (nama.length < 3) {
+          errorMsg.textContent = "Nama minimal 3 karakter.";
+        } else if (!email.includes("@")) {
+          errorMsg.textContent = "Email tidak valid.";
+        } else if (password.length < 6) {
+          errorMsg.textContent = "Password minimal 6 karakter.";
+        } else {
+          errorMsg.textContent = "";
+          alert("Form berhasil dikirim!");
+        }
+      });
+    </script>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat form pendaftaran dengan ketentuan:</p>
+    <ul>
+      <li>Field: Nama, Email, Password, Konfirmasi Password.</li>
+      <li>Validasi: semua wajib diisi, email valid, password minimal 6 karakter, konfirmasi password harus sama.</li>
+      <li>Tampilkan pesan error di bawah field jika tidak valid.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan validasi nomor telepon dengan regex (misalnya hanya angka 10–13 digit).</p>
+  </section>
+
+  <section class="navigation">
+    <a href="mini-project-profil.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="dom-manipulation.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
