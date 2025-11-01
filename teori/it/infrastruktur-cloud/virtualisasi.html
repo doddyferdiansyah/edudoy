@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtualisasi & Mesin Virtual - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🖥️ Virtualisasi & Mesin Virtual</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>Virtualisasi</strong> adalah teknologi yang memungkinkan satu komputer fisik menjalankan beberapa sistem operasi secara bersamaan melalui <em>mesin virtual (VM)</em>.  
+       Bayangkan sebuah rumah besar (server fisik) yang dibagi menjadi beberapa apartemen (VM), masing-masing bisa dihuni dengan aturan dan dekorasi berbeda.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Dasar Virtualisasi</h2>
+    <ul>
+      <li><strong>Hypervisor</strong>: perangkat lunak yang mengatur VM (contoh: VMware, VirtualBox, KVM, Hyper-V).</li>
+      <li><strong>Mesin Virtual (VM)</strong>: sistem operasi lengkap yang berjalan di atas hypervisor.</li>
+      <li><strong>Manfaat</strong>:
+        <ul>
+          <li>Efisiensi penggunaan hardware.</li>
+          <li>Isolasi antar sistem (jika satu crash, yang lain tetap jalan).</li>
+          <li>Mudah untuk testing & development.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>🔄 VM vs Container</h2>
+    <ul>
+      <li><strong>VM</strong>: butuh OS lengkap, lebih berat, isolasi kuat.</li>
+      <li><strong>Container</strong>: berbagi kernel host, lebih ringan, startup cepat.</li>
+    </ul>
+    <p>👉 VM cocok untuk workload besar & legacy apps, sedangkan container cocok untuk microservices & aplikasi modern.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba buat VM menggunakan VirtualBox:</p>
+    <ol>
+      <li>Install VirtualBox di laptop/PC.</li>
+      <li>Buat VM baru dengan OS Linux (misalnya Ubuntu).</li>
+      <li>Atur resource (CPU, RAM, storage).</li>
+      <li>Jalankan VM dan coba akses terminal Linux di dalamnya.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat dua VM berbeda di laptop/PC kamu:</p>
+    <ul>
+      <li>VM 1: Ubuntu Server (untuk web server).</li>
+      <li>VM 2: Windows (untuk aplikasi desktop).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Coba hubungkan kedua VM dalam satu jaringan virtual (internal network) dan lakukan ping antar VM.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="pengantar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="cloud-service-models.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
