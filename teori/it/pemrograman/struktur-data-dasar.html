@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struktur Data Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📦 Struktur Data Dasar</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Struktur data</strong> adalah cara kita menyimpan dan mengorganisir data agar mudah digunakan.  
+       Bayangkan seperti <em>lemari penyimpanan</em>: ada laci untuk daftar, kotak untuk pasangan kunci-nilai, dan set untuk koleksi unik.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis Struktur Data Dasar di Python</h2>
+    <ul>
+      <li><strong>List</strong>: menyimpan kumpulan data berurutan, bisa diubah.</li>
+      <li><strong>Tuple</strong>: mirip list, tapi tidak bisa diubah (immutable).</li>
+      <li><strong>Set</strong>: kumpulan data unik, tidak berurutan.</li>
+      <li><strong>Dictionary</strong>: pasangan kunci-nilai, seperti kamus.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code># List
+buah = ["apel", "pisang", "jeruk"]
+buah.append("mangga")
+print(buah)
+
+# Tuple
+koordinat = (10, 20)
+print("X:", koordinat[0], "Y:", koordinat[1])
+
+# Set
+angka = {1, 2, 3, 3, 2}
+print(angka)  # otomatis unik
+
+# Dictionary
+mahasiswa = {"nama": "Doddy", "umur": 25}
+print(mahasiswa["nama"])
+</code></pre>
+    <p>👉 Perhatikan perbedaan karakteristik tiap struktur data.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat program yang menyimpan daftar nilai mahasiswa dalam sebuah <code>dictionary</code>,  
+       dengan nama mahasiswa sebagai kunci dan nilai sebagai value.  
+       Tampilkan semua data, lalu hitung rata-rata nilainya.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="mini-project-kalkulator.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="modularisasi-file.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
