@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>ORM Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🗂️ ORM Dasar</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>ORM (Object Relational Mapping)</strong> adalah teknik untuk berinteraksi dengan database menggunakan objek, bukan query SQL mentah.  
+       ORM mempermudah pengelolaan data dengan sintaks yang lebih intuitif.  
+       Bayangkan ORM seperti <em>penerjemah</em>: kita berbicara dengan bahasa JavaScript, ORM menerjemahkannya menjadi SQL/Mongo query.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama ORM</h2>
+    <ul>
+      <li><strong>Model</strong>: representasi tabel/koleksi dalam bentuk class/objek.</li>
+      <li><strong>CRUD</strong>: operasi Create, Read, Update, Delete dilakukan dengan method, bukan query manual.</li>
+      <li><strong>Relasi</strong>: ORM mendukung relasi antar tabel (One-to-Many, Many-to-Many).</li>
+      <li><strong>Abstraksi</strong>: developer fokus pada logika, bukan detail query.</li>
+    </ul>
+
+    <h3>🔹 Sequelize (MySQL/PostgreSQL)</h3>
+    <pre><code>// models/User.js
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize("belajar_db", "root", "", {
+  host: "localhost",
+  dialect: "mysql"
+});
+
+const User = sequelize.define("User", {
+  nama: { type: DataTypes.STRING, allowNull: false }
+});
+
+module.exports = User;
+
+// app.js
+const express = require("express");
+const User = require("./models/User");
+const app = express();
+app.use(express.json());
+
+app.get("/users", async (req, res) =&gt; {
+  const users = await User.findAll();
+  res.json(users);
+});
+
+app.post("/users", async (req, res) =&gt; {
+  const user = await User.create({ nama: req.body.nama });
+  res.status(201).json(user);
+});
+
+app.listen(3000, () =&gt; console.log("Server berjalan di http://localhost:3000"));
+</code></pre>
+
+    <h3>🔹 Mongoose (MongoDB)</h3>
+    <pre><code>// models/User.js
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({
+  nama: { type: String, required: true }
+});
+
+module.exports = mongoose.model("User", userSchema);
+
+// app.js
+const express = require("express");
+const mongoose = require("mongoose");
+const User = require("./models/User");
+const app = express();
+app.use(express.json());
+
+mongoose.connect("mongodb://localhost:27017/belajar_db");
+
+app.get("/users", async (req, res) =&gt; {
+  const users = await User.find();
+  res.json(users);
+});
+
+app.post("/users", async (req, res) =&gt; {
+  const user = new User({ nama: req.body.nama });
+  await user.save();
+  res.status(201).json(user);
+});
+
+app.listen(3000, () =&gt; console.log("Server berjalan di http://localhost:3000"));
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba buat model <code>User</code> dengan field <code>nama</code>, lalu gunakan ORM (Sequelize atau Mongoose) untuk menambahkan dan mengambil data user.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat API sederhana dengan ORM:</p>
+    <ul>
+      <li>Model <code>Product</code> dengan field <code>nama</code> dan <code>harga</code>.</li>
+      <li>Endpoint <code>GET /products</code> → ambil semua produk.</li>
+      <li>Endpoint <code>POST /products</code> → tambah produk baru.</li>
+      <li>Endpoint <code>PUT /products/:id</code> → update harga produk.</li>
+      <li>Endpoint <code>DELETE /products/:id</code> → hapus produk.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan validasi agar harga tidak boleh negatif, dan gunakan relasi sederhana (misalnya Product dimiliki oleh User).</p>
+  </section>
+
+  <section class="navigation">
+    <a href="integrasi-database.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="authentication-session.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
