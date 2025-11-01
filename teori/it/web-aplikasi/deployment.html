@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🚀 Deployment</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Deployment</strong> adalah proses merilis aplikasi dari lingkungan pengembangan ke server/hosting agar bisa diakses pengguna.  
+       Bayangkan deployment seperti <em>membuka restoran</em>: setelah dapur (development) selesai menyiapkan menu, restoran (server) dibuka agar pelanggan bisa datang dan menikmati.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama Deployment</h2>
+    <ul>
+      <li><strong>Server Hosting</strong>: tempat aplikasi dijalankan (VPS, cloud, shared hosting).</li>
+      <li><strong>Build & Bundle</strong>: mengoptimalkan kode (minify, transpile, bundle).</li>
+      <li><strong>Environment Variables</strong>: konfigurasi rahasia (API key, DB password) tidak disimpan di kode.</li>
+      <li><strong>CI/CD</strong>: otomatisasi build, test, dan deploy (GitHub Actions, GitLab CI, Jenkins).</li>
+      <li><strong>Scaling</strong>: menambah kapasitas server saat trafik meningkat.</li>
+    </ul>
+
+    <h3>🔹 Contoh Deployment Node.js ke VPS</h3>
+    <pre><code># 1. Clone project
+git clone https://github.com/user/proyek.git
+cd proyek
+
+# 2. Install dependency
+npm install
+
+# 3. Jalankan aplikasi
+node app.js
+
+# 4. Gunakan PM2 agar tetap jalan di background
+npm install -g pm2
+pm2 start app.js
+</code></pre>
+
+    <h3>🔹 Deployment ke Platform Cloud</h3>
+    <ul>
+      <li><strong>Heroku</strong>: mudah untuk pemula, push via Git.</li>
+      <li><strong>Vercel/Netlify</strong>: cocok untuk frontend (React, Vue, Next.js).</li>
+      <li><strong>AWS/GCP/Azure</strong>: enterprise-level, fleksibel, mendukung scaling otomatis.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba deploy aplikasi Node.js sederhana ke Heroku atau Vercel:</p>
+    <ol>
+      <li>Buat akun di Heroku/Vercel.</li>
+      <li>Install CLI (contoh: <code>npm install -g vercel</code>).</li>
+      <li>Login dan jalankan <code>vercel</code> di folder proyek.</li>
+      <li>Aplikasi akan mendapatkan URL publik.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat pipeline CI/CD sederhana:</p>
+    <ul>
+      <li>Gunakan GitHub Actions untuk otomatisasi build & test setiap push.</li>
+      <li>Deploy otomatis ke Vercel/Heroku setelah branch <code>main</code> di-update.</li>
+      <li>Tambahkan environment variable untuk API key.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Implementasikan auto-scaling di cloud (misalnya AWS Elastic Beanstalk atau Docker + Kubernetes).</p>
+  </section>
+
+  <section class="navigation">
+    <a href="keamanan-web.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="monitoring-logging.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
