@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Lanjutan - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    .flexbox {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .flexbox div {
+      background: #3498db;
+      color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      flex: 1;
+      margin: 5px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .grid div {
+      background: #2ecc71;
+      color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .animasi {
+      width: 100px;
+      height: 100px;
+      background: tomato;
+      border-radius: 50%;
+      position: relative;
+      animation: gerak 3s infinite alternate;
+    }
+    @keyframes gerak {
+      from { left: 0; background: tomato; }
+      to { left: 200px; background: purple; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🎨 CSS Lanjutan (Flexbox, Grid, Animasi)</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>CSS Lanjutan</strong> memungkinkan kita membuat layout modern dan interaktif.  
+       Flexbox dan Grid memudahkan pengaturan tata letak, sedangkan animasi membuat web lebih hidup.  
+       Bayangkan Flexbox sebagai <em>rak buku fleksibel</em>, Grid sebagai <em>papan catur</em>, dan Animasi sebagai <em>efek panggung</em> yang membuat pertunjukan menarik.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Flexbox</strong>: tata letak 1 dimensi (baris/kolom). Properti penting: <code>display: flex</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex</code>.</li>
+      <li><strong>Grid</strong>: tata letak 2 dimensi (baris & kolom). Properti penting: <code>display: grid</code>, <code>grid-template-columns</code>, <code>grid-template-rows</code>, <code>gap</code>.</li>
+      <li><strong>Animasi</strong>: gunakan <code>@keyframes</code> untuk membuat efek bergerak, berubah warna, atau transisi.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <div class="container">
+      <h3>Flexbox</h3>
+      <div class="flexbox">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+      </div>
+
+      <h3>Grid</h3>
+      <div class="grid">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+      </div>
+
+      <h3>Animasi</h3>
+      <div class="animasi"></div>
+    </div>
+    <p>👉 Coba jalankan kode ini di browser. Flexbox akan menata box secara fleksibel, Grid membuat layout kotak, dan lingkaran akan bergerak dengan animasi.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat halaman dengan:</p>
+    <ul>
+      <li>Header dan footer menggunakan Flexbox (logo di kiri, menu di kanan).</li>
+      <li>Konten utama berupa galeri gambar menggunakan Grid (3 kolom di desktop, 1 kolom di HP).</li>
+      <li>Tambahkan animasi hover pada gambar (misalnya zoom in atau efek bayangan).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat animasi loading sederhana (misalnya lingkaran berputar) menggunakan <code>@keyframes</code>.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="responsive-design.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="javascript-es6.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
