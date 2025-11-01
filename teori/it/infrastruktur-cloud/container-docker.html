@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Container & Docker - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📦 Container & Docker</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Container</strong> adalah teknologi untuk mengemas aplikasi beserta dependensinya agar bisa dijalankan di mana saja secara konsisten.  
+       <strong>Docker</strong> adalah platform populer untuk membuat, mengelola, dan menjalankan container.  
+       Bayangkan container seperti <em>kontainer kapal</em>: apapun isinya, bentuk luar sama sehingga mudah dipindahkan ke kapal manapun.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Dasar Container</h2>
+    <ul>
+      <li><strong>Isolasi</strong>: setiap container punya lingkungan sendiri.</li>
+      <li><strong>Ringan</strong>: berbagi kernel host, lebih cepat dibanding VM.</li>
+      <li><strong>Portabilitas</strong>: bisa dijalankan di laptop, server, atau cloud tanpa perubahan.</li>
+      <li><strong>Reproducibility</strong>: hasil build sama di semua lingkungan.</li>
+    </ul>
+
+    <h2>🔄 VM vs Container</h2>
+    <table>
+      <tr>
+        <th>Aspek</th>
+        <th>VM</th>
+        <th>Container</th>
+      </tr>
+      <tr>
+        <td>OS</td>
+        <td>Butuh OS lengkap</td>
+        <td>Berbagi kernel host</td>
+      </tr>
+      <tr>
+        <td>Startup</td>
+        <td>Lambat (menit)</td>
+        <td>Cepat (detik)</td>
+      </tr>
+      <tr>
+        <td>Resource</td>
+        <td>Lebih berat</td>
+        <td>Ringan</td>
+      </tr>
+      <tr>
+        <td>Kegunaan</td>
+        <td>Legacy apps, isolasi penuh</td>
+        <td>Microservices, deployment cepat</td>
+      </tr>
+    </table>
+
+    <h2>⚙️ Workflow Docker</h2>
+    <ol>
+      <li>Tulis <code>Dockerfile</code> → definisi image.</li>
+      <li>Build image → <code>docker build</code>.</li>
+      <li>Jalankan container → <code>docker run</code>.</li>
+      <li>Bagikan image → push ke Docker Hub/registry.</li>
+    </ol>
+
+    <h3>🔹 Contoh Dockerfile</h3>
+    <pre><code># Dockerfile
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba jalankan aplikasi Node.js sederhana dengan Docker:</p>
+    <ol>
+      <li>Buat <code>Dockerfile</code> seperti contoh di atas.</li>
+      <li>Build image: <code>docker build -t myapp .</code></li>
+      <li>Jalankan container: <code>docker run -p 3000:3000 myapp</code></li>
+      <li>Akses aplikasi di <code>http://localhost:3000</code>.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat aplikasi sederhana (misalnya To-Do API) lalu:</p>
+    <ul>
+      <li>Buat <code>Dockerfile</code> untuk aplikasi tersebut.</li>
+      <li>Build image & jalankan container.</li>
+      <li>Push image ke Docker Hub.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan <code>docker-compose</code> untuk menjalankan aplikasi + database (misalnya Node.js + MongoDB) dalam beberapa container.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="devops-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="orchestration-kubernetes.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
