@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Jaringan Troubleshooting - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🌐 Jaringan Troubleshooting</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>Jaringan Troubleshooting</strong> adalah proses mendiagnosis dan memperbaiki masalah konektivitas jaringan.  
+       Bayangkan seperti <em>detektif lalu lintas</em>: ketika jalan macet, ia mencari tahu apakah masalah ada di jalan utama, lampu lalu lintas, atau kendaraan itu sendiri.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis Masalah Jaringan Umum</h2>
+    <ul>
+      <li><strong>Tidak ada koneksi</strong> → kabel lepas, Wi-Fi mati, adaptor rusak.</li>
+      <li><strong>Koneksi lambat</strong> → bandwidth penuh, interferensi Wi-Fi.</li>
+      <li><strong>DNS error</strong> → server DNS tidak merespons.</li>
+      <li><strong>IP conflict</strong> → dua perangkat memakai IP yang sama.</li>
+      <li><strong>Packet loss</strong> → kabel rusak, router overload.</li>
+    </ul>
+
+    <h2>🧭 Metode Diagnosis</h2>
+    <ol>
+      <li><strong>Cek fisik</strong>: pastikan kabel & router menyala.</li>
+      <li><strong>Ping test</strong>: uji koneksi ke gateway/internet.</li>
+      <li><strong>Traceroute</strong>: lacak jalur paket ke server.</li>
+      <li><strong>Cek konfigurasi IP</strong>: gunakan <code>ipconfig</code> / <code>ifconfig</code>.</li>
+      <li><strong>DNS test</strong>: coba akses via IP langsung.</li>
+    </ol>
+
+    <h2>📊 Contoh Gejala & Solusi</h2>
+    <table>
+      <tr>
+        <th>Gejala</th>
+        <th>Penyebab Umum</th>
+        <th>Solusi Awal</th>
+      </tr>
+      <tr>
+        <td>Tidak bisa internet</td>
+        <td>Kabel lepas, Wi-Fi mati</td>
+        <td>Cek kabel, restart router</td>
+      </tr>
+      <tr>
+        <td>Koneksi lambat</td>
+        <td>Bandwidth penuh, interferensi</td>
+        <td>Matikan aplikasi berat, pindah channel Wi-Fi</td>
+      </tr>
+      <tr>
+        <td>DNS error</td>
+        <td>Server DNS down</td>
+        <td>Ganti DNS ke 8.8.8.8</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan tes koneksi:</p>
+    <ol>
+      <li>Buka Command Prompt/Terminal.</li>
+      <li>Ketik <code>ping google.com</code>.</li>
+      <li>Amati hasil: reply sukses atau request timed out.</li>
+      <li>Jika gagal, coba <code>ping 8.8.8.8</code> untuk cek apakah masalah di DNS.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Pilih salah satu masalah berikut dan buat langkah troubleshooting:</p>
+    <ul>
+      <li>Wi-Fi connect tapi tidak ada internet.</li>
+      <li>Sering disconnect saat meeting online.</li>
+      <li>IP conflict di kantor.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat diagram alur troubleshooting jaringan (mulai dari cek fisik → ping → traceroute → DNS → eskalasi).</p>
+  </section>
+
+  <section class="navigation">
+    <a href="software-troubleshooting.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="tools-dan-utilities.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
