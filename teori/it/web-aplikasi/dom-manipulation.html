@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    button { margin: 5px; padding: 8px 12px; background: #3498db; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #2980b9; }
+    #kotak { width: 100px; height: 100px; background: tomato; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🧩 DOM Manipulation</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>DOM (Document Object Model)</strong> adalah representasi struktur halaman web dalam bentuk pohon objek.  
+       Dengan JavaScript, kita bisa <em>memanipulasi DOM</em> untuk mengubah konten, gaya, atau struktur halaman secara dinamis.  
+       Bayangkan DOM seperti <em>panggung teater</em>, dan JavaScript adalah sutradara yang bisa mengatur aktor (elemen) kapan saja.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Dasar DOM</h2>
+    <ul>
+      <li><code>document.getElementById("id")</code> → memilih elemen berdasarkan ID.</li>
+      <li><code>document.querySelector(".class")</code> → memilih elemen dengan selector CSS.</li>
+      <li><code>element.innerHTML</code> → mengubah isi HTML.</li>
+      <li><code>element.style.property</code> → mengubah gaya CSS.</li>
+      <li><code>element.addEventListener("event", function)</code> → menambahkan event listener.</li>
+      <li><code>document.createElement()</code> → membuat elemen baru.</li>
+      <li><code>parent.appendChild(child)</code> → menambahkan elemen ke dalam parent.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <div class="container">
+      <h3 id="judul">Halo Dunia!</h3>
+      <button onclick="ubahTeks()">Ubah Teks</button>
+      <button onclick="ubahWarna()">Ubah Warna Kotak</button>
+      <button onclick="tambahElemen()">Tambah Elemen</button>
+      <div id="kotak"></div>
+      <div id="list"></div>
+    </div>
+
+    <script>
+      function ubahTeks() {
+        document.getElementById("judul").innerHTML = "Teks sudah diubah dengan DOM!";
+      }
+
+      function ubahWarna() {
+        const kotak = document.getElementById("kotak");
+        kotak.style.background = kotak.style.background === "tomato" ? "green" : "tomato";
+      }
+
+      function tambahElemen() {
+        const itemBaru = document.createElement("p");
+        itemBaru.textContent = "Elemen baru ditambahkan!";
+        document.getElementById("list").appendChild(itemBaru);
+      }
+    </script>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat halaman dengan fitur berikut:</p>
+    <ul>
+      <li>Input teks + tombol "Tambah" → menambahkan item ke daftar.</li>
+      <li>Tombol "Hapus Semua" → menghapus semua item dari daftar.</li>
+      <li>Setiap item daftar bisa dihapus dengan klik.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan efek animasi sederhana (misalnya perubahan warna atau fade out) saat item dihapus.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="form-validasi.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="responsive-design.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
