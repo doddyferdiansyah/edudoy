@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>SQL Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>💻 SQL Dasar</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>SQL (Structured Query Language)</strong> adalah bahasa standar untuk mengelola database relasional.  
+       Dengan SQL, kita bisa menambahkan, membaca, memperbarui, dan menghapus data.  
+       Bayangkan seperti <em>remote control</em> untuk database: kita bisa memberi perintah sesuai kebutuhan.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Perintah SQL Dasar</h2>
+    <ul>
+      <li><strong>SELECT</strong> → mengambil data dari tabel.</li>
+      <li><strong>INSERT</strong> → menambahkan data baru.</li>
+      <li><strong>UPDATE</strong> → memperbarui data yang sudah ada.</li>
+      <li><strong>DELETE</strong> → menghapus data.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh penggunaan SQL dasar pada tabel <code>mahasiswa</code>:</p>
+    <pre><code>-- Menambahkan data
+INSERT INTO mahasiswa (nama, umur, jurusan, tanggal_daftar)
+VALUES ('Budi', 20, 'Informatika', '2025-01-01');
+
+-- Membaca data
+SELECT * FROM mahasiswa;
+
+-- Memperbarui data
+UPDATE mahasiswa
+SET umur = 21
+WHERE nama = 'Budi';
+
+-- Menghapus data
+DELETE FROM mahasiswa
+WHERE nama = 'Budi';
+</code></pre>
+    <p>👉 Perintah di atas menambahkan data mahasiswa, menampilkan semua data, memperbarui umur, lalu menghapus data.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat tabel <code>pegawai</code> (jika belum ada), lalu lakukan hal berikut:</p>
+    <ul>
+      <li>Tambahkan 3 data pegawai baru.</li>
+      <li>Tampilkan semua data pegawai.</li>
+      <li>Perbarui posisi salah satu pegawai.</li>
+      <li>Hapus 1 pegawai dari tabel.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan <code>WHERE</code> untuk memastikan hanya data tertentu yang diperbarui atau dihapus.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="struktur-tabel.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="filter-sort.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
