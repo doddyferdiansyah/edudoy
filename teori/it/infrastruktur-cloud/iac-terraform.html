@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Infrastructure as Code (Terraform) - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🛠️ Infrastructure as Code (Terraform)</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Infrastructure as Code (IaC)</strong> adalah pendekatan mengelola infrastruktur dengan kode, bukan konfigurasi manual.  
+       <strong>Terraform</strong> adalah salah satu tool populer untuk IaC, memungkinkan kita mendefinisikan infrastruktur dalam file deklaratif.  
+       Bayangkan IaC seperti <em>arsitek</em> yang menggambar blueprint rumah: sekali desain dibuat, rumah bisa dibangun ulang dengan hasil konsisten.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama IaC</h2>
+    <ul>
+      <li><strong>Deklaratif</strong>: kita mendefinisikan "apa yang diinginkan", bukan "bagaimana caranya".</li>
+      <li><strong>Idempotensi</strong>: menjalankan kode berulang kali menghasilkan kondisi akhir yang sama.</li>
+      <li><strong>Versioning</strong>: infrastruktur bisa dikelola dengan Git seperti kode aplikasi.</li>
+      <li><strong>Portabilitas</strong>: bisa digunakan lintas cloud provider.</li>
+    </ul>
+
+    <h2>⚙️ Workflow Terraform</h2>
+    <ol>
+      <li>Tulis file konfigurasi (<code>.tf</code>).</li>
+      <li>Inisialisasi project: <code>terraform init</code>.</li>
+      <li>Preview perubahan: <code>terraform plan</code>.</li>
+      <li>Terapkan perubahan: <code>terraform apply</code>.</li>
+      <li>Hapus resource: <code>terraform destroy</code>.</li>
+    </ol>
+
+    <h3>🔹 Contoh Konfigurasi Terraform (AWS EC2)</h3>
+    <pre><code># main.tf
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "MyFirstInstance"
+  }
+}
+</code></pre>
+    <p>👉 Kode di atas akan membuat sebuah instance EC2 di AWS.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba buat file <code>main.tf</code> untuk membuat resource sederhana:</p>
+    <ul>
+      <li>Gunakan provider lokal (contoh: <code>local_file</code> untuk membuat file teks).</li>
+      <li>Jalankan <code>terraform init</code>, <code>terraform plan</code>, dan <code>terraform apply</code>.</li>
+      <li>Lihat hasil file yang dibuat otomatis oleh Terraform.</li>
+    </ul>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat infrastruktur sederhana dengan Terraform:</p>
+    <ul>
+      <li>1 VM (EC2 di AWS atau Compute Engine di GCP).</li>
+      <li>1 Storage bucket.</li>
+      <li>Tambahkan tag/nama resource sesuai standar.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan <code>variables.tf</code> untuk parameter (misalnya nama instance, region) dan <code>outputs.tf</code> untuk menampilkan informasi penting (misalnya IP publik VM).</p>
+  </section>
+
+  <section class="navigation">
+    <a href="orchestration-kubernetes.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-deploy-cloud.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
