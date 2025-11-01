@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Keamanan Web - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🛡️ Keamanan Web</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Keamanan Web</strong> adalah praktik melindungi aplikasi dari serangan yang dapat mencuri data, merusak sistem, atau mengambil alih kontrol.  
+       Bayangkan website seperti <em>rumah</em>: jika pintu dan jendela tidak dikunci, pencuri bisa masuk dengan mudah.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Ancaman Umum</h2>
+    <ul>
+      <li><strong>SQL Injection</strong>: penyerang menyisipkan query SQL berbahaya.</li>
+      <li><strong>XSS (Cross-Site Scripting)</strong>: penyerang menyisipkan script berbahaya ke halaman web.</li>
+      <li><strong>CSRF (Cross-Site Request Forgery)</strong>: penyerang memaksa user melakukan aksi tanpa sadar.</li>
+      <li><strong>Brute Force</strong>: mencoba kombinasi password berulang-ulang.</li>
+      <li><strong>Session Hijacking</strong>: mencuri session ID untuk mengambil alih akun.</li>
+    </ul>
+
+    <h2>📖 Best Practices</h2>
+    <ul>
+      <li>Gunakan <strong>prepared statements</strong> atau ORM untuk mencegah SQL Injection.</li>
+      <li>Escape/encode input user untuk mencegah XSS.</li>
+      <li>Gunakan <strong>CSRF token</strong> pada form.</li>
+      <li>Hash password dengan algoritma kuat (bcrypt, Argon2).</li>
+      <li>Gunakan HTTPS untuk enkripsi komunikasi.</li>
+      <li>Batasi percobaan login (rate limiting).</li>
+      <li>Gunakan <strong>helmet</strong> (Express middleware) untuk menambah header keamanan.</li>
+    </ul>
+
+    <h3>🔹 Contoh: SQL Injection vs Prepared Statement</h3>
+    <pre><code>// ❌ Rentan SQL Injection
+db.query("SELECT * FROM users WHERE nama = '" + req.body.nama + "'");
+
+// ✅ Aman dengan prepared statement
+db.query("SELECT * FROM users WHERE nama = ?", [req.body.nama]);
+</code></pre>
+
+    <h3>🔹 Contoh: Express Helmet</h3>
+    <pre><code>const helmet = require("helmet");
+app.use(helmet());</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat form login sederhana, lalu:</p>
+    <ul>
+      <li>Gunakan prepared statement untuk query database.</li>
+      <li>Tambahkan middleware <code>helmet</code> di Express.</li>
+      <li>Gunakan HTTPS (self-signed certificate untuk lokal).</li>
+    </ul>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat aplikasi Express dengan fitur keamanan:</p>
+    <ul>
+      <li>Form login dengan validasi input.</li>
+      <li>Gunakan bcrypt untuk hash password.</li>
+      <li>Tambahkan CSRF token pada form.</li>
+      <li>Gunakan helmet untuk menambah header keamanan.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Implementasikan rate limiting untuk mencegah brute force login.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="auth-session.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="deployment.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
