@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Framework Frontend - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚛️ Framework Frontend (React & Vue)</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Framework Frontend</strong> membantu membangun aplikasi web modern dengan lebih cepat, terstruktur, dan interaktif.  
+       React dan Vue adalah dua framework/library populer.  
+       Bayangkan framework seperti <em>peralatan dapur lengkap</em>: kita tidak perlu membuat pisau, panci, atau kompor dari nol—semua sudah tersedia untuk memasak lebih efisien.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Komponen</strong>: potongan UI yang dapat digunakan kembali.</li>
+      <li><strong>State</strong>: data dinamis yang memengaruhi tampilan.</li>
+      <li><strong>Props</strong>: data yang dikirim dari parent ke child component.</li>
+      <li><strong>Reaktivitas</strong>: UI otomatis berubah saat data berubah.</li>
+    </ul>
+
+    <h3>🔹 React (Library)</h3>
+    <pre><code>// React Component
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Nilai: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Tambah&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+</code></pre>
+
+    <h3>🔹 Vue (Framework)</h3>
+    <pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Nilai: {{ count }}&lt;/p&gt;
+    &lt;button @click="count++"&gt;Tambah&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return { count: 0 };
+  }
+}
+&lt;/script&gt;
+</code></pre>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba buat aplikasi <strong>Counter</strong> sederhana menggunakan React atau Vue:</p>
+    <ul>
+      <li>React: gunakan <code>useState</code> untuk menyimpan nilai counter.</li>
+      <li>Vue: gunakan <code>data()</code> untuk menyimpan nilai counter.</li>
+      <li>Tampilkan nilai counter dan tombol untuk menambahkannya.</li>
+    </ul>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat aplikasi kecil dengan framework pilihanmu:</p>
+    <ul>
+      <li>Form input untuk menambahkan item ke daftar.</li>
+      <li>Tampilkan daftar item di layar.</li>
+      <li>Tambahkan tombol hapus untuk setiap item.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Gunakan <code>localStorage</code> agar daftar tetap tersimpan meskipun halaman direfresh.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="mini-project-todo.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="backend-dasar.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
