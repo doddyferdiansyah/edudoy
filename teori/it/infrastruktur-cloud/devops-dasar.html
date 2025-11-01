@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dasar DevOps - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚙️ Dasar DevOps</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>DevOps</strong> adalah budaya dan praktik yang menyatukan tim <em>Development</em> dan <em>Operations</em> untuk mempercepat siklus pengembangan, meningkatkan kualitas, dan memastikan aplikasi dapat berjalan stabil di produksi.  
+       Bayangkan DevOps seperti <em>orkestra</em>: developer adalah pemain musik, ops adalah teknisi panggung, dan DevOps adalah konduktor yang menyatukan keduanya agar pertunjukan berjalan harmonis.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama DevOps</h2>
+    <ul>
+      <li><strong>Kolaborasi</strong>: hilangkan sekat antara dev & ops.</li>
+      <li><strong>Automasi</strong>: otomatisasi build, test, deploy.</li>
+      <li><strong>Continuous Integration (CI)</strong>: kode baru digabung & diuji secara otomatis.</li>
+      <li><strong>Continuous Delivery/Deployment (CD)</strong>: aplikasi siap dirilis kapan saja.</li>
+      <li><strong>Monitoring</strong>: pantau performa & error di produksi.</li>
+      <li><strong>Feedback Loop</strong>: perbaikan cepat berdasarkan data nyata.</li>
+    </ul>
+
+    <h2>🔧 Tools Populer</h2>
+    <ul>
+      <li><strong>CI/CD</strong>: GitHub Actions, GitLab CI, Jenkins.</li>
+      <li><strong>Configuration Management</strong>: Ansible, Puppet, Chef.</li>
+      <li><strong>Container & Orchestration</strong>: Docker, Kubernetes.</li>
+      <li><strong>Monitoring</strong>: Prometheus, Grafana, ELK Stack.</li>
+    </ul>
+
+    <h2>🔄 Alur DevOps (Pipeline)</h2>
+    <ol>
+      <li>Developer push kode ke repository.</li>
+      <li>CI server build & jalankan unit test.</li>
+      <li>Jika lolos, kode di-deploy ke staging.</li>
+      <li>Setelah validasi, otomatis deploy ke production.</li>
+      <li>Monitoring & feedback untuk perbaikan.</li>
+    </ol>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Buat pipeline sederhana dengan GitHub Actions:</p>
+    <pre><code># .github/workflows/nodejs.yml
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm test
+</code></pre>
+    <p>👉 Pipeline ini otomatis menjalankan <code>npm install</code> dan <code>npm test</code> setiap kali ada push ke repo.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat pipeline CI/CD sederhana:</p>
+    <ul>
+      <li>Gunakan GitHub Actions atau GitLab CI.</li>
+      <li>Pipeline harus build & test aplikasi Node.js.</li>
+      <li>Jika sukses, deploy otomatis ke staging (misalnya Heroku atau Vercel).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan notifikasi ke Slack/Discord jika pipeline gagal.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="cloud-providers.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="container-docker.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
