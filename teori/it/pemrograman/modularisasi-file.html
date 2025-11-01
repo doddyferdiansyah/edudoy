@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Modularisasi & File - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📂 Modularisasi & File</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Modularisasi</strong> adalah cara memecah program besar menjadi bagian-bagian kecil (modul) agar lebih terstruktur.  
+       <strong>File handling</strong> adalah kemampuan program untuk membaca dan menulis data ke file.  
+       Bayangkan seperti <em>perpustakaan</em>: setiap buku (modul) punya isi sendiri, dan kita bisa membuka/menyimpan catatan (file).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama</h2>
+    <ul>
+      <li><strong>Modularisasi</strong>: menggunakan <code>import</code> untuk memanggil fungsi dari file lain.</li>
+      <li><strong>File Handling</strong>: membuka file dengan <code>open()</code>, membaca dengan <code>read()</code>, menulis dengan <code>write()</code>.</li>
+      <li>Mode file: <code>"r"</code> (read), <code>"w"</code> (write), <code>"a"</code> (append).</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code># === file: mymath.py ===
+def tambah(a, b):
+    return a + b
+
+# === file utama: main.py ===
+import mymath
+
+print(mymath.tambah(3, 4))  # hasil: 7
+
+# === File Handling ===
+# Menulis ke file
+with open("data.txt", "w") as f:
+    f.write("Halo, ini disimpan di file!")
+
+# Membaca file
+with open("data.txt", "r") as f:
+    isi = f.read()
+    print("Isi file:", isi)
+</code></pre>
+    <p>👉 Contoh di atas menunjukkan bagaimana membuat modul sendiri dan membaca/menulis file.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat modul bernama <code>util.py</code> yang berisi fungsi <code>hitung_rata</code> untuk menghitung rata-rata dari list angka.  
+       Lalu, di file utama:</p>
+    <ul>
+      <li>Import fungsi tersebut.</li>
+      <li>Baca data angka dari file <code>nilai.txt</code> (misalnya: 80, 90, 70).</li>
+      <li>Gunakan <code>hitung_rata</code> untuk menampilkan rata-rata nilai.</li>
+    </ul>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="struktur-data-dasar.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="error-handling.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
