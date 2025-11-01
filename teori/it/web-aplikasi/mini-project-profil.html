@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Halaman Profil - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .profile-pic {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    p {
+      text-align: center;
+      color: #555;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+    ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>👤 Mini Project: Halaman Profil</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Pada mini project ini, kita akan membuat halaman profil sederhana menggunakan HTML dan CSS.  
+       Bayangkan ini sebagai <em>kartu nama digital</em> yang menampilkan identitas, hobi, dan link sosial media.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Struktur Halaman</h2>
+    <p>Halaman profil akan berisi:</p>
+    <ul>
+      <li>Foto profil</li>
+      <li>Nama & deskripsi singkat</li>
+      <li>Daftar hobi</li>
+      <li>Link ke media sosial</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh kode HTML + CSS untuk halaman profil:</p>
+    <pre><code>&lt;div class="container"&gt;
+  &lt;img src="foto.jpg" alt="Foto Profil" class="profile-pic"&gt;
+  &lt;h1&gt;Doddy&lt;/h1&gt;
+  &lt;p&gt;IT Support Specialist & Content Creator&lt;/p&gt;
+
+  &lt;h3&gt;Hobi&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Coding&lt;/li&gt;
+    &lt;li&gt;Membaca&lt;/li&gt;
+    &lt;li&gt;Gaming&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3&gt;Temukan Saya&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://linkedin.com"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+    <p>👉 Simpan file ini sebagai <code>profil.html</code> dan buka di browser.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Kembangkan halaman profil dengan fitur tambahan:</p>
+    <ul>
+      <li>Tambahkan bagian "Tentang Saya" dengan paragraf lebih panjang.</li>
+      <li>Tambahkan tabel sederhana berisi daftar pengalaman kerja atau pendidikan.</li>
+      <li>Tambahkan tombol "Hubungi Saya" yang mengarah ke email.</li>
+      <li>Gunakan CSS untuk membuat tampilan lebih menarik (warna, font, hover effect).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat halaman profil menjadi responsif dengan CSS media query agar tetap rapi di layar HP.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="devtools-accessibility.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="../web-aplikasi/form-validasi.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
