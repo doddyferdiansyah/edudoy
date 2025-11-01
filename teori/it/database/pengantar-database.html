@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pengantar Database - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>📘 Pengantar Database</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p><strong>Database</strong> adalah sistem yang digunakan untuk menyimpan, mengelola, dan mengambil data secara terstruktur.  
+       Bayangkan seperti <em>lemari arsip digital</em>: setiap laci (tabel) berisi dokumen (baris) dengan label tertentu (kolom).  
+       Dengan database, data dapat diakses dengan cepat, aman, dan efisien.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Mengapa Database Penting?</h2>
+    <ul>
+      <li><strong>Organisasi Data</strong>: menyimpan data dalam bentuk tabel yang rapi.</li>
+      <li><strong>Konsistensi</strong>: menjaga agar data tetap akurat dan tidak duplikat.</li>
+      <li><strong>Keamanan</strong>: mengatur siapa yang boleh mengakses data.</li>
+      <li><strong>Efisiensi</strong>: memudahkan pencarian dan manipulasi data.</li>
+    </ul>
+    <p>Database digunakan di hampir semua aplikasi modern: e-commerce, media sosial, perbankan, hingga sistem akademik.</p>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba buat database sederhana di MySQL atau SQLite:</p>
+    <pre><code>-- Membuat database baru
+CREATE DATABASE sekolah;
+
+-- Menggunakan database
+USE sekolah;
+
+-- Membuat tabel siswa
+CREATE TABLE siswa (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(50),
+    umur INT,
+    kelas VARCHAR(10)
+);
+</code></pre>
+    <p>👉 Di atas kita membuat database <code>sekolah</code> dengan tabel <code>siswa</code> yang punya kolom <code>id</code>, <code>nama</code>, <code>umur</code>, dan <code>kelas</code>.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat database bernama <code>perpustakaan</code> dengan tabel <code>buku</code> yang memiliki kolom:</p>
+    <ul>
+      <li><code>id</code> (primary key, auto increment)</li>
+      <li><code>judul</code> (teks)</li>
+      <li><code>penulis</code> (teks)</li>
+      <li><code>tahun_terbit</code> (angka)</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan 3 data buku menggunakan perintah <code>INSERT</code>.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="index.html" class="btn back">⬅️ Kembali ke Modul Database</a>
+    <a href="struktur-tabel.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
