@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>OOP Dasar - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🏗️ OOP Dasar</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Object-Oriented Programming (OOP)</strong> adalah paradigma pemrograman yang berfokus pada objek.  
+       Objek menggabungkan data (atribut) dan perilaku (metode).  
+       Bayangkan seperti <em>mobil</em>: punya atribut (warna, merk) dan metode (jalan, berhenti).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Konsep Utama OOP</h2>
+    <ul>
+      <li><strong>Kelas (class)</strong>: cetak biru untuk membuat objek.</li>
+      <li><strong>Objek (object)</strong>: instance nyata dari sebuah kelas.</li>
+      <li><strong>Atribut</strong>: variabel yang dimiliki objek.</li>
+      <li><strong>Metode</strong>: fungsi yang dimiliki objek.</li>
+      <li><strong>Encapsulation</strong>: menyembunyikan detail internal, hanya menyediakan antarmuka.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <pre><code># Membuat class
+class Mobil:
+    def __init__(self, merk, warna):
+        self.merk = merk
+        self.warna = warna
+
+    def jalan(self):
+        print(self.merk, "berjalan di jalan raya.")
+
+# Membuat objek
+mobil1 = Mobil("Toyota", "Merah")
+mobil2 = Mobil("Honda", "Hitam")
+
+# Memanggil metode
+mobil1.jalan()
+mobil2.jalan()
+</code></pre>
+    <p>👉 Kelas <code>Mobil</code> punya atribut <code>merk</code> dan <code>warna</code>, serta metode <code>jalan()</code>.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat kelas bernama <code>Mahasiswa</code> dengan atribut <code>nama</code> dan <code>nim</code>.  
+       Tambahkan metode <code>perkenalan()</code> yang menampilkan:  
+       <em>"Halo, nama saya [nama], NIM saya [nim]"</em>.</p>
+    <p><strong>Tugas tambahan:</strong> Buat beberapa objek mahasiswa dan panggil metode <code>perkenalan()</code> untuk masing-masing.</p>
+  </section>
+
+  <!-- Navigasi antar materi -->
+  <section class="navigation">
+    <a href="error-handling.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-todolist.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
