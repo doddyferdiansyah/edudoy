@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Relasi & Foreign Key - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔗 Relasi & Foreign Key</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p><strong>Relasi</strong> adalah hubungan antar tabel dalam database.  
+       <strong>Foreign Key</strong> digunakan untuk menghubungkan satu tabel dengan tabel lain.  
+       Bayangkan seperti <em>kartu anggota perpustakaan</em>: kartu punya ID anggota (foreign key) yang merujuk ke data anggota di tabel utama.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis Relasi</h2>
+    <ul>
+      <li><strong>One-to-One (1:1)</strong>: satu data di tabel A berhubungan dengan satu data di tabel B.</li>
+      <li><strong>One-to-Many (1:N)</strong>: satu data di tabel A bisa berhubungan dengan banyak data di tabel B.</li>
+      <li><strong>Many-to-Many (M:N)</strong>: banyak data di tabel A bisa berhubungan dengan banyak data di tabel B (biasanya butuh tabel penghubung).</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh relasi One-to-Many: Satu <code>kelas</code> memiliki banyak <code>mahasiswa</code>.</p>
+    <pre><code>-- Membuat tabel kelas
+CREATE TABLE kelas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama_kelas VARCHAR(50) NOT NULL
+);
+
+-- Membuat tabel mahasiswa dengan foreign key ke kelas
+CREATE TABLE mahasiswa (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(50) NOT NULL,
+    kelas_id INT,
+    FOREIGN KEY (kelas_id) REFERENCES kelas(id)
+);
+
+-- Menambahkan data kelas
+INSERT INTO kelas (nama_kelas) VALUES ('Informatika A'), ('Informatika B');
+
+-- Menambahkan data mahasiswa
+INSERT INTO mahasiswa (nama, kelas_id) VALUES 
+('Andi', 1),
+('Budi', 1),
+('Citra', 2);
+</code></pre>
+    <p>👉 Kolom <code>kelas_id</code> di tabel <code>mahasiswa</code> adalah foreign key yang merujuk ke <code>kelas.id</code>.</p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat relasi antara tabel <code>pegawai</code> dan <code>departemen</code>:</p>
+    <ul>
+      <li>Tabel <code>departemen</code> memiliki kolom <code>id</code> (PK) dan <code>nama_departemen</code>.</li>
+      <li>Tabel <code>pegawai</code> memiliki kolom <code>id</code> (PK), <code>nama</code>, <code>posisi</code>, dan <code>departemen_id</code> (FK).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Tambahkan minimal 2 departemen dan 5 pegawai, lalu pastikan setiap pegawai terhubung ke departemen yang sesuai.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="mini-project-kontak.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="join.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
