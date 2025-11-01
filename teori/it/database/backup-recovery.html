@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Backup & Recovery - Fixly Learning Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html">Teori Dasar</a></li>
+        <li><a href="../index.html">IT</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>💾 Backup & Recovery</h1>
+    <p class="tag advanced">Level: Advanced</p>
+    <p><strong>Backup</strong> adalah proses membuat salinan data untuk mencegah kehilangan,  
+       sedangkan <strong>Recovery</strong> adalah proses mengembalikan data dari backup ketika terjadi kegagalan.  
+       Bayangkan seperti <em>menyimpan kunci cadangan rumah</em>: jika kunci utama hilang, kita masih bisa masuk dengan cadangan.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis Backup</h2>
+    <ul>
+      <li><strong>Full Backup</strong>: menyalin seluruh database.</li>
+      <li><strong>Incremental Backup</strong>: hanya menyalin perubahan sejak backup terakhir.</li>
+      <li><strong>Differential Backup</strong>: menyalin perubahan sejak full backup terakhir.</li>
+    </ul>
+
+    <h2>📖 Strategi Recovery</h2>
+    <ul>
+      <li><strong>Point-in-Time Recovery</strong>: mengembalikan database ke kondisi tertentu.</li>
+      <li><strong>Disaster Recovery</strong>: pemulihan total setelah kegagalan besar (server crash, bencana).</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Contoh backup & restore di MySQL:</p>
+    <pre><code>-- Backup database ke file .sql
+mysqldump -u root -p nama_database > backup.sql
+
+-- Restore database dari file .sql
+mysql -u root -p nama_database < backup.sql
+</code></pre>
+
+    <p>👉 Untuk PostgreSQL:</p>
+    <pre><code>-- Backup
+pg_dump nama_database > backup.sql
+
+-- Restore
+psql nama_database < backup.sql
+</code></pre>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat skenario backup & recovery untuk database <code>inventaris_db</code>:</p>
+    <ul>
+      <li>Lakukan full backup database ke file <code>inventaris_backup.sql</code>.</li>
+      <li>Hapus salah satu tabel, lalu lakukan recovery dari backup.</li>
+      <li>Uji apakah data kembali seperti semula.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat jadwal backup otomatis harian menggunakan script atau cron job.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="transaksi-acid.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="keamanan-database.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
