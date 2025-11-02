@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>VPN & Enkripsi - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔐 VPN & Enkripsi</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>VPN (Virtual Private Network) dan enkripsi adalah dua teknologi penting untuk menjaga keamanan data saat transit.  
+       Bayangkan VPN seperti terowongan rahasia di jalan raya, sedangkan enkripsi adalah kode rahasia yang hanya bisa dibaca oleh penerima yang sah.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Apa Itu VPN?</h2>
+    <ul>
+      <li>VPN adalah layanan yang membuat koneksi internet lebih aman dengan mengenkripsi lalu lintas data.</li>
+      <li>Membuat “terowongan” privat antara perangkat pengguna dan server VPN.</li>
+      <li>Menyembunyikan alamat IP asli pengguna.</li>
+    </ul>
+
+    <h3>Manfaat VPN</h3>
+    <ul>
+      <li>Melindungi data saat menggunakan Wi-Fi publik.</li>
+      <li>Menyembunyikan lokasi dan identitas online.</li>
+      <li>Mengakses konten yang dibatasi wilayah.</li>
+    </ul>
+
+    <h2>📖 Apa Itu Enkripsi?</h2>
+    <ul>
+      <li>Enkripsi adalah proses mengubah data menjadi kode yang tidak bisa dibaca tanpa kunci.</li>
+      <li>Hanya penerima yang memiliki kunci dekripsi yang bisa membaca data asli.</li>
+      <li>Contoh: HTTPS menggunakan TLS untuk mengenkripsi komunikasi web.</li>
+    </ul>
+
+    <h3>Jenis Enkripsi</h3>
+    <ul>
+      <li><strong>Simetris</strong>: kunci yang sama digunakan untuk enkripsi & dekripsi (contoh: AES).</li>
+      <li><strong>Asimetris</strong>: menggunakan pasangan kunci publik & privat (contoh: RSA).</li>
+      <li><strong>Hashing</strong>: mengubah data menjadi nilai tetap, tidak bisa dibalik (contoh: SHA-256).</li>
+    </ul>
+
+    <h2>📊 Perbandingan VPN & Enkripsi</h2>
+    <table>
+      <tr>
+        <th>Aspek</th>
+        <th>VPN</th>
+        <th>Enkripsi</th>
+      </tr>
+      <tr>
+        <td>Fungsi</td>
+        <td>Membuat terowongan aman</td>
+        <td>Mengubah data jadi kode rahasia</td>
+      </tr>
+      <tr>
+        <td>Fokus</td>
+        <td>Privasi & keamanan koneksi</td>
+        <td>Kerumitan data agar tidak bisa dibaca</td>
+      </tr>
+      <tr>
+        <td>Contoh</td>
+        <td>OpenVPN, WireGuard</td>
+        <td>AES, RSA, TLS</td>
+      </tr>
+    </table>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>VPN</strong>: seperti mengirim surat lewat jalur kurir rahasia.</li>
+      <li><strong>Enkripsi</strong>: seperti menulis surat dengan sandi khusus yang hanya bisa dibaca penerima.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba gunakan VPN gratis/open-source:</p>
+    <ol>
+      <li>Install aplikasi VPN (contoh: ProtonVPN Free).</li>
+      <li>Aktifkan VPN dan cek alamat IP sebelum & sesudah (gunakan <code>whatismyip.com</code>).</li>
+      <li>Diskusikan: apa perbedaan alamat IP? Apa manfaatnya?</li>
+    </ol>
+    <p>Untuk enkripsi, coba:</p>
+    <ol>
+      <li>Buka terminal.</li>
+      <li>Ketik: <code>echo "Halo Dunia" | openssl enc -aes-256-cbc -a -salt -pass pass:12345</code></li>
+      <li>Lihat hasil enkripsi berupa teks acak.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat simulasi komunikasi aman:</p>
+    <ul>
+      <li>Tulis pesan rahasia dan enkripsi dengan tool online/terminal.</li>
+      <li>Berikan pesan terenkripsi ke temanmu.</li>
+      <li>Berikan kunci dekripsi hanya ke teman tersebut.</li>
+      <li>Lihat apakah hanya dia yang bisa membaca pesan asli.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat diagram alur komunikasi dengan VPN + enkripsi, tunjukkan bagaimana data bergerak dari client ke server.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="firewall-dan-ids.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="segmentasi-dan-zero-trust.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
