@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project: Network Defense Simulator - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🎯 Mini Project: Network Defense Simulator</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Dalam mini project ini, kamu akan berperan sebagai admin jaringan yang harus melindungi server dari serangan.  
+       Tujuannya adalah memahami bagaimana firewall, IDS, dan monitoring bekerja bersama untuk mempertahankan jaringan.  
+       Bayangkan seperti latihan perang: kamu membuat benteng, menempatkan penjaga, dan menguji pertahanan dari serangan simulasi.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Alur Simulasi</h2>
+    <ol>
+      <li><strong>Setup Lingkungan</strong>: gunakan VM atau lab jaringan sederhana (misalnya VirtualBox/VMware + Linux server).</li>
+      <li><strong>Konfigurasi Firewall</strong>: izinkan hanya port 22 (SSH) dan 80/443 (web).</li>
+      <li><strong>Pasang IDS</strong>: gunakan Snort atau Suricata untuk mendeteksi serangan.</li>
+      <li><strong>Simulasi Serangan</strong>: lakukan port scanning dengan <code>nmap</code> dari mesin attacker.</li>
+      <li><strong>Analisis</strong>: lihat log firewall & alert IDS, lalu buat laporan.</li>
+    </ol>
+
+    <h2>📊 Komponen yang Digunakan</h2>
+    <table>
+      <tr>
+        <th>Komponen</th>
+        <th>Fungsi</th>
+        <th>Contoh Tool</th>
+      </tr>
+      <tr>
+        <td>Firewall</td>
+        <td>Membatasi akses port</td>
+        <td>UFW, iptables</td>
+      </tr>
+      <tr>
+        <td>IDS</td>
+        <td>Mendeteksi aktivitas mencurigakan</td>
+        <td>Snort, Suricata</td>
+      </tr>
+      <tr>
+        <td>Attacker</td>
+        <td>Menguji pertahanan</td>
+        <td>nmap, hping3</td>
+      </tr>
+      <tr>
+        <td>Monitoring</td>
+        <td>Mencatat & menganalisis log</td>
+        <td>Wireshark, Kibana</td>
+      </tr>
+    </table>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>Firewall</strong>: seperti pagar rumah dengan pintu yang hanya terbuka untuk tamu tertentu.</li>
+      <li><strong>IDS</strong>: seperti alarm rumah yang berbunyi saat ada gerakan mencurigakan.</li>
+      <li><strong>Monitoring</strong>: seperti satpam yang mencatat semua aktivitas di buku tamu.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan simulasi sederhana di Linux:</p>
+    <ol>
+      <li>Aktifkan firewall: <code>sudo ufw enable</code>.</li>
+      <li>Izinkan port web: <code>sudo ufw allow 80</code> dan <code>sudo ufw allow 443</code>.</li>
+      <li>Blokir port lain secara default: <code>sudo ufw default deny incoming</code>.</li>
+      <li>Install Snort: <code>sudo apt install snort</code>.</li>
+      <li>Lakukan port scan dari mesin lain: <code>nmap -sS target_ip</code>.</li>
+      <li>Lihat apakah Snort menghasilkan alert.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat skenario pertahanan jaringan mini:</p>
+    <ul>
+      <li>Setup 1 server (target), 1 attacker, 1 IDS.</li>
+      <li>Konfigurasi firewall agar hanya layanan web bisa diakses.</li>
+      <li>Lakukan serangan port scan & brute force sederhana.</li>
+      <li>Catat hasil: port mana yang terbuka, alert apa yang muncul.</li>
+      <li>Buat laporan singkat: kelemahan apa yang masih ada, dan bagaimana memperbaikinya.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat diagram arsitektur simulasi pertahanan jaringanmu, lengkap dengan alur serangan dan respon pertahanan.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="praktik-packet-analysis.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="index.html" class="btn next">Kembali ke Modul ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
