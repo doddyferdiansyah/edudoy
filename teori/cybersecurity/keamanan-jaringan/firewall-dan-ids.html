@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Firewall & IDS - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🛡️ Firewall & IDS</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Firewall dan IDS adalah dua komponen penting dalam pertahanan jaringan.  
+       Bayangkan firewall seperti satpam di pintu masuk gedung yang memeriksa siapa yang boleh masuk,  
+       sedangkan IDS seperti CCTV yang mengawasi aktivitas di dalam gedung untuk mendeteksi hal mencurigakan.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Apa Itu Firewall?</h2>
+    <ul>
+      <li>Firewall adalah sistem yang mengontrol lalu lintas jaringan berdasarkan aturan tertentu.</li>
+      <li>Bisa berupa perangkat keras (hardware) atau perangkat lunak (software).</li>
+      <li>Berfungsi sebagai “gerbang” yang menyaring paket data masuk dan keluar.</li>
+    </ul>
+
+    <h3>Jenis Firewall</h3>
+    <ul>
+      <li><strong>Packet Filtering</strong>: memeriksa header paket (IP, port, protokol).</li>
+      <li><strong>Stateful Inspection</strong>: melacak status koneksi, lebih cerdas dari packet filtering.</li>
+      <li><strong>Application Firewall</strong>: memfilter lalu lintas di level aplikasi (HTTP, FTP).</li>
+      <li><strong>Next-Gen Firewall (NGFW)</strong>: gabungan firewall + IDS/IPS + fitur tambahan.</li>
+    </ul>
+
+    <h2>📖 Apa Itu IDS?</h2>
+    <ul>
+      <li>IDS (Intrusion Detection System) adalah sistem yang mendeteksi aktivitas mencurigakan dalam jaringan.</li>
+      <li>IDS tidak memblokir, hanya memberi peringatan (alert).</li>
+      <li>Jika IDS ditambah kemampuan memblokir, disebut IPS (Intrusion Prevention System).</li>
+    </ul>
+
+    <h3>Jenis IDS</h3>
+    <ul>
+      <li><strong>Network-based IDS (NIDS)</strong>: memantau lalu lintas jaringan.</li>
+      <li><strong>Host-based IDS (HIDS)</strong>: memantau aktivitas pada host/komputer tertentu.</li>
+    </ul>
+
+    <h2>📊 Perbandingan Firewall & IDS</h2>
+    <table>
+      <tr>
+        <th>Aspek</th>
+        <th>Firewall</th>
+        <th>IDS</th>
+      </tr>
+      <tr>
+        <td>Fungsi</td>
+        <td>Mengontrol akses</td>
+        <td>Mendeteksi serangan</td>
+      </tr>
+      <tr>
+        <td>Posisi</td>
+        <td>Gerbang masuk/keluar jaringan</td>
+        <td>Di dalam jaringan/host</td>
+      </tr>
+      <tr>
+        <td>Aksi</td>
+        <td>Memblokir atau mengizinkan</td>
+        <td>Memberi peringatan</td>
+      </tr>
+    </table>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>Firewall</strong>: Satpam di pintu masuk gedung, hanya mengizinkan orang dengan ID valid.</li>
+      <li><strong>IDS</strong>: CCTV di dalam gedung, mendeteksi aktivitas mencurigakan.</li>
+      <li><strong>IPS</strong>: Satpam yang langsung bertindak jika melihat aktivitas mencurigakan.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba konfigurasi firewall sederhana di perangkatmu:</p>
+    <ol>
+      <li>Buka terminal (Linux/Mac) atau PowerShell (Windows).</li>
+      <li>Linux: gunakan <code>sudo ufw enable</code> untuk mengaktifkan firewall.</li>
+      <li>Cek status: <code>sudo ufw status</code>.</li>
+      <li>Tambahkan aturan: <code>sudo ufw allow 22</code> (mengizinkan SSH).</li>
+      <li>Diskusikan: apa risiko jika semua port dibuka tanpa aturan?</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat simulasi pertahanan jaringan:</p>
+    <ul>
+      <li>Bayangkan kamu admin jaringan kantor kecil.</li>
+      <li>Tentukan aturan firewall untuk melindungi server web (port 80/443) dan blokir port lain.</li>
+      <li>Tambahkan IDS untuk mendeteksi serangan brute force login.</li>
+      <li>Buat diagram sederhana: posisi firewall, IDS, dan server.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Cari tahu tools IDS populer (contoh: Snort, Suricata) dan tulis perbandingannya.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="konsep-dasar-jaringan.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="vpn-dan-enkripsi.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
