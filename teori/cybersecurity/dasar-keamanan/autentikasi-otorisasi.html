@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Autentikasi & Otorisasi - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🧑‍💻 Autentikasi & Otorisasi</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Autentikasi dan otorisasi adalah dua komponen penting dalam sistem keamanan digital.  
+       Bayangkan seperti masuk ke gedung kantor: <strong>autentikasi</strong> adalah proses menunjukkan ID untuk membuktikan siapa kamu,  
+       sedangkan <strong>otorisasi</strong> adalah proses menentukan ruangan mana yang boleh kamu akses.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Definisi & Perbedaan</h2>
+    <table>
+      <tr>
+        <th>Konsep</th>
+        <th>Autentikasi</th>
+        <th>Otorisasi</th>
+      </tr>
+      <tr>
+        <td>Tujuan</td>
+        <td>Memverifikasi identitas pengguna</td>
+        <td>Menentukan hak akses pengguna</td>
+      </tr>
+      <tr>
+        <td>Contoh</td>
+        <td>Login dengan username & password</td>
+        <td>Hanya admin bisa menghapus data</td>
+      </tr>
+      <tr>
+        <td>Terjadi kapan?</td>
+        <td>Sebelum akses diberikan</td>
+        <td>Setelah identitas diverifikasi</td>
+      </tr>
+    </table>
+
+    <h2>🔐 Jenis Autentikasi</h2>
+    <ul>
+      <li><strongPassword-based</strong>: metode paling umum, tapi rentan jika tidak kuat.</li>
+      <li><strongTwo-Factor Authentication (2FA)</strong>: kombinasi password + kode OTP.</li>
+      <li><strongBiometrik</strong>: sidik jari, wajah, retina.</li>
+      <li><strongToken-based</strong>: menggunakan token digital (contoh: JWT).</li>
+      <li><strongSSO (Single Sign-On)</strong>: satu login untuk banyak layanan.</li>
+    </ul>
+
+    <h2>📋 Contoh Otorisasi</h2>
+    <ul>
+      <li>Role-based access: user biasa tidak bisa menghapus data, hanya admin.</li>
+      <li>File permission: hanya pemilik file bisa edit, orang lain hanya bisa baca.</li>
+      <li>API access: token dengan scope tertentu hanya bisa akses endpoint tertentu.</li>
+    </ul>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strongAutentikasi</strong>: menunjukkan KTP ke satpam.</li>
+      <li><strongOtorisasi</strong>: satpam mengecek apakah kamu boleh masuk ke ruang server.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Simulasi login & akses:</p>
+    <ol>
+      <li>Buat 2 akun di aplikasi (misalnya: admin & user).</li>
+      <li>Login sebagai masing-masing akun.</li>
+      <li>Uji akses: apakah user bisa menghapus data? Apakah admin bisa melihat semua?</li>
+      <li>Catat perbedaan hak akses dan bagaimana sistem membedakan keduanya.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Desain sistem login & akses untuk aplikasi sekolah:</p>
+    <ul>
+      <li>Role: siswa, guru, admin.</li>
+      <li>Autentikasi: metode login yang digunakan.</li>
+      <li>Otorisasi: siapa bisa lihat nilai, edit data, kirim pengumuman.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat diagram alur login + otorisasi menggunakan role-based access control (RBAC).</p>
+  </section>
+
+  <section class="navigation">
+    <a href="prinsip-cia.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="ancaman-umum.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
