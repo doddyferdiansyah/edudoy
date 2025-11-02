@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Segmentasi & Zero Trust - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🧩 Segmentasi & Zero Trust</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Segmentasi jaringan dan Zero Trust adalah strategi penting untuk membatasi pergerakan penyerang di dalam jaringan.  
+       Bayangkan rumah besar dengan banyak ruangan: segmentasi adalah memasang kunci di setiap ruangan,  
+       sedangkan Zero Trust adalah prinsip bahwa setiap orang harus selalu menunjukkan identitasnya meski sudah berada di dalam rumah.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Apa Itu Segmentasi Jaringan?</h2>
+    <ul>
+      <li>Proses membagi jaringan menjadi beberapa segmen (subnet/VLAN) untuk meningkatkan keamanan dan efisiensi.</li>
+      <li>Jika satu segmen diserang, segmen lain tetap aman.</li>
+      <li>Contoh: memisahkan jaringan tamu Wi-Fi dari jaringan internal kantor.</li>
+    </ul>
+
+    <h3>Manfaat Segmentasi</h3>
+    <ul>
+      <li>Mengurangi penyebaran malware.</li>
+      <li>Meningkatkan kontrol akses.</li>
+      <li>Memudahkan monitoring & troubleshooting.</li>
+    </ul>
+
+    <h2>📖 Apa Itu Zero Trust?</h2>
+    <ul>
+      <li>Model keamanan yang berprinsip “Never Trust, Always Verify”.</li>
+      <li>Setiap akses harus diverifikasi, meskipun berasal dari dalam jaringan.</li>
+      <li>Menggunakan autentikasi kuat, enkripsi, dan monitoring berkelanjutan.</li>
+    </ul>
+
+    <h3>Pilar Zero Trust</h3>
+    <ul>
+      <li><strong>Identitas</strong>: autentikasi multifaktor untuk semua pengguna.</li>
+      <li><strong>Perangkat</strong>: hanya perangkat terdaftar yang boleh mengakses.</li>
+      <li><strong>Jaringan</strong>: segmentasi mikro (microsegmentation).</li>
+      <li><strong>Aplikasi</strong>: akses berbasis peran (RBAC).</li>
+      <li><strong>Data</strong>: enkripsi & klasifikasi data.</li>
+    </ul>
+
+    <h2>📊 Perbandingan Segmentasi & Zero Trust</h2>
+    <table>
+      <tr>
+        <th>Aspek</th>
+        <th>Segmentasi</th>
+        <th>Zero Trust</th>
+      </tr>
+      <tr>
+        <td>Fokus</td>
+        <td>Memisahkan jaringan</td>
+        <td>Verifikasi akses setiap saat</td>
+      </tr>
+      <tr>
+        <td>Implementasi</td>
+        <td>Subnet, VLAN, firewall antar segmen</td>
+        <td>MFA, microsegmentation, policy enforcement</td>
+      </tr>
+      <tr>
+        <td>Tujuan</td>
+        <td>Membatasi pergerakan lateral</td>
+        <td>Mencegah akses tanpa verifikasi</td>
+      </tr>
+    </table>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>Segmentasi</strong>: seperti mall dengan area berbeda (food court, toko, bioskop) yang dipisahkan pintu.</li>
+      <li><strong>Zero Trust</strong>: seperti setiap pintu mall punya satpam yang selalu memeriksa tiket/ID meski kamu sudah di dalam.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba simulasi segmentasi sederhana:</p>
+    <ol>
+      <li>Jika menggunakan router rumah, buat dua SSID Wi-Fi: satu untuk pribadi, satu untuk tamu.</li>
+      <li>Pastikan tamu tidak bisa mengakses perangkat di jaringan pribadi.</li>
+      <li>Diskusikan: bagaimana segmentasi ini melindungi perangkat pribadi dari tamu?</li>
+    </ol>
+    <p>Untuk Zero Trust:</p>
+    <ol>
+      <li>Aktifkan autentikasi dua faktor (2FA) di akun email atau media sosialmu.</li>
+      <li>Amati bagaimana sistem selalu meminta verifikasi tambahan meski login dari perangkat yang sama.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Desain arsitektur jaringan kantor kecil dengan prinsip segmentasi & Zero Trust:</p>
+    <ul>
+      <li>Buat 3 segmen: jaringan tamu, jaringan karyawan, jaringan server.</li>
+      <li>Tentukan aturan firewall antar segmen.</li>
+      <li>Tambahkan Zero Trust: semua akses ke server harus melalui autentikasi multifaktor.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat diagram arsitektur yang menunjukkan segmentasi + Zero Trust policy enforcement.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="vpn-dan-enkripsi.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="serangan-jaringan-umum.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
