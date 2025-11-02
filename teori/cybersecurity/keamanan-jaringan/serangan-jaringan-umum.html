@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Serangan Jaringan Umum - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>⚠️ Serangan Jaringan Umum</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Jaringan komputer sering menjadi target serangan karena menjadi jalur utama pertukaran data.  
+       Memahami jenis-jenis serangan jaringan membantu kita mengenali pola ancaman dan menyiapkan pertahanan yang tepat.  
+       Bayangkan seperti jalan raya: ada pencuri yang menyamar, penyadap yang menguping, hingga geng yang menutup jalan agar lalu lintas macet.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Jenis Serangan Jaringan</h2>
+    <ul>
+      <li><strong>Sniffing</strong>: penyadapan lalu lintas data menggunakan tools seperti Wireshark.</li>
+      <li><strong>Spoofing</strong>: pemalsuan identitas (IP spoofing, ARP spoofing, DNS spoofing).</li>
+      <li><strong>Man-in-the-Middle (MITM)</strong>: penyerang berada di antara komunikasi dua pihak untuk menyadap atau memodifikasi data.</li>
+      <li><strong>DoS/DDoS</strong>: membanjiri server dengan trafik agar tidak bisa diakses.</li>
+      <li><strong>Port Scanning</strong>: pemindaian port untuk mencari layanan yang terbuka dan rentan.</li>
+      <li><strong>Session Hijacking</strong>: mengambil alih sesi komunikasi pengguna yang sah.</li>
+    </ul>
+
+    <h2>📊 Contoh Kasus & Dampak</h2>
+    <table>
+      <tr>
+        <th>Jenis Serangan</th>
+        <th>Contoh Kasus</th>
+        <th>Dampak</th>
+      </tr>
+      <tr>
+        <td>Sniffing</td>
+        <td>Penyadapan password di Wi-Fi publik</td>
+        <td>Kebocoran kredensial</td>
+      </tr>
+      <tr>
+        <td>Spoofing</td>
+        <td>DNS spoofing mengarahkan user ke website palsu</td>
+        <td>Pencurian data login</td>
+      </tr>
+      <tr>
+        <td>MITM</td>
+        <td>Penyerang menyusup di antara komunikasi HTTPS yang lemah</td>
+        <td>Data dimodifikasi atau dicuri</td>
+      </tr>
+      <tr>
+        <td>DDoS</td>
+        <td>Serangan ke website e-commerce saat promo besar</td>
+        <td>Website down, kerugian finansial</td>
+      </tr>
+    </table>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>Sniffing</strong>: seperti orang yang menguping percakapan di kafe.</li>
+      <li><strong>Spoofing</strong>: seperti penipu yang menyamar jadi petugas resmi.</li>
+      <li><strong>MITM</strong>: seperti orang ketiga yang menyelipkan diri saat dua orang berbicara.</li>
+      <li><strong>DDoS</strong>: seperti ribuan orang pura-pura antre di kasir agar toko tidak bisa melayani pelanggan asli.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan simulasi sederhana:</p>
+    <ol>
+      <li>Buka terminal dan gunakan perintah <code>ping</code> ke sebuah website.</li>
+      <li>Gunakan tool <code>tracert</code> (Windows) atau <code>traceroute</code> (Linux/Mac) untuk melihat jalur paket.</li>
+      <li>Diskusikan: bagaimana jika ada penyerang yang menyusup di salah satu jalur tersebut?</li>
+    </ol>
+    <p><em>(Catatan: praktik sniffing atau spoofing nyata hanya boleh dilakukan di lab/lingkungan uji, bukan di jaringan publik.)</em></p>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat tabel ancaman jaringan di lingkunganmu:</p>
+    <ul>
+      <li>Identifikasi 3 ancaman yang mungkin terjadi (misalnya: Wi-Fi publik, port terbuka, serangan brute force).</li>
+      <li>Tentukan dampak potensial dari tiap ancaman.</li>
+      <li>Rancang solusi sederhana untuk mitigasi (contoh: gunakan VPN, tutup port tidak perlu, aktifkan IDS).</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat poster edukasi “Kenali Serangan Jaringan” untuk teman atau rekan kerja.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="segmentasi-dan-zero-trust.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="praktik-packet-analysis.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
