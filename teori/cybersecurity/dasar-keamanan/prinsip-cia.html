@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Prinsip CIA - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔐 Prinsip CIA: Confidentiality, Integrity, Availability</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Prinsip CIA adalah fondasi utama dalam keamanan informasi.  
+       Setiap sistem digital harus menjaga kerahasiaan, keutuhan, dan ketersediaan data.  
+       Bayangkan seperti menjaga brankas: hanya orang tertentu boleh buka (C), isi tidak boleh diubah sembarangan (I), dan harus bisa diakses saat dibutuhkan (A).</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Apa Itu CIA Triad?</h2>
+    <p>CIA bukan badan intelijen, tapi singkatan dari:</p>
+    <ul>
+      <li><strong>Confidentiality (Kerahasiaan)</strong>: menjaga agar data hanya bisa diakses oleh pihak yang berwenang.</li>
+      <li><strong>Integrity (Keutuhan)</strong>: memastikan data tetap akurat dan tidak dimodifikasi tanpa izin.</li>
+      <li><strong>Availability (Ketersediaan)</strong>: memastikan sistem dan data tersedia saat dibutuhkan.</li>
+    </ul>
+
+    <h2>📊 Contoh Kasus CIA</h2>
+    <table>
+      <tr>
+        <th>Prinsip</th>
+        <th>Contoh Pelanggaran</th>
+        <th>Solusi Praktis</th>
+      </tr>
+      <tr>
+        <td>Confidentiality</td>
+        <td>Data pelanggan bocor ke publik</td>
+        <td>Enkripsi data, kontrol akses</td>
+      </tr>
+      <tr>
+        <td>Integrity</td>
+        <td>File laporan dimodifikasi tanpa sepengetahuan</td>
+        <td>Hashing, audit log</td>
+      </tr>
+      <tr>
+        <td>Availability</td>
+        <td>Website down saat transaksi</td>
+        <td>Backup, failover, monitoring</td>
+      </tr>
+    </table>
+
+    <h2>🔍 Praktik CIA di Dunia Nyata</h2>
+    <ul>
+      <li><strongConfidentiality</strong>: Gunakan password kuat, enkripsi email, dan jangan berbagi akses sembarangan.</li>
+      <li><strongIntegrity</strong>: Verifikasi checksum file, gunakan sistem versioning, dan aktifkan audit trail.</li>
+      <li><strongAvailability</strong>: Gunakan UPS, backup otomatis, dan monitoring uptime server.</li>
+    </ul>
+
+    <h2>🧠 Analogi CIA</h2>
+    <ul>
+      <li><strongC</strong>: Seperti gembok di laci pribadi → hanya kamu yang punya kunci.</li>
+      <li><strongI</strong>: Seperti segel pada dokumen → jika rusak, berarti ada yang mengubah.</li>
+      <li><strongA</strong>: Seperti pintu darurat → harus bisa dibuka kapan saja saat dibutuhkan.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Lakukan audit sederhana terhadap file penting di laptopmu:</p>
+    <ol>
+      <li>Pilih 3 file penting (misalnya: CV, laporan, foto pribadi).</li>
+      <li>Identifikasi: apakah file tersebut aman secara C, I, dan A?</li>
+      <li>Contoh: apakah file dienkripsi? Apakah ada backup? Apakah bisa diakses saat offline?</li>
+      <li>Buat catatan dan rencana perbaikan jika ada celah.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat simulasi pelanggaran CIA dan rancang solusinya:</p>
+    <ul>
+      <li>Kasus: file gaji karyawan bocor ke publik.</li>
+      <li>Tentukan: pelanggaran apa (C/I/A)?</li>
+      <li>Rancang solusi teknis dan non-teknis untuk mencegah kejadian serupa.</li>
+    </ul>
+    <p><strongTugas tambahan:</strong> Buat infografis sederhana yang menjelaskan CIA Triad kepada orang awam.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="pengantar-keamanan.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="autentikasi-otorisasi.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
