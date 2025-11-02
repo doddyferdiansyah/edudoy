@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Praktik Packet Analysis - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../../../index.html">Beranda</a></li>
+        <li><a href="../../index.html" class="active">Teori Dasar</a></li>
+        <li><a href="../../../praktik/index.html">Praktik</a></li>
+        <li><a href="../../../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../../../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../../../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../../../resources/index.html">Resource</a></li>
+        <li><a href="../../../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>🔍 Praktik Packet Analysis</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Packet analysis adalah teknik menganalisis lalu lintas jaringan untuk memahami bagaimana data bergerak, mendeteksi anomali, atau menginvestigasi serangan.  
+       Bayangkan seperti membuka amplop surat di kantor pos untuk melihat isi pesan—bedanya, di dunia digital kita hanya mengamati salinan data, bukan merusak komunikasi.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Apa Itu Packet Analysis?</h2>
+    <ul>
+      <li>Proses menangkap dan memeriksa paket data yang lewat di jaringan.</li>
+      <li>Digunakan untuk troubleshooting, monitoring, dan investigasi keamanan.</li>
+      <li>Tools populer: <strong>Wireshark</strong>, <strong>tcpdump</strong>.</li>
+    </ul>
+
+    <h2>📊 Informasi yang Bisa Dilihat</h2>
+    <ul>
+      <li>Alamat IP sumber & tujuan.</li>
+      <li>Port yang digunakan (HTTP, HTTPS, DNS, dll).</li>
+      <li>Protokol komunikasi (TCP, UDP, ICMP).</li>
+      <li>Payload (isi data, jika tidak terenkripsi).</li>
+    </ul>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>Wireshark</strong>: seperti CCTV lalu lintas yang merekam semua kendaraan di jalan raya.</li>
+      <li><strong>tcpdump</strong>: seperti petugas yang mencatat nomor polisi kendaraan yang lewat.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil dengan Wireshark</h2>
+    <ol>
+      <li>Install Wireshark di laptopmu.</li>
+      <li>Buka Wireshark dan pilih interface jaringan (misalnya Wi-Fi).</li>
+      <li>Mulai capture, lalu buka browser dan akses <code>example.com</code>.</li>
+      <li>Stop capture, lalu filter dengan <code>http</code> atau <code>dns</code>.</li>
+      <li>Amati: alamat IP tujuan, request DNS, dan paket HTTP.</li>
+    </ol>
+
+    <h2>🛠️ Praktik Kecil dengan tcpdump</h2>
+    <ol>
+      <li>Buka terminal (Linux/Mac).</li>
+      <li>Jalankan: <code>sudo tcpdump -i wlan0 -c 10</code> (ganti <code>wlan0</code> dengan interface-mu).</li>
+      <li>Lihat 10 paket pertama yang lewat.</li>
+      <li>Diskusikan: protokol apa yang terlihat? IP mana yang sering muncul?</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat investigasi sederhana dengan packet analysis:</p>
+    <ul>
+      <li>Lakukan capture saat browsing ke sebuah website.</li>
+      <li>Identifikasi: alamat IP server, protokol yang digunakan, port yang terbuka.</li>
+      <li>Bandingkan hasil saat mengakses website HTTP vs HTTPS.</li>
+      <li>Diskusikan: apa perbedaan data yang terlihat?</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat laporan singkat (1 halaman) berisi hasil analisis paketmu, lengkap dengan screenshot Wireshark/tcpdump.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="serangan-jaringan-umum.html" class="btn back">⬅️ Materi Sebelumnya</a>
+    <a href="mini-project-network-defense-simulator.html" class="btn next">Materi Berikutnya ➡️</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
