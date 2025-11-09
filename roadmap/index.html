@@ -4,43 +4,59 @@
   <meta charset="UTF-8">
   <title>Roadmap Cybersecurity - Fixly Learning Hub</title>
   <style>
-    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    body { font-family: 'Poppins', sans-serif; background: #f4f6f9; margin:0; }
+    h1 { text-align:center; padding:20px; }
     .container { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 20px; margin: 20px; }
-    .profesi-list { background: #fff; padding: 15px; border-radius: 8px; }
+    /* Sidebar */
+    .profesi-list { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
     .profesi-list button {
-      display: block; width: 100%; margin: 5px 0; padding: 10px;
-      background: #0077cc; color: #fff; border: none; border-radius: 6px;
-      cursor: pointer; text-align: left;
+      display: block; width: 100%; margin: 6px 0; padding: 12px;
+      background: #e9f1fb; color: #333; border: none; border-radius: 6px;
+      cursor: pointer; text-align: left; font-weight: 600; transition: all 0.3s;
     }
-    .profesi-list button:hover { background: #005fa3; }
+    .profesi-list button:hover { background: #0077cc; color:#fff; }
+    .profesi-list button.active { background:#0077cc; color:#fff; }
+
+    /* Timeline */
     .timeline, .certifications {
-      background: #fff; padding: 15px; border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #fff; padding: 20px; border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); min-height:300px;
+      transition: all 0.3s ease-in-out;
     }
     .timeline ul { list-style: none; padding: 0; }
     .timeline li {
-      position: relative; padding: 10px 20px; border-left: 3px solid #0077cc; margin-bottom: 10px;
+      position: relative; padding: 12px 20px; border-left: 3px solid #0077cc; margin-bottom: 12px;
+      background:#f9fbff; border-radius:4px;
     }
     .timeline li::before {
-      content: ""; position: absolute; left: -9px; top: 12px;
+      content: ""; position: absolute; left: -9px; top: 16px;
       width: 12px; height: 12px; background: #0077cc; border-radius: 50%;
+    }
+    .timeline li strong { color:#0077cc; }
+
+    /* Sertifikasi */
+    .certifications ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px; }
+    .certifications li {
+      background:#e9f1fb; padding:8px 12px; border-radius:20px;
+      font-size:14px; font-weight:600; color:#0077cc;
+      box-shadow:0 1px 3px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <h1 style="text-align:center;">🗺️ Roadmap Cybersecurity</h1>
+  <h1>🗺️ Roadmap Cybersecurity</h1>
   <div class="container">
     <!-- Kolom kiri: daftar profesi -->
-    <div class="profesi-list">
-      <button onclick="showRoadmap('analyst')">🔍 Security Analyst</button>
-      <button onclick="showRoadmap('pentester')">🛠️ Penetration Tester</button>
-      <button onclick="showRoadmap('engineer')">⚙️ Security Engineer</button>
-      <button onclick="showRoadmap('architect')">🏗️ Security Architect</button>
-      <button onclick="showRoadmap('admin')">🖥️ Security Administrator</button>
-      <button onclick="showRoadmap('crypto')">🔐 Cryptographer</button>
-      <button onclick="showRoadmap('incident')">🚨 Incident Responder</button>
-      <button onclick="showRoadmap('governance')">📑 Governance Specialist</button>
-      <button onclick="showRoadmap('ciso')">👔 CISO</button>
+    <div class="profesi-list" id="profesiList">
+      <button onclick="showRoadmap('analyst')" id="btn-analyst">🔍 Security Analyst</button>
+      <button onclick="showRoadmap('pentester')" id="btn-pentester">🛠️ Penetration Tester</button>
+      <button onclick="showRoadmap('engineer')" id="btn-engineer">⚙️ Security Engineer</button>
+      <button onclick="showRoadmap('architect')" id="btn-architect">🏗️ Security Architect</button>
+      <button onclick="showRoadmap('admin')" id="btn-admin">🖥️ Security Administrator</button>
+      <button onclick="showRoadmap('crypto')" id="btn-crypto">🔐 Cryptographer</button>
+      <button onclick="showRoadmap('incident')" id="btn-incident">🚨 Incident Responder</button>
+      <button onclick="showRoadmap('governance')" id="btn-governance">📑 Governance Specialist</button>
+      <button onclick="showRoadmap('ciso')" id="btn-ciso">👔 CISO</button>
     </div>
 
     <!-- Kolom tengah: learning path -->
@@ -142,12 +158,16 @@
     };
 
     function showRoadmap(role) {
+      // highlight active button
+      document.querySelectorAll('.profesi-list button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-'+role).classList.add('active');
+
       const timeline = document.getElementById('timeline');
       const certs = document.getElementById('certifications');
       timeline.innerHTML = "<h3>Jalur Belajar</h3><ul>" +
         data[role].path.map(item => `<li>${item}</li>`).join("") +
         "</ul>";
-      certs.innerHTML = "<h3>Sertifikasi</h3><ul>" +
+            certs.innerHTML = "<h3>Sertifikasi</h3><ul>" +
         data[role].certs.map(c => `<li>${c}</li>`).join("") +
         "</ul>";
     }
