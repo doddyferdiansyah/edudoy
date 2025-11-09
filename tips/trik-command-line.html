@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Trik Command Line - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul, ol { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow: auto; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../teori/index.html">Teori Dasar</a></li>
+        <li><a href="../praktik/index.html">Praktik</a></li>
+        <li><a href="index.html" class="active">Tips & Trik</a></li>
+        <li><a href="../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../resources/index.html">Resource</a></li>
+        <li><a href="../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>⚡ Trik Command Line</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Command line adalah senjata utama para sysadmin, developer, dan hacker etis.  
+       Dengan trik-trik berikut, kamu bisa bekerja lebih cepat, efisien, dan terlihat seperti “ninja terminal”.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Trik Dasar</h2>
+    <ul>
+      <li><code>!!</code> → menjalankan ulang command terakhir.</li>
+      <li><code>sudo !!</code> → menjalankan ulang command terakhir dengan hak admin.</li>
+      <li><code>history</code> → melihat daftar command yang pernah dijalankan.</li>
+      <li><code>!n</code> → menjalankan command ke-n dari history (contoh: <code>!42</code>).</li>
+      <li><code>ctrl + r</code> → mencari command lama di history secara interaktif.</li>
+    </ul>
+
+    <h2>⚡ Trik Produktivitas</h2>
+    <ul>
+      <li><code>alias</code> → buat shortcut command (contoh: <code>alias ll='ls -la'</code>).</li>
+      <li><code>grep</code> → cari teks dalam file/log (contoh: <code>grep "error" logfile.txt</code>).</li>
+      <li><code>find</code> → mencari file (contoh: <code>find /home -name "*.txt"</code>).</li>
+      <li><code>du -sh *</code> → melihat ukuran folder/file dengan ringkas.</li>
+      <li><code>tar -czvf backup.tar.gz folder/</code> → membuat arsip kompresi cepat.</li>
+    </ul>
+
+    <h2>🧠 Trik Jalur Cepat</h2>
+    <ul>
+      <li><code>ctrl + a</code> → lompat ke awal baris.</li>
+      <li><code>ctrl + e</code> → lompat ke akhir baris.</li>
+      <li><code>ctrl + u</code> → hapus teks dari kursor ke awal baris.</li>
+      <li><code>ctrl + k</code> → hapus teks dari kursor ke akhir baris.</li>
+      <li><code>ctrl + w</code> → hapus kata sebelum kursor.</li>
+    </ul>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>Alias</strong>: seperti membuat jalan pintas di desktop, tapi untuk command.</li>
+      <li><strong>History</strong>: seperti catatan harian, bisa membuka kembali aktivitas lama.</li>
+      <li><strong>Ctrl shortcuts</strong>: seperti remote control cepat untuk mengedit teks.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan eksperimen berikut di terminal:</p>
+    <ol>
+      <li>Ketik <code>history</code> dan lihat daftar command yang pernah kamu jalankan.</li>
+      <li>Gunakan <code>ctrl + r</code> lalu ketik sebagian kata untuk mencari command lama.</li>
+      <li>Buat alias: <code>alias hi='echo Halo Doddy'</code>, lalu jalankan <code>hi</code>.</li>
+      <li>Coba shortcut <code>ctrl + a</code> dan <code>ctrl + e</code> saat mengetik command panjang.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat “toolbox” command line pribadi:</p>
+    <ul>
+      <li>Buat 3 alias untuk command yang sering kamu pakai.</li>
+      <li>Gunakan <code>grep</code> untuk mencari kata “error” di file log.</li>
+      <li>Gunakan <code>find</code> untuk mencari file tertentu di folder home.</li>
+      <li>Simpan semua alias di file <code>~/.bashrc</code> agar permanen.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat cheat sheet command line favoritmu dalam format teks/markdown.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="index.html" class="btn back">⬅️ Kembali ke Tips & Trik</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
