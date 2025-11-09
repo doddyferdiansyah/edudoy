@@ -1,1 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning Path - Fixly Learning Hub</title>
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f4f6f9; margin:0; }
+    header {
+      background:#0077cc; color:#fff; padding:15px 20px;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    header .logo { font-weight:700; font-size:18px; }
+    header nav ul { list-style:none; margin:0; padding:0; display:flex; gap:15px; }
+    header nav a { color:#fff; text-decoration:none; font-weight:600; }
+    header nav a:hover { text-decoration:underline; }
 
+    h1 { text-align:center; padding:20px; }
+    .container { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; margin: 20px; }
+
+    .teori-list { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .teori-list button {
+      display: block; width: 100%; margin: 6px 0; padding: 12px;
+      background: #e9f1fb; color: #333; border: none; border-radius: 6px;
+      cursor: pointer; text-align: left; font-weight: 600; transition: all 0.3s;
+    }
+    .teori-list button:hover { background: #0077cc; color:#fff; }
+    .teori-list button.active { background:#0077cc; color:#fff; }
+
+    .path {
+      background: #fff; padding: 20px; border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); min-height:300px;
+      transition: all 0.3s ease-in-out;
+    }
+    .path ul { list-style: none; padding: 0; }
+    .path li {
+      position: relative; padding: 12px 20px; border-left: 3px solid #0077cc; margin-bottom: 12px;
+      background:#f9fbff; border-radius:4px;
+    }
+    .path li::before {
+      content: ""; position: absolute; left: -9px; top: 16px;
+      width: 12px; height: 12px; background: #0077cc; border-radius: 50%;
+    }
+    .path li strong { color:#0077cc; }
+
+    footer { text-align:center; padding:20px; margin-top:20px; }
+    .btn-home {
+      display:inline-block; margin-top:10px; padding:10px 15px;
+      background:#0077cc; color:#fff; border-radius:6px; text-decoration:none;
+      font-weight:600;
+    }
+    .btn-home:hover { background:#005fa3; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Fixly Learning Hub</div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../teori/index.html">Teori Dasar</a></li>
+        <li><a href="../praktik/index.html">Praktik</a></li>
+        <li><a href="../tips/index.html">Tips & Trik</a></li>
+        <li><a href="../resources/index.html">Resource</a></li>
+        <li><a href="../roadmap/index.html">Roadmap</a></li>
+        <li><a href="index.html" class="active">Learning Path</a></li>
+        <li><a href="../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>📚 Learning Path</h1>
+  <div class="container">
+    <!-- Kolom kiri: daftar teori -->
+    <div class="teori-list" id="teoriList">
+      <button onclick="showPath('os')" id="btn-os">💻 Sistem Operasi</button>
+      <button onclick="showPath('network')" id="btn-network">🌐 Jaringan</button>
+      <button onclick="showPath('programming')" id="btn-programming">👨‍💻 Pemrograman</button>
+      <button onclick="showPath('database')" id="btn-database">🗄️ Database</button>
+      <button onclick="showPath('web')" id="btn-web">🌍 Web & Aplikasi</button>
+      <button onclick="showPath('infra')" id="btn-infra">☁️ Infrastruktur & Cloud</button>
+      <button onclick="showPath('cyber')" id="btn-cyber">🔒 Cybersecurity</button>
+    </div>
+
+    <!-- Kolom tengah: materi terstruktur -->
+    <div class="path" id="path">
+      <h3>Materi</h3>
+      <p>Pilih teori di kiri untuk melihat learning path.</p>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../index.html" class="btn-home">⬅️ Kembali ke Halaman Utama</a>
+    <p>© 2025 Fixly Learning Hub | Learning Path</p>
+  </footer>
+
+  <script>
+    const data = {
+      os: {
+        path: [
+          "Beginner: Pengenalan OS, konsep kernel & shell",
+          "Intermediate: Manajemen proses, memori, file system",
+          "Advanced: Security & hardening OS, virtualisasi"
+        ]
+      },
+      network: {
+        path: [
+          "Beginner: Dasar TCP/IP, model OSI",
+          "Intermediate: Routing, switching, protokol (HTTP, DNS, SMTP)",
+          "Advanced: Network security, IDS/IPS, VPN"
+        ]
+      },
+      programming: {
+        path: [
+          "Beginner: Algoritma & logika dasar, bahasa Python",
+          "Intermediate: OOP, struktur data, debugging",
+          "Advanced: API, framework, secure coding"
+        ]
+      },
+      database: {
+        path: [
+          "Beginner: SQL dasar, relasi tabel",
+          "Intermediate: Normalisasi, indexing, query optimization",
+          "Advanced: Database security, distribusi & replication"
+        ]
+      },
+      web: {
+        path: [
+          "Beginner: HTML, CSS, dasar JavaScript",
+          "Intermediate: Framework (React, Django), REST API",
+          "Advanced: Web security, scalable architecture"
+        ]
+      },
+      infra: {
+        path: [
+          "Beginner: Virtualisasi, dasar cloud (AWS/Azure)",
+          "Intermediate: Container (Docker), orchestration (Kubernetes)",
+          "Advanced: Cloud security, DevOps pipeline"
+        ]
+      },
+      cyber: {
+        path: [
+          "Beginner: Konsep CIA triad, ancaman umum",
+          "Intermediate: Pentest dasar, SIEM, incident response",
+          "Advanced: Threat hunting, red/blue teaming, governance"
+        ]
+      }
+    };
+
+    function showPath(teori) {
+      // highlight active button
+      document.querySelectorAll('.teori-list button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-'+teori).classList.add('active');
+
+      const pathDiv = document.getElementById('path');
+      pathDiv.innerHTML = "<h3>Materi</h3><ul>" +
+        data[teori].path.map(item => `<li>${item}</li>`).join("") +
+        "</ul>";
+    }
+  </script>
+</body>
+</html>
