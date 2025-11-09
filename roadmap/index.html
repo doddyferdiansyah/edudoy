@@ -12,17 +12,11 @@
       grid-template-columns: 1fr 2fr 1fr;
       gap: 20px;
       margin: 20px;
+      align-items: start;
     }
-    .profesi {
+    .profesi, .timeline, .certifications {
       background: #fff;
       padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .timeline {
-      position: relative;
-      background: #fff;
-      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
@@ -43,13 +37,8 @@
       background: #0077cc;
       border-radius: 50%;
     }
-    .certifications {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
     h2 { margin-top: 0; }
+    h3 { margin-top: 15px; }
   </style>
 </head>
 <body>
@@ -74,13 +63,12 @@
     <p>Roadmap berdasarkan profesi: kiri = profesi, tengah = jalur belajar (timeline), kanan = sertifikasi rekomendasi.</p>
   </section>
 
-  <!-- Contoh untuk 1 profesi -->
+  <!-- 1. Security Analyst -->
   <div class="roadmap">
     <div class="profesi">
       <h2>🔍 Security Analyst</h2>
-      <p>Fokus pada monitoring, log analysis, dan SIEM untuk mendeteksi ancaman.</p>
+      <p>Monitoring, log analysis, SIEM untuk mendeteksi ancaman.</p>
     </div>
-
     <div class="timeline">
       <h3>Jalur Belajar</h3>
       <ul>
@@ -90,20 +78,106 @@
         <li><strong>Capstone:</strong> Analisis serangan DDoS menggunakan SIEM</li>
       </ul>
     </div>
-
     <div class="certifications">
       <h3>Sertifikasi</h3>
-      <ul>
-        <li>CompTIA Security+</li>
-        <li>Splunk Certified</li>
-      </ul>
+      <ul><li>CompTIA Security+</li><li>Splunk Certified</li></ul>
     </div>
   </div>
 
-  <!-- Tambahkan blok roadmap lain untuk Penetration Tester, Security Engineer, dst -->
+  <!-- 2. Penetration Tester -->
+  <div class="roadmap">
+    <div class="profesi">
+      <h2>🛠️ Penetration Tester</h2>
+      <p>Menguji keamanan sistem dengan simulasi serangan.</p>
+    </div>
+    <div class="timeline">
+      <h3>Jalur Belajar</h3>
+      <ul>
+        <li><strong>Beginner:</strong> Dasar jaringan, Linux CLI, ethical hacking intro</li>
+        <li><strong>Intermediate:</strong> Kali Linux tools, Nmap, Metasploit dasar, OWASP Top 10</li>
+        <li><strong>Advanced:</strong> Buffer overflow, privilege escalation, wireless/cloud pentest</li>
+        <li><strong>Capstone:</strong> Pentest aplikasi web end-to-end</li>
+      </ul>
+    </div>
+    <div class="certifications">
+      <h3>Sertifikasi</h3>
+      <ul><li>CEH</li><li>OSCP</li><li>eJPT</li></ul>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 Fixly Learning Hub | Roadmap Cybersecurity</p>
-  </footer>
-</body>
-</html>
+  <!-- 3. Security Engineer -->
+  <div class="roadmap">
+    <div class="profesi">
+      <h2>⚙️ Security Engineer</h2>
+      <p>Membangun & mengimplementasikan sistem keamanan.</p>
+    </div>
+    <div class="timeline">
+      <h3>Jalur Belajar</h3>
+      <ul>
+        <li><strong>Beginner:</strong> Networking & OS, firewall dasar</li>
+        <li><strong>Intermediate:</strong> IDS/IPS, VPN setup, OS hardening</li>
+        <li><strong>Advanced:</strong> Cloud security, automation & scripting</li>
+        <li><strong>Capstone:</strong> Deploy firewall + IDS di lab</li>
+      </ul>
+    </div>
+    <div class="certifications">
+      <h3>Sertifikasi</h3>
+      <ul><li>CompTIA CySA+</li><li>CCNP Security</li></ul>
+    </div>
+  </div>
+
+  <!-- 4. Security Architect -->
+  <div class="roadmap">
+    <div class="profesi">
+      <h2>🏗️ Security Architect</h2>
+      <p>Merancang arsitektur keamanan skala besar.</p>
+    </div>
+    <div class="timeline">
+      <h3>Jalur Belajar</h3>
+      <ul>
+        <li><strong>Beginner:</strong> Networking & OS</li>
+        <li><strong>Intermediate:</strong> Zero Trust, segmentation</li>
+        <li><strong>Advanced:</strong> Cloud architecture, enterprise security design</li>
+        <li><strong>Capstone:</strong> Desain arsitektur jaringan aman</li>
+      </ul>
+    </div>
+    <div class="certifications">
+      <h3>Sertifikasi</h3>
+      <ul><li>CCSP</li><li>TOGAF Security</li></ul>
+    </div>
+  </div>
+
+  <!-- 5. Security Administrator -->
+  <div class="roadmap">
+    <div class="profesi">
+      <h2>🖥️ Security Administrator</h2>
+      <p>Mengelola operasional harian & troubleshooting.</p>
+    </div>
+    <div class="timeline">
+      <h3>Jalur Belajar</h3>
+      <ul>
+        <li><strong>Beginner:</strong> User management, patch management</li>
+        <li><strong>Intermediate:</strong> Server hardening, monitoring tools</li>
+        <li><strong>Advanced:</strong> Automation, incident handling</li>
+        <li><strong>Capstone:</strong> Setup server aman dengan RBAC</li>
+      </ul>
+    </div>
+    <div class="certifications">
+      <h3>Sertifikasi</h3>
+      <ul><li>Microsoft Security Admin</li><li>Linux Foundation SysAdmin</li></ul>
+    </div>
+  </div>
+
+  <!-- 6. Cryptographer -->
+  <div class="roadmap">
+    <div class="profesi">
+      <h2>🔐 Cryptographer</h2>
+      <p>Mendesain algoritma enkripsi & protokol keamanan.</p>
+    </div>
+    <div class="timeline">
+      <h3>Jalur Belajar</h3>
+      <ul>
+        <li><strong>Beginner:</strong> Dasar enkripsi</li>
+        <li><strong>Intermediate:</strong> RSA, AES, hashing</li>
+        <li><strong>Advanced:</strong> Protocol design, post-quantum crypto</li>
+        <li><strong>Capstone:</strong> Implement
