@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Cara Install Wireshark - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul, ol { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; overflow: auto; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+    .note { background: #fff8e1; border: 1px solid #f0d98c; padding: 10px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../teori/index.html">Teori Dasar</a></li>
+        <li><a href="../praktik/index.html">Praktik</a></li>
+        <li><a href="index.html" class="active">Tips & Trik</a></li>
+        <li><a href="../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../resources/index.html">Resource</a></li>
+        <li><a href="../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🧰 Cara Install Wireshark</h1>
+    <p class="tag beginner">Level: Beginner</p>
+    <p>Wireshark adalah tool open-source untuk menganalisis paket jaringan. Di bawah ini panduan instalasi untuk Windows, Linux, dan macOS, plus verifikasi dan tips penggunaan awal.</p>
+  </section>
+
+  <section class="content">
+    <h2>🪟 Install di Windows 10/11</h2>
+    <ol>
+      <li>Kunjungi situs resmi Wireshark dan unduh installer terbaru (64-bit).</li>
+      <li>Jalankan installer, pilih <strong>Next</strong> hingga bagian komponen.</li>
+      <li>Pastikan opsi <strong>Npcap</strong> dicentang (dibutuhkan untuk capture paket di Windows).</li>
+      <li>Lanjutkan instalasi Npcap:
+        <ul>
+          <li>Centang <strong>Support raw 802.11 traffic (and monitor mode) for wireless adapters</strong> jika diperlukan.</li>
+          <li>Centang <strong>Install Npcap in WinPcap API-compatible Mode</strong> jika butuh kompatibilitas lama.</li>
+        </ul>
+      </li>
+      <li>Selesai instalasi, buka Wireshark dari Start Menu.</li>
+    </ol>
+    <div class="note">
+      <strong>Catatan:</strong> Beberapa adapter Wi-Fi di Windows tidak mendukung monitor mode; capture terbaik biasanya via Ethernet atau dengan adapter Wi-Fi tertentu yang kompatibel.
+    </div>
+
+    <h2>🐧 Install di Linux (Ubuntu/Debian)</h2>
+    <ol>
+      <li>Update repo:
+        <pre><code>sudo apt update</code></pre>
+      </li>
+      <li>Install Wireshark:
+        <pre><code>sudo apt install wireshark</code></pre>
+      </li>
+      <li>Izinkan non-root melakukan capture:
+        <pre><code>sudo dpkg-reconfigure wireshark-common
+sudo usermod -aG wireshark $USER
+# logout/login atau reboot agar group berlaku</code></pre>
+      </li>
+    </ol>
+
+    <h2>🐧 Install di Linux (Fedora/RHEL/CentOS)</h2>
+    <ol>
+      <li>Install paket:
+        <pre><code>sudo dnf install wireshark wireshark-cli</code></pre>
+      </li>
+      <li>Tambahkan user ke group:
+        <pre><code>sudo usermod -aG wireshark $USER</code></pre>
+      </li>
+      <li>Logout/login ulang sebelum capture.</li>
+    </ol>
+
+    <h2>🍎 Install di macOS</h2>
+    <ol>
+      <li>Jika pakai Homebrew:
+        <pre><code>brew install --cask wireshark</code></pre>
+      </li>
+      <li>Pada first run, macOS akan meminta izin untuk capture. Berikan izin yang diperlukan.</li>
+      <li>Untuk capture di antarmuka tertentu, pastikan izin jaringan (System Settings → Privacy & Security) aktif.</li>
+    </ol>
+
+    <h2>✅ Verifikasi Instalasi</h2>
+    <ul>
+      <li><strong>GUI:</strong> Buka Wireshark, pastikan daftar interface (Wi-Fi/Ethernet) muncul.</li>
+      <li><strong>CLI:</strong> Coba:
+        <pre><code>tshark -v
+tshark -D   # daftar interface</code></pre>
+      </li>
+      <li>Mulai capture sebentar dan hentikan untuk memastikan paket terbaca.</li>
+    </ul>
+
+    <h2>🚀 Mulai Capture Pertama</h2>
+    <ol>
+      <li>Pilih interface aktif (misal: Ethernet atau Wi-Fi).</li>
+      <li>Klik <strong>Start</strong>, lalu di browser akses <code>example.com</code>.</li>
+      <li>Gunakan filter tampilan:
+        <ul>
+          <li>HTTP: <code>http</code></li>
+          <li>DNS: <code>dns</code></li>
+          <li>ICMP (ping): <code>icmp</code></li>
+          <li>IP ke host tertentu: <code>ip.addr == 8.8.8.8</code></li>
+        </ul>
+      </li>
+      <li>Klik paket dan lihat detail di panel tengah (header + payload).</li>
+    </ol>
+
+    <h2>🧠 Tips & Troubleshooting</h2>
+    <ul>
+      <li><strong>Interface tidak muncul:</strong> di Windows, reinstall Npcap; di Linux, cek group <code>wireshark</code> dan izin.</li>
+      <li><strong>Tidak ada paket:</strong> pastikan interface benar, atau matikan VPN yang mengalihkan traffic.</li>
+      <li><strong>Izin capture ditolak:</strong> di Linux, pastikan user sudah di group <code>wireshark</code> dan relogin.</li>
+      <li><strong>Wi-Fi monitor mode:</strong> dukungan terbatas di Windows; pertimbangkan Linux + adapter kompatibel untuk kebutuhan advanced.</li>
+      <li><strong>Simpan capture:</strong> File → Save As → format <code>.pcapng</code> untuk dibuka kembali di Wireshark atau <code>tshark</code>.</li>
+    </ul>
+  </section>
+
+  <section class="navigation">
+    <a href="index.html" class="btn back">⬅️ Kembali ke Tips & Trik</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
