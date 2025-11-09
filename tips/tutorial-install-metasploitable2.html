@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial Install Metasploitable2 - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    a { color: #0077cc; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../teori/index.html">Teori Dasar</a></li>
+        <li><a href="../praktik/index.html">Praktik</a></li>
+        <li><a href="index.html" class="active">Tips & Trik</a></li>
+        <li><a href="../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../resources/index.html">Resource</a></li>
+        <li><a href="../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>📘 Tutorial Install Metasploitable2</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Metasploitable2 adalah virtual machine berbasis Ubuntu yang sengaja dibuat rentan untuk latihan penetration testing.  
+       VM ini kompatibel dengan VirtualBox, VMware, dan platform virtualisasi lainnya.</p>
+  </section>
+
+  <section class="content">
+    <h2>🔽 Langkah 1: Download Metasploitable2</h2>
+    <p>Unduh file VM dari link resmi Rapid7:</p>
+    <ul>
+      <li><a href="https://docs.rapid7.com/metasploit/metasploitable-2/" target="_blank">Dokumentasi Rapid7</a></li>
+      <li><a href="https://information.rapid7.com/metasploitable-download.html" target="_blank">Download via Rapid7</a></li>
+      <li><a href="https://sourceforge.net/projects/metasploitable/" target="_blank">Download via SourceForge</a></li>
+    </ul>
+    <p>Ukuran file sekitar <strong>800 MB</strong>, jadi pastikan koneksi internet stabil.</p>
+
+    <h2>📦 Langkah 2: Ekstrak File</h2>
+    <ul>
+      <li>Setelah selesai download, ekstrak file ZIP.</li>
+      <li>Di dalamnya terdapat file VM (format VMDK) yang siap dijalankan.</li>
+    </ul>
+
+    <h2>💻 Langkah 3: Import ke Virtualisasi</h2>
+    <ul>
+      <li>Buka VirtualBox atau VMware.</li>
+      <li>Buat VM baru dengan OS type: <strong>Linux → Ubuntu (32-bit)</strong>.</li>
+      <li>Gunakan file VMDK hasil ekstraksi sebagai hard disk.</li>
+      <li>Atur RAM minimal 512 MB.</li>
+    </ul>
+
+    <h2>▶️ Langkah 4: Jalankan VM</h2>
+    <ul>
+      <li>Start VM Metasploitable2.</li>
+      <li>Login dengan kredensial default:</li>
+    </ul>
+    <pre>
+Username: msfadmin
+Password: msfadmin
+    </pre>
+
+    <h2>🌐 Langkah 5: Cek IP Address</h2>
+    <ul>
+      <li>Setelah login, ketik perintah:</li>
+    </ul>
+    <pre>
+msfadmin@metasploitable:~$ ifconfig
+    </pre>
+    <ul>
+      <li>Catat alamat <strong>inet</strong> dari interface <code>eth0</code>.</li>
+      <li>IP ini digunakan sebagai target saat melakukan penetration testing.</li>
+    </ul>
+
+    <h2>ℹ️ Catatan</h2>
+    <ul>
+      <li>Metasploitable2 hanya untuk <strong>lab/testing</strong>, jangan digunakan di jaringan produksi.</li>
+      <li>VM ini penuh dengan kerentanan, jadi jalankan di lingkungan terisolasi.</li>
+    </ul>
+  </section>
+
+  <section class="navigation">
+    <a href="index.html" class="btn back">⬅️ Kembali ke Tips & Trik</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
