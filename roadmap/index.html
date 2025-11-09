@@ -5,35 +5,13 @@
   <title>Roadmap Cybersecurity - Fixly Learning Hub</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
-    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; line-height: 1.6; }
     .hero { text-align: center; padding: 40px 20px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 20px;
-      transition: transform 0.2s;
-    }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 { margin-top: 0; font-size: 18px; }
-    .card p { font-size: 14px; color: #555; }
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #0077cc;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .btn:hover { background: #005fa3; }
+    section.profesi { background: #fff; margin: 20px auto; padding: 20px; border-radius: 8px; max-width: 900px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; }
+    h3 { margin-top: 20px; }
+    ul { margin-left: 20px; }
+    .tag { font-size: 14px; color: #0077cc; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -55,68 +33,88 @@
 
   <section class="hero">
     <h1>🗺️ Roadmap Cybersecurity</h1>
-    <p>Jelajahi roadmap berdasarkan profesi cybersecurity.  
-       Klik salah satu profesi untuk melihat jalur belajar dari Beginner → Advanced, lengkap dengan rekomendasi sertifikasi.</p>
+    <p>Berikut roadmap lengkap berdasarkan profesi cybersecurity.  
+       Setiap profesi memiliki jalur belajar dari Beginner → Intermediate → Advanced, capstone project, dan rekomendasi sertifikasi.</p>
   </section>
 
-  <section class="grid">
-    <div class="card">
-      <h3>🔍 Security Analyst</h3>
-      <p>Fokus pada monitoring, log analysis, dan SIEM untuk mendeteksi ancaman.</p>
-      <a href="security-analyst.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>🛠️ Penetration Tester</h3>
-      <p>Menguji keamanan sistem dengan simulasi serangan dan eksploitasi.</p>
-      <a href="penetration-tester.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>⚙️ Security Engineer</h3>
-      <p>Membangun dan mengimplementasikan sistem keamanan jaringan & aplikasi.</p>
-      <a href="security-engineer.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>🏗️ Security Architect</h3>
-      <p>Merancang arsitektur keamanan skala besar dengan prinsip Zero Trust.</p>
-      <a href="security-architect.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>🖥️ Security Administrator</h3>
-      <p>Mengelola operasional harian, user management, patching, dan troubleshooting.</p>
-      <a href="security-administrator.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>🔐 Cryptographer</h3>
-      <p>Mendesain algoritma enkripsi, hashing, dan protokol keamanan data.</p>
-      <a href="cryptographer.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>🚨 Incident Responder</h3>
-      <p>Menangani insiden keamanan, melakukan forensik, dan mitigasi serangan.</p>
-      <a href="incident-responder.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>📑 Governance Specialist</h3>
-      <p>Menyusun kebijakan, compliance, dan standar keamanan organisasi.</p>
-      <a href="governance-specialist.html" class="btn">Lihat Roadmap</a>
-    </div>
-
-    <div class="card">
-      <h3>👔 Chief Information Security Officer (CISO)</h3>
-      <p>Memimpin strategi keamanan, risk management, dan komunikasi dengan stakeholder.</p>
-      <a href="ciso.html" class="btn">Lihat Roadmap</a>
-    </div>
+  <!-- Security Analyst -->
+  <section class="profesi">
+    <h2>🔍 Security Analyst</h2>
+    <h3>Beginner</h3>
+    <ul><li>Dasar jaringan & TCP/IP</li><li>Linux/Windows dasar</li><li>Konsep keamanan dasar</li></ul>
+    <h3>Intermediate</h3>
+    <ul><li>Log analysis</li><li>SIEM tools (Splunk, ELK)</li><li>Packet analysis dengan Wireshark</li></ul>
+    <h3>Advanced</h3>
+    <ul><li>Threat hunting</li><li>Detection engineering</li><li>Incident reporting</li></ul>
+    <h3>Capstone Project</h3><p>Analisis serangan DDoS menggunakan SIEM.</p>
+    <h3>Sertifikasi</h3><ul><li>CompTIA Security+</li><li>Splunk Certified</li></ul>
   </section>
 
-  <footer>
-    <p>© 2025 Fixly Learning Hub | Roadmap Cybersecurity</p>
-  </footer>
-</body>
-</html>
+  <!-- Penetration Tester -->
+  <section class="profesi">
+    <h2>🛠️ Penetration Tester</h2>
+    <h3>Beginner</h3>
+    <ul><li>Dasar jaringan</li><li>Linux command line</li><li>Ethical hacking intro</li></ul>
+    <h3>Intermediate</h3>
+    <ul><li>Kali Linux tools</li><li>Nmap, Nikto</li><li>Metasploit dasar</li><li>OWASP Top 10</li></ul>
+    <h3>Advanced</h3>
+    <ul><li>Buffer overflow</li><li>Privilege escalation</li><li>Wireless & cloud pentest</li></ul>
+    <h3>Capstone Project</h3><p>Pentest aplikasi web end-to-end.</p>
+    <h3>Sertifikasi</h3><ul><li>CEH</li><li>OSCP</li><li>eJPT</li></ul>
+  </section>
+
+  <!-- Security Engineer -->
+  <section class="profesi">
+    <h2>⚙️ Security Engineer</h2>
+    <h3>Beginner</h3><ul><li>Networking & OS</li><li>Firewall dasar</li></ul>
+    <h3>Intermediate</h3><ul><li>IDS/IPS</li><li>VPN setup</li><li>OS hardening</li></ul>
+    <h3>Advanced</h3><ul><li>Cloud security</li><li>Automation & scripting</li></ul>
+    <h3>Capstone Project</h3><p>Deploy firewall + IDS di lab.</p>
+    <h3>Sertifikasi</h3><ul><li>CompTIA CySA+</li><li>CCNP Security</li></ul>
+  </section>
+
+  <!-- Security Architect -->
+  <section class="profesi">
+    <h2>🏗️ Security Architect</h2>
+    <h3>Beginner</h3><ul><li>Networking & OS</li></ul>
+    <h3>Intermediate</h3><ul><li>Zero Trust</li><li>Segmentation</li></ul>
+    <h3>Advanced</h3><ul><li>Cloud architecture</li><li>Enterprise security design</li></ul>
+    <h3>Capstone Project</h3><p>Desain arsitektur jaringan aman untuk kantor.</p>
+    <h3>Sertifikasi</h3><ul><li>CCSP</li><li>TOGAF Security</li></ul>
+  </section>
+
+  <!-- Security Administrator -->
+  <section class="profesi">
+    <h2>🖥️ Security Administrator</h2>
+    <h3>Beginner</h3><ul><li>User management</li><li>Patch management</li></ul>
+    <h3>Intermediate</h3><ul><li>Server hardening</li><li>Monitoring tools</li></ul>
+    <h3>Advanced</h3><ul><li>Automation</li><li>Incident handling</li></ul>
+    <h3>Capstone Project</h3><p>Setup server aman dengan role-based access.</p>
+    <h3>Sertifikasi</h3><ul><li>Microsoft Security Admin</li><li>Linux Foundation Certified SysAdmin</li></ul>
+  </section>
+
+  <!-- Cryptographer -->
+  <section class="profesi">
+    <h2>🔐 Cryptographer</h2>
+    <h3>Beginner</h3><ul><li>Dasar enkripsi</li></ul>
+    <h3>Intermediate</h3><ul><li>RSA, AES</li><li>Hashing</li></ul>
+    <h3>Advanced</h3><ul><li>Protocol design</li><li>Post-quantum cryptography</li></ul>
+    <h3>Capstone Project</h3><p>Implementasi RSA/AES untuk komunikasi.</p>
+    <h3>Sertifikasi</h3><ul><li>Certified Encryption Specialist</li></ul>
+  </section>
+
+  <!-- Incident Responder -->
+  <section class="profesi">
+    <h2>🚨 Incident Responder</h2>
+    <h3>Beginner</h3><ul><li>Dasar forensik</li></ul>
+    <h3>Intermediate</h3><ul><li>Threat hunting</li><li>IR plan</li></ul>
+    <h3>Advanced</h3><ul><li>Malware analysis</li><li>Advanced forensics</li></ul>
+    <h3>Capstone Project</h3><p>Simulasi respon insiden malware.</p>
+    <h3>Sertifikasi</h3><ul><li>GCFA</li><li>GCIH</li></ul>
+  </section>
+
+  <!-- Governance Specialist -->
+  <section class="profesi">
+    <h2>📑 Governance Specialist</h2>
+    <h3>Beginner</h3><ul><li>Dasar GRC</li></ul>
+    <h3>Intermediate</h3><ul><li>ISO 27001</li><li>NIST</li
