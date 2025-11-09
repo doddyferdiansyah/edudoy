@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Troubleshooting Network - Fixly Learning Hub</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; }
+    ul { margin-left: 20px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 6px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Fixly Learning Hub</div>
+      <ul class="menu">
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="../teori/index.html">Teori Dasar</a></li>
+        <li><a href="../praktik/index.html">Praktik</a></li>
+        <li><a href="index.html" class="active">Tips & Trik</a></li>
+        <li><a href="../learning-path/index.html">Learning Path</a></li>
+        <li><a href="../roadmap/index.html">Roadmap</a></li>
+        <li><a href="../resources/index.html">Resource</a></li>
+        <li><a href="../tentang/index.html">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🛠️ Troubleshooting Network</h1>
+    <p class="tag intermediate">Level: Intermediate</p>
+    <p>Masalah jaringan bisa terjadi kapan saja: internet lambat, tidak bisa konek, atau server tidak merespon.  
+       Dengan pendekatan troubleshooting yang sistematis, kita bisa menemukan akar masalah dan memperbaikinya lebih cepat.</p>
+  </section>
+
+  <section class="content">
+    <h2>📖 Langkah-Langkah Troubleshooting</h2>
+    <ol>
+      <li><strong>Cek fisik</strong>: pastikan kabel, router, dan perangkat menyala.</li>
+      <li><strong>Cek IP Address</strong>: gunakan <code>ipconfig</code> (Windows) atau <code>ifconfig/ip addr</code> (Linux).</li>
+      <li><strong>Ping gateway</strong>: <code>ping 192.168.1.1</code> untuk memastikan koneksi ke router.</li>
+      <li><strong>Ping internet</strong>: <code>ping 8.8.8.8</code> untuk cek koneksi ke luar.</li>
+      <li><strong>Cek DNS</strong>: coba akses website dengan nama domain, jika gagal mungkin masalah DNS.</li>
+      <li><strong>Traceroute</strong>: gunakan <code>tracert</code> (Windows) atau <code>traceroute</code> (Linux) untuk melihat jalur paket.</li>
+      <li><strong>Cek firewall</strong>: pastikan tidak ada aturan yang memblokir koneksi.</li>
+    </ol>
+
+    <h2>⚡ Tips Cepat</h2>
+    <ul>
+      <li>Gunakan <code>ping</code> untuk cek konektivitas dasar.</li>
+      <li>Gunakan <code>nslookup</code> atau <code>dig</code> untuk cek DNS.</li>
+      <li>Gunakan <code>netstat -an</code> untuk melihat port yang terbuka.</li>
+      <li>Gunakan <code>curl</code> atau <code>wget</code> untuk tes akses web.</li>
+    </ul>
+
+    <h2>🧠 Analogi Dunia Nyata</h2>
+    <ul>
+      <li><strong>Ping</strong>: seperti mengetuk pintu rumah tetangga untuk memastikan mereka ada di rumah.</li>
+      <li><strong>Traceroute</strong>: seperti melihat rute perjalanan dari rumah ke kantor, apakah ada jalan yang macet.</li>
+      <li><strong>DNS</strong>: seperti buku alamat, jika salah maka kamu pergi ke rumah yang salah.</li>
+    </ul>
+  </section>
+
+  <section class="practice">
+    <h2>🛠️ Praktik Kecil</h2>
+    <p>Coba lakukan troubleshooting sederhana:</p>
+    <ol>
+      <li>Putuskan koneksi Wi-Fi, lalu sambungkan kembali.</li>
+      <li>Cek IP dengan <code>ipconfig</code> atau <code>ifconfig</code>.</li>
+      <li>Ping gateway dan Google DNS.</li>
+      <li>Gunakan <code>nslookup google.com</code> untuk cek DNS.</li>
+    </ol>
+  </section>
+
+  <section class="challenge">
+    <h2>🎮 Mini Challenge</h2>
+    <p>Buat skenario troubleshooting:</p>
+    <ul>
+      <li>Bayangkan kamu admin jaringan kantor, tiba-tiba internet mati.</li>
+      <li>Tentukan langkah troubleshooting yang akan kamu lakukan.</li>
+      <li>Dokumentasikan hasil tiap langkah (IP valid/tidak, ping berhasil/tidak, DNS error/tidak).</li>
+      <li>Berikan solusi akhir berdasarkan temuanmu.</li>
+    </ul>
+    <p><strong>Tugas tambahan:</strong> Buat flowchart sederhana alur troubleshooting jaringan dari fisik → IP → gateway → internet → DNS.</p>
+  </section>
+
+  <section class="navigation">
+    <a href="index.html" class="btn back">⬅️ Kembali ke Tips & Trik</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Fixly Learning Hub | Edukasi IT & Cybersecurity untuk semua</p>
+  </footer>
+</body>
+</html>
